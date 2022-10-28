@@ -1,0 +1,11 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-family: 'Quicksand';
+    font-size: 25px;
+}
