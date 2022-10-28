@@ -24,10 +24,13 @@ import Header from "./components/Header";
 //   );
 // }
 
+
+
 const App = () => {
   return (
     <div className='container'>
       <Header/>
+      <Course courseName='CMPT370' courseDescription='learning to build a group project'/>
     </div>
   );
 }
