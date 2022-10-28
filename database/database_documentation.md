@@ -30,3 +30,6 @@ Store University of Saskatchewan courses, defining prerequisite and dependency r
 - Hyperlink
   - e.g., [https://catalogue.usask.ca/CMPT-370](https://catalogue.usask.ca/CMPT-370)
   - Can be represented as a String
+- Number of credits
+  - e.g., three
+  - This can be derived from the original course code (e.g., the ".3" in CMPT 370.3 represents three credits)
