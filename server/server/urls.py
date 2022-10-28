@@ -17,5 +17,5 @@ from django.contrib import admin
 from django.urls import path, re_path, include
 
 urlpatterns = [
-    path('', include('api.urls'))
+    path('', include('api.urls')) # for now we will send all url's to api folder url's
 ]
