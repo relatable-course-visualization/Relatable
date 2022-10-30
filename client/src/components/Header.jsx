@@ -3,7 +3,7 @@ import Search from "./searchBar";
 
 const Header = () => {
     return(
-        <header className='header'>
+        <header className='Header'>
             <>
                 <img src = {pic} className="App-pic" alt="pic" />
                 <>Relatable</>

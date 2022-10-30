@@ -1,17 +1,15 @@
 import React from 'react';
-//import Search from ".././components/searchBar";
-//import pic from ".././images/Anoures.jpg";
 
-import Search from '../components/searchBar';
-import pic from "../images/Anoures.jpg";
+import Course from ".././components/course";
+import Header from "../components/header";
 
-const homepage = () =>  {
+const Homepage = () =>  {
     return(
-        <>
-            <img src = {pic} className="App-pic" alt="pic" />
-            <Search/>
-        </>
+        <div className='container'>
+            <Header/>
+            <Course courseName='CMPT370' courseDescription='learning to build a group project' dependencies='dep-list' prerequisites='pre-list'/>
+        </div>
     )
 }
 
-export default homepage
+export default Homepage

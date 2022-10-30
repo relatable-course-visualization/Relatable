@@ -18,36 +18,37 @@ const Course = (props) => {
                     <h2>Prerequisites</h2>
                     <p>
                         <Button variant="contained">
+                            {props.prerequisites}
+                        </Button>
+                        
+                        <Button variant="contained">
                             280
                         </Button>
+
                         <Button variant="contained">
                             270
                         </Button>
-                        <Button variant="contained">
-                            214
-                        </Button>
+
                     </p>
                     
                     <h3>dependencies</h3>
                     <p>
-                    <Button variant="contained">
+
+                        <Button variant="contained">
+                            {props.dependencies}
+                        </Button>
+                        
+                        <Button variant="contained">
                             410
                         </Button>
+
                         <Button variant="contained">
                             440
                         </Button>
-                        <Button variant="contained">
-                            480
-                        </Button>
-                    </p>
-                    
-                    
-                </Box>
 
-            // <Button>
-            //     <h1>{props.courseName} </h1>
-            //     <p>{props.courseDescription}</p>          
-            // </Button>
+                    </p>
+                              
+                </Box>
     )
 }
 
