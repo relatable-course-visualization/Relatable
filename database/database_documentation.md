@@ -2,7 +2,7 @@
 
 Store University of Saskatchewan courses, defining prerequisite and dependency relationships to corresponding sets of courses.
 
-## Datapoints (Planning)
+## Datapoints
 
 ### Relevant Links:
 
@@ -31,5 +31,15 @@ Store University of Saskatchewan courses, defining prerequisite and dependency r
   - e.g., [https://catalogue.usask.ca/CMPT-370](https://catalogue.usask.ca/CMPT-370)
   - Can be represented as a String
 - Number of credits
-  - e.g., three
+  - e.g., 3
   - This can be derived from the original course code (e.g., the ".3" in CMPT 370.3 represents three credits)
+
+## MySQL Tables
+
+### Course Table
+
+The first row is the fields and the second is an example record. Datatypes and incrementation is included for specificity.
+
+| id : INT , AUTO_INCREMENT | course_code : VARCHAR(10) | name : VARCHAR(255)                 | description : TEXT    | prerequisites : _needs to be defined_                                                                                                                                                                                                                                                                                                                                                                        | restrictions : TEXT                            | hyperlink : VARCHAR(255)            | num_credits : INT |
+| ------------------------- | ------------------------- | ----------------------------------- | --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------- | ----------------------------------- | ----------------- |
+| 5                         | "CMPT 370"                | "Intermediate Software Engineering" | _needs to be defined_ | "Principles and techniques for developing software combined with the practical experience of creating a mid-size software system as a member of a software development team. Includes: teamwork; projects, planning and process; users and requirements; use cases; modeling; quality; software architecture; testing; GUI design, design principles, patterns and implementation; ethics; professionalism." | "Restricted to students in Applied Computing." | https://catalogue.usask.ca/CMPT-370 | 3                 |
