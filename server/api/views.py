@@ -19,8 +19,9 @@ def homepage(request):
 @api_view(['GET'])
 def getAllCourses(request):
     """ Return all course objects in the database"""
-    courses = CourseSerializer(Course)
-    serializer = CourseSerializer(courses)
+    # Note gives error since database dne yet
+    courses = Course.objects.all()
+    serializer = CourseSerializer(courses, many=True)
     return Response(serializer.data)
 
 @api_view(['GET'])
@@ -28,9 +29,10 @@ def getCourse(request, course_id):
     """ Return a single course, given the ID if possible"""
     # leave this maybe for marmik - not sure how to most efficiently search through database
     # additional functionality to add would be get certain depth of dependant and prerquisite classes as well - maybe use secondary fn for that
-    courses = CourseSerializer(Course)
+    courses = Course.objects.all()
     serializer = CourseSerializer(courses)
-    return Response(serializer.data)
+    # return Response(serializer.data)
+    return HttpResponse(course_id)
 
 
 
