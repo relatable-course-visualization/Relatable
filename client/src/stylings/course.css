@@ -1,0 +1,9 @@
+#course{
+    /* margin-top: 10px;
+    margin-bottom: 20px;
+    font-family: 'Quicksand';
+    font-size: 25px; */
+
+    font-size: var(--fs-4);
+    font-weight: var(--fw-bold);
+}
