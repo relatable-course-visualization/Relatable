@@ -1,4 +1,4 @@
-#course{
+.course{
     /* margin-top: 10px;
     margin-bottom: 20px;
     font-family: 'Quicksand';
@@ -6,4 +6,50 @@
 
     font-size: var(--fs-4);
     font-weight: var(--fw-bold);
+    background: rgb(70, 191, 54);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.26);
+    border-radius: 10px;
+    margin: 2rem 2rem 2rem 0;
+    padding: 1.5rem;
+    width: 250px;
+    transition: transform .3s ease;
+    cursor: pointer;
+}
+
+.course__body{
+    font-weight: 400;
+    font-size: 1.2rem;
+
+}
+
+.course:hover{
+    transform: scale(1.1);
+}
+
+.course__title{
+    font-weight: 900;
+    font-size: 1.5rem;
+}
+
+.course__prerequisites{
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: blue;
+    text-decoration: underline;
+}
+
+.course__dependencies{
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: rgb(199, 21, 21);
+    text-decoration: underline;
+}
+
+.course__image{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.paper__colour{
+    background-color: rgb(255, 255, 0);
 }
