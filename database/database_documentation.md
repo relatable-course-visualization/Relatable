@@ -47,14 +47,29 @@ Note, form four follows the conventional definition of v (that is, an inclusive 
 
 ## MySQL Tables
 
+For each table, the first row is the fields and the second is an example record. Datatypes and incrementation are included for specificity.
+
 ### Course Table
 
-The first row is the fields and the second is an example record. Datatypes and incrementation is included for specificity.
-
 Perhaps unintuitively, there is no column for a foreign key to a prerequisite record. While I tried this method--storing an entry for a prerequisite in the prerequite table corresponding to each course--initially, it could not handle the relational complexity of the prerequisite definition above. Thus, I have configured a more abtrast solution; you can see it defined in writing and in the tables for the prerequisite table below.
+
+Primary key: id
 
 | id : INT , AUTO_INCREMENT | course_code : VARCHAR(10) | name : VARCHAR(255)                 | description : TEXT                                                                                                                                                                                                                                                                                                                                                                                           | restrictions : TEXT                            | hyperlink : VARCHAR(255)            | num_credits : INT |
 | ------------------------- | ------------------------- | ----------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------- | ----------------------------------- | ----------------- |
 | 5                         | "CMPT 370"                | "Intermediate Software Engineering" | "Principles and techniques for developing software combined with the practical experience of creating a mid-size software system as a member of a software development team. Includes: teamwork; projects, planning and process; users and requirements; use cases; modeling; quality; software architecture; testing; GUI design, design principles, patterns and implementation; ethics; professionalism." | "Restricted to students in Applied Computing." | https://catalogue.usask.ca/CMPT-370 | 3                 |
 
 ![ERR for course table](course_table.png)
+
+### Prerequisite Table
+
+Primary key: id
+
+Foreign keys
+
+- course_id
+- course_id_prereq
+
+| id : INT , AUTO_INCREMENT | course_id : INT | disjunction_variable : CHAR(1) | course_id_prereq : INT |
+| ------------------------- | --------------- | ------------------------------ | ---------------------- |
+|                           |                 |                                |                        |
