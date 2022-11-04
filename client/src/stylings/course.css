@@ -4,22 +4,37 @@
     font-family: 'Quicksand';
     font-size: 25px; */
 
+
     font-size: var(--fs-4);
     font-weight: var(--fw-bold);
-    background: rgb(70, 191, 54);
+    background: var(--clr-course-background);
     box-shadow: 0 2px 8px rgba(0,0,0,0.26);
-    border-radius: 10px;
-    margin: 2rem 2rem 2rem 0;
-    padding: 1.5rem;
-    width: 250px;
+    border-radius: var(--br-background);
+    margin: 1rem 1rem 1rem 0;
+    padding: var(--fs-3);
+    width: var(--bw-large);
+    transition: transform .3s ease;
+    cursor: var(--crsr-pointercrsr-);
+}
+
+.sub{ 
+    font-size: var(--fs-4);
+    font-weight: var(--fw-bold);
+    background: var(--clr-subbox-background);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.26);
+    border-radius: var(--br-background);
+    margin: 0 0 0.5rem 0;
+    padding: var(--fs-3);
+    width: var(--bw-small);
     transition: transform .3s ease;
     cursor: pointer;
 }
 
 .course__body{
-    font-weight: 400;
-    font-size: 1.2rem;
-
+    font-family: var(font-family);
+    font-weight: var(--fw-light);
+    font-size: var(--fs-5);
+    padding-left: 5%;
 }
 
 .course:hover{
@@ -27,23 +42,21 @@
 }
 
 .course__title{
-    font-weight: 900;
-    font-size: 1.5rem;
+    font-family: var(font-family);
+    color: rgb(61, 27, 35);
+    font-weight: var(--fw-bold);
+    font-size: var(--fs-3);
 }
 
-.course__prerequisites{
-    font-weight: 600;
-    font-size: 1.2rem;
-    color: blue;
+.course__subboxes{
+    font-family: var(font-family);
+    font-weight: var(--fw-reg);
+    font-size: var(--fs-5);
+    color: rgb(75, 75, 78);
     text-decoration: underline;
 }
 
-.course__dependencies{
-    font-weight: 600;
-    font-size: 1.2rem;
-    color: rgb(199, 21, 21);
-    text-decoration: underline;
-}
+
 
 .course__image{
     display: flex;

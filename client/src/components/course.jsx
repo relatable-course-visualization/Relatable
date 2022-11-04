@@ -3,7 +3,6 @@ import Box from '@mui/material/Box';
 import Button from '@material-ui/core/Button'
 import "../stylings/course.css";
 import { Paper } from "@mui/material";
-import { blue } from "@mui/material/colors";
 
 
 const Course = (props) => {
@@ -12,9 +11,8 @@ const Course = (props) => {
             <div className="course">  
                 <div className="course__title" >{props.courseName}</div>
                 <div className="course__body">{props.courseDescription}</div>
-                <Paper style={{background: blue}}>
-                    <div className="course__prerequisites">Prerequisites</div>
-                    <p>
+                <div className="sub">  
+                    <div className="course__subboxes">Prerequisites</div>
                         <Button variant="contained">
                             {props.prerequisites}
                         </Button>
@@ -26,12 +24,10 @@ const Course = (props) => {
                         <Button variant="contained">
                             270
                         </Button>
-                    </p>
-                </Paper>
+                    </div>
 
-                <Paper className="paper__colour">
-                    <div className="course__dependencies">dependencies</div>
-                    <p>
+                <div className="sub"> 
+                    <div className="course__subboxes">Dependencies</div>
                         <Button variant="contained">
                             {props.dependencies}
                         </Button>
@@ -43,10 +39,8 @@ const Course = (props) => {
                         <Button variant="contained">
                             440
                         </Button>
-                    </p>
-                </Paper>
-                </div>             
-
+                </div>
+            </div>             
     )
 }
 
