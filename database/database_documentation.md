@@ -123,3 +123,5 @@ Examples:
 | 1                         | 65              | 32                     |
 | 2                         | 65              | 11                     |
 | 3                         | 65              | 4                      |
+
+![ERR for dependency table](dependency_table.png)
