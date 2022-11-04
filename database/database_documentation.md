@@ -53,7 +53,7 @@ Let C be the set of all courses. Let P be the set of all prerequisites. Define D
 
 ## MySQL Tables
 
-For each table, the first row is the fields and the second is an example record. Datatypes and incrementation are included for specificity.
+For each table, the first row is the fields and the latter are example records. Datatypes and incrementation are included for specificity.
 
 ### Course Table
 
@@ -103,6 +103,8 @@ Examples:
 ![ERR for prerequisite table](prerequisite_table.png)
 
 ### Dependency Table
+
+The course_id and course_id_depend are analogous to those in the Prerequisite Table. The relationship is such that for a given course all its dependency courses are listed in different columns. This does necessitate a course being duplicated in multiple records. However, the (positive) trade-off is that this table is easy to auto-populate and draw relationships to/from other tables.
 
 Primary key: id
 
