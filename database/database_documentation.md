@@ -63,6 +63,12 @@ Primary key: id
 
 ### Prerequisite Table
 
+The course_id column references a course. The same course often appears in multiple rows to define logical expressions.
+
+Because of the multi-form nature of prerequisites as seen in the definition, one of two general forms could be maintained: conjunctive normal form or disjunctive normal form. While not followed strictly or mathematically, the latter was selected; prerequisites of a course are seperated on the foundational level using disjunctions. This is done using the disjunction_expression field. In particular, for a given course, the disjunction_expression represents a variable or a logical expression that is part of the larger disjunction. Thus, different disjunction_expression's represent different variables or logical expressions in the disjunction. Multiple rows with the same disjunction_expression indicate conjunction. Accordingly, the logical expressions representing the prerequisites for a given course are a set of disjunctive conjunctions. This holds by the definition of disjunctive normal form, as potential inner disjunctions can be equivalently factored outward using axiomatic associativity.
+
+The course_id_prereq field stands for a corresponding prerequisite course from the course table.
+
 Primary key: id
 
 Foreign keys
@@ -70,6 +76,6 @@ Foreign keys
 - course_id
 - course_id_prereq
 
-| id : INT , AUTO_INCREMENT | course_id : INT | disjunction_variable : CHAR(1) | course_id_prereq : INT |
-| ------------------------- | --------------- | ------------------------------ | ---------------------- |
-|                           |                 |                                |                        |
+| id : INT , AUTO_INCREMENT | course_id : INT | disjunction_expression : CHAR(1) | course_id_prereq : INT |
+| ------------------------- | --------------- | -------------------------------- | ---------------------- |
+|                           |                 |                                  |                        |
