@@ -101,3 +101,15 @@ Examples:
 | 8                         | 5               | b                                | 66                     |
 
 ![ERR for prerequisite table](prerequisite_table.png)
+
+### Dependency Table
+
+Primary key: id
+
+Foreign keys
+
+- course_id
+- course_id_depend
+
+| id : INT , AUTO_INCREMENT | course_id : INT | course_id_depend : INT |
+| ------------------------- | --------------- | ---------------------- |
