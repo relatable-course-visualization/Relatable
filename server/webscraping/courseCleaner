@@ -53,7 +53,8 @@ def recursiveClean(courseList):
             or_index.append(i)
         elif courseList[i] == "and one of":
             and_one_index.append(i)
-            or_index.append(i) # this is for the case when the is Class A and one of ...
+            # or_index.append(i) # this is for the case when the is Class A and one of ...
+
 
     # all classes after "and one of into its seperate list"
     # ** assume there is only one "and one of" fro now
@@ -67,15 +68,22 @@ def recursiveClean(courseList):
     # print (and_one_list)
     # assume at this point we just have ors and courses
     or_list = []
-    if len(or_index) > 0:
-        or_list.append(courseList[:or_index[0]])
+    # come back to later
+    # print(or_index)
+    # print(courseList)
+    if len(or_index) == 0:
+        or_list = [courseList]
+    elif len(or_index) > 0:
+        if or_index[0] != 0:
+            or_list.append(courseList[:or_index[0]])
         i = 1
         if len(or_index) > 1:
             while i < len(or_index):
-                or_list.append(courseList[or_index[i-1]+1:or_index[i]])
+                if or_index[i-1]+1 != or_index[i]:
+                    or_list.append(courseList[or_index[i-1]+1:or_index[i]])
                 i += 1
-
-        or_list.append(courseList[or_index[i-1]+1:])
+        if or_index[i-1]+1 != len(courseList):
+            or_list.append(courseList[or_index[i-1]+1:])
 
     # print("Or Index")
     # print(or_index)
@@ -85,10 +93,14 @@ def recursiveClean(courseList):
         for c in or_list:
             final_list.append(c)
     else:
+        # print(and_one_list)
+        # print(or_list)
         for k in and_one_list:
             for l in or_list:
-                newList = [k] + l
-                final_list.append(newList)
+                if k != "or":
+                    newList = [k] + l
+
+                    final_list.append(newList)
 
         
 
