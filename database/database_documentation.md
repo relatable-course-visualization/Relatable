@@ -65,7 +65,7 @@ Primary key: id
 | ------------------------- | ------------------------- | ----------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------- | ----------------------------------- | ----------------- |
 | 5                         | "CMPT 370"                | "Intermediate Software Engineering" | "Principles and techniques for developing software combined with the practical experience of creating a mid-size software system as a member of a software development team. Includes: teamwork; projects, planning and process; users and requirements; use cases; modeling; quality; software architecture; testing; GUI design, design principles, patterns and implementation; ethics; professionalism." | "Restricted to students in Applied Computing." | https://catalogue.usask.ca/CMPT-370 | 3                 |
 
-![ERR for course table](course_table.png)
+![EER for course table](course_table.png)
 
 ### Prerequisite Table
 
@@ -100,7 +100,7 @@ Examples:
 | 7                         | 5               | b                                | 11                     |
 | 8                         | 5               | b                                | 66                     |
 
-![ERR for prerequisite table](prerequisite_table.png)
+![EER for prerequisite table](prerequisite_table.png)
 
 ### Dependency Table
 
@@ -124,4 +124,8 @@ Examples:
 | 2                         | 65              | 11                     |
 | 3                         | 65              | 4                      |
 
-![ERR for dependency table](dependency_table.png)
+![EER for dependency table](dependency_table.png)
+
+## Enhanced-Entity Relationship Diagram (EER)
+
+![EER for all tables](EER.png)
