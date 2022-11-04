@@ -76,6 +76,20 @@ Foreign keys
 - course_id
 - course_id_prereq
 
+Examples:
+
+- Numbers represents a course
+- Example one: 23 AND 41
+- Example two: 93 OR 20
+- Example three: (103 AND 31) OR (11 AND 66)
+
 | id : INT , AUTO_INCREMENT | course_id : INT | disjunction_expression : CHAR(1) | course_id_prereq : INT |
 | ------------------------- | --------------- | -------------------------------- | ---------------------- |
-|                           |                 |                                  |                        |
+| 1                         | 3               | a                                | 23                     |
+| 2                         | 3               | a                                | 41                     |
+| 3                         | 17              | a                                | 93                     |
+| 4                         | 17              | b                                | 20                     |
+| 5                         | 5               | a                                | 103                    |
+| 6                         | 5               | a                                | 31                     |
+| 7                         | 5               | b                                | 11                     |
+| 8                         | 5               | b                                | 66                     |
