@@ -34,16 +34,22 @@ Store University of Saskatchewan courses, defining prerequisite and dependency r
   - e.g., 3
   - This can be derived from the original course code (e.g., the ".3" in CMPT 370.3 represents three credits)
 
-## Prerequisite Theory
+## Theory
 
-Let C = the set of all courses. Let P be the set of all prerequisites. Given a course c ∈ C, define p ∈ P recursively as a set representing the prerequisites of c st it holds one of the following forms ∀p<sub>1</sub>, ..., p<sub>n</sub> ∈ P, ∀c<sub>i</sub> ∈ C:
+### Prerequisite Definition
+
+Let C be the set of all courses. Define P ⊆ C as the set of all prerequisites. Given a course c ∈ C, define p ∈ P recursively as a set representing the prerequisites of c st it holds one of the following forms ∀p<sub>1</sub>, ..., p<sub>n</sub> ∈ P, ∀c<sub>i</sub> ∈ C:
 
 - p = Ø
-- p = c<sub>i</sub>
+- p = {c<sub>i</sub>}
 - p = {p<sub>1</sub>, ..., p<sub>n</sub>}
 - p = p<sub>1</sub> v ... v p<sub>n</sub>
 
 Note, form four follows the conventional definition of v (that is, an inclusive disjunction).
+
+### Dependency Definition
+
+Let C be the set of all courses. Let P be the set of all prerequisites. Define D ⊆ C as the set of all dependencies. Given a course c ∈ C, define d ∈ D st if it is a dependency of c, then c ∈ P and c is a prerequisite of d.
 
 ## MySQL Tables
 
