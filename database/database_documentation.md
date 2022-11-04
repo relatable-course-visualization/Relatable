@@ -93,3 +93,5 @@ Examples:
 | 6                         | 5               | a                                | 31                     |
 | 7                         | 5               | b                                | 11                     |
 | 8                         | 5               | b                                | 66                     |
+
+![ERR for prerequisite table](prerequisite_table.png)
