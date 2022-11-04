@@ -7,7 +7,7 @@ const Homepage = () =>  {
     return(
         <div className='container'>
             <Header/>
-            <Course courseName='CMPT370' courseDescription='learning to build a group project' dependencies='dep-list' prerequisites='pre-list'/>
+            <Course courseName='CMPT370' courseDescription='Learning to build a group project' dependencies='dep-list' prerequisites='pre-list'/>
         </div>
     )
 }
