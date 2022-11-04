@@ -1,0 +1,128 @@
+from lib2to3.pgen2.tokenize import tokenize
+from queue import Empty
+from typing import final
+import nltk
+from nltk.tokenize import RegexpTokenizer, word_tokenize
+import string
+
+#Simple examples:
+# CMPT 141; or CMPT 111 and permission of the department.
+# CMPT 141.3 or CMPT 142.3
+# CMPT 145 or CMPT 115 or CMPT 117.
+# CMPT 214 and one of MATH 104, MATH 110, MATH 121, MATH 123, MATH 125, MATH 176 or STAT 245 (or equivalent).
+# MATH 110 or MATH 176; and one of CMPT 145, CMPT 115, or CMPT 117.
+#   =>[[Math 110, CMPT145], ]
+# CMPT 145 or CMPT 115 or CMPT 117; and one of MATH 104, MATH 110, MATH 121, MATH 123, MATH 125, MATH 176 or STAT 245 (or equivalent).
+# Special Cases:
+# MATH 110 or MATH 176; and one of CMPT 145, CMPT 115, or CMPT 117.
+
+
+
+# Keywords:
+    # or
+    # and
+    # and one of -> 
+
+def initialClean(course_str):
+    # remove punctuation:
+    #course_tokens = nltk.word_tokenize(course_str)
+    course_str = course_str.translate(str.maketrans('', '', string.punctuation)) # remove punctuation
+    
+    course_id_tokenizer = RegexpTokenizer('[A-Z]{4}\s[0-9]{3}|[o][r]|[a][n][d]\s[o][n][e]\s[o][f]|[a][n][d]') # grab only course and keywords
+    
+    # Use following two if you want no spaces in course id
+    # course_str = course_str.translate(str.maketrans('', '', ' ')) # remove spaces
+    # course_id_tokenizer = RegexpTokenizer('[A-Z]{4}[0-9]{3}|[o][r]|[a][n][d][o][n][e][o][f]|[a][n][d]') 
+
+    course_tokens = course_id_tokenizer.tokenize(course_str)
+
+    return course_tokens
+
+
+# courses in the same list are ANDs
+# Lists in a list are ORs
+# need to pass in a list with a single string
+def recursiveClean(courseList):
+    # if we see 'and one of' then:
+        # all classes following that until the next "and" will be placed into a special list
+    # if we 'or' then split into two lists and call function recursively
+    or_index = []
+    and_one_index = []
+    for i in range(len(courseList)):
+        if courseList[i] == "or" and (len(and_one_index) == 0):
+            or_index.append(i)
+        elif courseList[i] == "and one of":
+            and_one_index.append(i)
+            # or_index.append(i) # this is for the case when the is Class A and one of ...
+
+
+    # all classes after "and one of into its seperate list"
+    # ** assume there is only one "and one of" fro now
+    # need to remove ors from this list
+    and_one_list = []
+    if len(and_one_index) == 1:
+        and_one_list = courseList[and_one_index[0]+1:]
+        courseList = courseList[0:and_one_index[0]]
+
+    # print("And one list:")
+    # print (and_one_list)
+    # assume at this point we just have ors and courses
+    or_list = []
+    # come back to later
+    # print(or_index)
+    # print(courseList)
+    if len(or_index) == 0:
+        or_list = [courseList]
+    elif len(or_index) > 0:
+        if or_index[0] != 0:
+            or_list.append(courseList[:or_index[0]])
+        i = 1
+        if len(or_index) > 1:
+            while i < len(or_index):
+                if or_index[i-1]+1 != or_index[i]:
+                    or_list.append(courseList[or_index[i-1]+1:or_index[i]])
+                i += 1
+        if or_index[i-1]+1 != len(courseList):
+            or_list.append(courseList[or_index[i-1]+1:])
+
+    # print("Or Index")
+    # print(or_index)
+    # print("Or List:")
+    final_list = []
+    if len(and_one_list) == 0:
+        for c in or_list:
+            final_list.append(c)
+    else:
+        # print(and_one_list)
+        # print(or_list)
+        for k in and_one_list:
+            for l in or_list:
+                if k != "or":
+                    newList = [k] + l
+
+                    final_list.append(newList)
+
+        
+
+    return final_list
+
+def main():
+    test_cases = ["CMPT 141.3 or CMPT 142.3", 
+              "CMPT 145 or CMPT 115 or CMPT 117.", 
+              "CMPT 214 and one of MATH 104, MATH 110, MATH 121, MATH 123, MATH 125, MATH 176 or STAT 245 (or equivalent).", 
+              "MATH 110 or MATH 176; and one of CMPT 145, CMPT 115, or CMPT 117.",
+              "CMPT 145 or CMPT 115 or CMPT 117; and one of MATH 104, MATH 110, MATH 121, MATH 123, MATH 125, MATH 176 or STAT 245 (or equivalent).",
+              "MATH 110 or MATH 176; and one of CMPT 145, CMPT 115, or CMPT 117.",
+              "Mathematics A30 or B30 or C30; or Foundations of Mathematics 30; or Pre-Calculus 30.",
+              "One of (Computer Science 30, CMPT 105.3, CMPT 140.3, BINF 151.3) and one of (Mathematics B30, Foundations of Mathematics 30, Pre-Calculus 30); or MATH 110.3, MATH 123.3, MATH 133.4 or MATH 176.3 (can be taken concurrently).",
+              ]
+    for i in range (0, 7):
+        print(test_cases[i])
+        print(initialClean(test_cases[i]))
+        print(recursiveClean(initialClean(test_cases[i])))
+        print("\n")
+
+if __name__ == "__main__":
+    main()
+
+
