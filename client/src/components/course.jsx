@@ -1,24 +1,18 @@
 import React from "react";
 import Box from '@mui/material/Box';
 import Button from '@material-ui/core/Button'
-import ".././stylings/course.css";
+import "../stylings/course.css";
+import { Paper } from "@mui/material";
 
 
 const Course = (props) => {
     console.log(props);
-
     return(
-                <Box 
-                    // component='span' 
-                    sx={{ p: 2, border: '1px solid grey',
-                    padding: '10px',
-                    maxWidth: '300px',
-                    '&:hover':{backgroundColor: 'pink'}, }}>
-                    
-                    <h1>{props.courseName} </h1>
-                    <p>{props.courseDescription}</p>
-                    <h2>Prerequisites</h2>
-                    <p>
+            <div className="course">  
+                <div className="course__title" >{props.courseName}</div>
+                <div className="course__body">{props.courseDescription}</div>
+                <div className="sub">  
+                    <div className="course__subboxes">Prerequisites</div>
                         <Button variant="contained">
                             {props.prerequisites}
                         </Button>
@@ -30,12 +24,10 @@ const Course = (props) => {
                         <Button variant="contained">
                             270
                         </Button>
+                    </div>
 
-                    </p>
-                    
-                    <h3>dependencies</h3>
-                    <p>
-
+                <div className="sub"> 
+                    <div className="course__subboxes">Dependencies</div>
                         <Button variant="contained">
                             {props.dependencies}
                         </Button>
@@ -47,10 +39,8 @@ const Course = (props) => {
                         <Button variant="contained">
                             440
                         </Button>
-
-                    </p>
-                              
-                </Box>
+                </div>
+            </div>             
     )
 }
 
