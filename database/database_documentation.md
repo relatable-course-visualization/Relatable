@@ -113,5 +113,13 @@ Foreign keys
 - course_id
 - course_id_depend
 
+Examples:
+
+- Numbers represents a course
+- Courses 32, 11, and 4 are dependencies of course 65
+
 | id : INT , AUTO_INCREMENT | course_id : INT | course_id_depend : INT |
 | ------------------------- | --------------- | ---------------------- |
+| 1                         | 65              | 32                     |
+| 2                         | 65              | 11                     |
+| 3                         | 65              | 4                      |
