@@ -49,6 +49,17 @@ def getCourseNames(subject_code):
     course_name = [str(c).split(":", 1)[1] for c in course_name]
     return (course_name)
 
+    # dic ('key course_code) text course_name
+
+def getCourseDescriptions(subject_code):
+    course_weblink = catalogue_link+"?subj_code="+str(subject_code)+"&cnum="
+    course_catalogue = requests.get(course_weblink)
+    course_webpage = bs(course_catalogue.content)
+    course = course_webpage.select("div.col-md-7 p")
+    # remove the <p> tag from the string so that we have only the description text.
+    course_description = [str(c).strip("</p>") for c in course]
+    return course_description
+
 
 def main():
     # test cases for each method
@@ -65,5 +76,5 @@ list_of_subjects = getSubjectCodes()
 # for course in list_of_subjects:
 #     print(getCourseNames(course))
 
-print(getCourseCodes('CMPT'))
-print(getCourseNames('CMPT'))
+# print(getCourseCodes('CMPT'))
+print(getCourseDescriptions('CMPT'))
