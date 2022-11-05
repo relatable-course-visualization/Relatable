@@ -38,7 +38,7 @@ def getCourseCodes(subject_code):
     return(course_code) 
 
 '''
-function that returns the course name for each course
+function that returns the course name for each course in a subject
 '''
 def getCourseNames(subject_code):
     course_weblink = catalogue_link+"?subj_code="+str(subject_code)+"&cnum="
@@ -50,7 +50,9 @@ def getCourseNames(subject_code):
     return (course_name)
 
     # dic ('key course_code) text course_name
-
+'''
+function that takes a course as a subject code as an input and returns the description for every course in the subject
+'''
 def getCourseDescriptions(subject_code):
     course_weblink = catalogue_link+"?subj_code="+str(subject_code)+"&cnum="
     course_catalogue = requests.get(course_weblink)
@@ -59,6 +61,18 @@ def getCourseDescriptions(subject_code):
     # remove the <p> tag from the string so that we have only the description text.
     course_description = [str(c).strip("</p>") for c in course]
     return course_description
+
+'''
+function that return the web links for every course in a particlar subject
+'''
+def getCourseLinks(subject_code):
+    course_weblink = catalogue_link+"?subj_code="+str(subject_code)+"&cnum="
+    course_catalogue = requests.get(course_weblink)
+    course_webpage = bs(course_catalogue.content)
+    course = course_webpage.select("div h4 a")
+    # grab only the href links in the string
+    course_links = [link['href'] for link in course]
+    return course_links
 
 
 def main():
@@ -77,4 +91,4 @@ list_of_subjects = getSubjectCodes()
 #     print(getCourseNames(course))
 
 # print(getCourseCodes('CMPT'))
-print(getCourseDescriptions('CMPT'))
+print(getCourseLinks('CMPT'))
