@@ -4,7 +4,9 @@ from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls), 
-    path('homepage/', views.homepage), # basic django and html test page
-    path('course/', views.getAllCourses), # get all courses django-rest 
-    re_path(r'^course/([A-za-z]{3,4}\d{3})/$', views.getCourse), # string to get a certain course (implementation not finished)
+
+    path('course/', views.getAllCourses), 
+    re_path(r'^getCourse/([A-za-z]{2,4}\d{2,3})/$', views.getCourse), #path like /getCourse/CMPT141/
+    re_path(r'^getPrereqs/([A-za-z]{2,4}\d{2,3})/$', views.getPrereqs), 
+    re_path(r'^getDependants/([A-za-z]{2,4}\d{2,3})/$', views.getDependants),
 ]
