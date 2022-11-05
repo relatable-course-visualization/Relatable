@@ -62,17 +62,7 @@ def getCourseDescriptions(subject_code):
     course_description = [str(c).strip("</p>") for c in course]
     return course_description
 
-'''
-function that return the web links for every course in a particlar subject
-'''
-def getCourseLinks(subject_code):
-    course_weblink = catalogue_link+"?subj_code="+str(subject_code)+"&cnum="
-    course_catalogue = requests.get(course_weblink)
-    course_webpage = bs(course_catalogue.content)
-    course = course_webpage.select("div h4 a")
-    # grab only the href links in the string
-    course_links = [link['href'] for link in course]
-    return course_links
+
 
 
 # course_1 = web.find_all("b", string=re.compile("Pre"))
@@ -85,6 +75,7 @@ def getCourseLinks(subject_code):
 # course_1_1 = web.select("div.col-md-5 p")
 # for c in course_1_1:
 #    c1 =  c.find("b", string=re.compile("Pre"))
+#    c1 = c1.find("b", string=re.sub("Co"))
 #    print(c1)
 #    if c1 == None:
 #     c2 = "none"
@@ -109,6 +100,32 @@ def getCoursePrerequisites(subject_code):
         else:
             course_preq_list.append(c1.next_element.next_element)
     return course_preq_list
+
+
+def getCourseRestrictions(subject_code):
+    course_weblink = catalogue_link+"?subj_code="+str(subject_code)+"&cnum="
+    course_catalogue = requests.get(course_weblink)
+    course_webpage = bs(course_catalogue.content)
+    course = course_webpage.select("div.col-md-5 p")
+    course_restriction_list = []
+    for c in course:
+        c1 =  c.find("b", string=re.compile("Restriction"))
+        if c1 == None:
+            course_restriction_list.append("None")
+        else:
+            course_restriction_list.append(c1.next_element.next_element)
+    return course_restriction_list
+'''
+function that return the web links for every course in a particlar subject
+'''
+def getCourseLinks(subject_code):
+    course_weblink = catalogue_link+"?subj_code="+str(subject_code)+"&cnum="
+    course_catalogue = requests.get(course_weblink)
+    course_webpage = bs(course_catalogue.content)
+    course = course_webpage.select("div h4 a")
+    # grab only the href links in the string
+    course_links = [link['href'] for link in course]
+    return course_links
             
 
 def main():
@@ -128,4 +145,5 @@ list_of_subjects = getSubjectCodes()
 
 # print(getCourseCodes('CMPT'))
 # print(getCourseLinks('CMPT'))
-# print(getCoursePrerequisites('CMPT'))
+# print(len(getCoursePrerequisites('CMPT')))
+# print(len(getCourseRestrictions('CMPT')))
