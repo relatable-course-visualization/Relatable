@@ -29,10 +29,26 @@ def getCourseCodes(subject_code):
     course_weblink = catalogue_link+"?subj_code="+str(subject_code)+"&cnum="
     course_catalogue = requests.get(course_weblink)
     course_webpage = bs(course_catalogue.content)
+    # select the particular html tag/component that has the course code
+    course = course_webpage.select("div h4 a")
+    # use regex to get only the string that includes the Course information in every course without the unneccessary tag elements
+    course_code = [str(c.find(string=re.compile(str(subject_code)))).strip() for c in course]
+    # split the string by fullstop to get only the course code.
+    course_code = [str(c).split(".", 1)[0] for c in course_code]
+    return(course_code) 
+
+'''
+function that returns the course name for each course
+'''
+def getCourseNames(subject_code):
+    course_weblink = catalogue_link+"?subj_code="+str(subject_code)+"&cnum="
+    course_catalogue = requests.get(course_weblink)
+    course_webpage = bs(course_catalogue.content)
     course = course_webpage.select("div h4 a")
     course_name = [str(c.find(string=re.compile(str(subject_code)))).strip() for c in course]
-    course_name = [str(c).split(".", 1)[0] for c in course_name]
-    return(course_name) 
+    course_name = [str(c).split(":", 1)[1] for c in course_name]
+    return (course_name)
+
 
 def main():
     # test cases for each method
@@ -46,5 +62,8 @@ list_of_subjects = getSubjectCodes()
 # print(list_of_subjects[3])
 # print(getCourseCodes(list_of_subjects[3]))
 
-for course in list_of_subjects:
-    print(getCourseCodes(course))
+# for course in list_of_subjects:
+#     print(getCourseNames(course))
+
+print(getCourseCodes('CMPT'))
+print(getCourseNames('CMPT'))
