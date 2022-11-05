@@ -71,7 +71,7 @@ Primary key: id
 
 The course_id column references a course. The same course often appears in multiple rows to define logical expressions.
 
-Because of the multi-form nature of prerequisites as seen in the definition, one of two general forms could be maintained: conjunctive normal form or disjunctive normal form. While not followed strictly or mathematically, the latter was selected; prerequisites of a course are seperated on the foundational level using disjunctions. This is done using the disjunction_expression field. In particular, for a given course, the disjunction_expression represents a variable or a logical expression that is part of the larger disjunction. Thus, different disjunction_expression's represent different variables or logical expressions in the disjunction. Multiple rows with the same disjunction_expression indicate conjunction. Accordingly, the logical expressions representing the prerequisites for a given course are a set of disjunctive conjunctions. This holds by the definition of disjunctive normal form, as potential inner disjunctions can be equivalently factored outward using axiomatic associativity.
+Because of the multi-form nature of prerequisites as seen in the definition, one of two general forms could be maintained: conjunctive normal form or disjunctive normal form. While not followed strictly or mathematically, due to the nature of prerequisites on the course website, the former was selected; prerequisites of a course are seperated on the foundational level using conjunctions. This is done using the conjunction_expression field. In particular, for a given course, the conjunction_expression represents a variable or a logical expression that is part of the larger conjunction. Thus, different conjunction_expression's represent different variables or logical expressions in the conjunction. Multiple rows with the same conjunction_expression indicate conjunction. Accordingly, the logical expressions representing the prerequisites for a given course are a set of conjunctive disjunctions. This holds by the definition of conjunctive normal form, as potential inner conjunctions can be equivalently factored outward using axiomatic associativity.
 
 The course_id_prereq field stands for a corresponding prerequisite course from the course table.
 
@@ -87,18 +87,19 @@ Examples:
 - Numbers represents a course
 - Example one: 23 AND 41
 - Example two: 93 OR 20
-- Example three: (103 AND 31) OR (11 AND 66)
+- Example three: (103 OR 31) AND (12 OR 11 OR 66)
 
-| id : INT , AUTO_INCREMENT | course_id : INT | disjunction_expression : CHAR(1) | course_id_prereq : INT |
+| id : INT , AUTO_INCREMENT | course_id : INT | conjunction_expression : CHAR(1) | course_id_prereq : INT |
 | ------------------------- | --------------- | -------------------------------- | ---------------------- |
 | 1                         | 3               | a                                | 23                     |
-| 2                         | 3               | a                                | 41                     |
+| 2                         | 3               | b                                | 41                     |
 | 3                         | 17              | a                                | 93                     |
-| 4                         | 17              | b                                | 20                     |
+| 4                         | 17              | a                                | 20                     |
 | 5                         | 5               | a                                | 103                    |
 | 6                         | 5               | a                                | 31                     |
-| 7                         | 5               | b                                | 11                     |
-| 8                         | 5               | b                                | 66                     |
+| 7                         | 5               | b                                | 12                     |
+| 8                         | 5               | b                                | 11                     |
+| 9                         | 5               | b                                | 66                     |
 
 ![EER for prerequisite table](prerequisite_table.png)
 
