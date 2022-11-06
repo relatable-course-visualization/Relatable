@@ -19,4 +19,7 @@ class Course:
     def getDecription(self):
         return '{}'.format(self.description)
 
+    def getPrerequisite(self):
+        return '{}'.format(self.prerequisite)
+
 
