@@ -13,5 +13,7 @@ class Course:
     def getCode(self):
         return '{}'.format(self.code)
     
+    def getName(self):
+        return '{}'.format(self.name)
 
 
