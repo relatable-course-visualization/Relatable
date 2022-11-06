@@ -3,6 +3,7 @@ import React from 'react';
 // import Course from ".././components/course";
 import Header from "../components/header";
 import SearchBar from '../components/searchBar';
+import NewSearch from '../components/newSearch';
 
 import "../stylings/homepage.css";
 
@@ -14,7 +15,7 @@ const Homepage = () =>  {
     return(
         <div className='homepage'>
             <Header/>
-            <SearchBar placeholder="Enter an Course..." data = {ClassData}/>
+            <NewSearch/>
             {/* <Course courseName='CMPT370' courseDescription='Learning to build a group project' dependencies='dep-list' prerequisites='pre-list'/> */}
         </div>
     )
