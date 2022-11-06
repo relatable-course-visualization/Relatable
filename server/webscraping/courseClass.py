@@ -4,15 +4,15 @@ from courseCleaner import *
 
 class Course:
     def __init__(self, code, name, description, prerequisite, restriction, link):
-        self.code = code
+        self.course_code = code
         self.name = name
         self.description = description
         self.prerequisite = prerequisite
-        self.restriction = restriction
-        self.link = link
+        self.restrictions = restriction
+        self.hyperlink = link
 
     def getCode(self):
-        return '{}'.format(self.code)
+        return '{}'.format(self.course_code)
     
     def getName(self):
         return '{}'.format(self.name)
@@ -24,13 +24,13 @@ class Course:
         return '{}'.format(self.prerequisite)
 
     def getRestricition(self):
-        return '{}'.format(self.restriction)
+        return '{}'.format(self.restrictions)
     
     def getLink(self):
-        return '{}'.format(self.link)
+        return '{}'.format(self.hyperlink)
 
     def getInfo(self):
-        return 'Code: {}\n Name: {} \n Description: {}\n Prerequisite(s): {}\n Restriction:{}\n Link: {}'.format(self.code, self.name, self.description, self.prerequisite, self.restriction, self.link)
+        return 'Code: {}\n Name: {} \n Description: {}\n Prerequisite(s): {}\n Restriction:{}\n Link: {}'.format(self.course_code, self.name, self.description, self.prerequisite, self.restrictions, self.hyperlink)
 
 
 

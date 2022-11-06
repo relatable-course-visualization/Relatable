@@ -128,7 +128,7 @@ def getCourseLinks(subject_code):
     return course_links
             
 
-def main():
+# def main():
     # test cases for each method
 
     # test case for getSubjectCodes
@@ -151,4 +151,3 @@ def main():
 # print (getCourseCodes('CMPT'))
 # print (getCourseNames('CMPT'))
 # print (getCoursePrerequisites('CMPT'))
-
