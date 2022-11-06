@@ -1,0 +1,47 @@
+/* @import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');} */
+
+* {
+    font-family: "Lucida Console", Courier, monospace;
+    box-sizing: border-box;
+  
+    /*Font Sizes*/
+    --fs-1: 3rem;
+    --fs-2: 2rem;
+    --fs-3: 1.5rem;
+    --fs-4: 1rem;
+    --fs-5: 1.2rem;
+  
+    /*Colors*/
+    --clr-primary: #0393d2;
+    --clr-secondary: #ff6400;
+    --clr-primary-light: #66d0ff;
+    --clr-secondary-light: #ff9856;
+    --clr-primary-light-background: #ddfdff;
+    --clr-hover: #ffc156;
+    --clr-black: rgb(45, 45, 45);
+    --clr-white: #fff;
+    
+    --clr-course-background: rgb(70, 191, 54);
+    --clr-subbox-background: rgb(116, 219, 103);
+  
+    /*Font Weights*/
+    --fw-light: 200;
+    --fw-reg: 400;
+    --fw-bold: 900;
+  
+    /*Box Shadows*/
+    --bs: 0 4px 12px -6px var(--clr-black);
+
+    /*Box Width*/
+    --bw-large: 400px;
+    --bw-small: 350px;
+  
+    /*Border Radius*/
+    --br-button: 5px;
+    --br-background: 10px;
+
+     /*Cursor pointers*/
+     --crsr-pointer: pointer;
+
+
+  }

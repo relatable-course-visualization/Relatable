@@ -1,0 +1,18 @@
+.header{
+    /* display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-family: 'Quicksand';
+    font-size: 25px;
+    text-decoration-color: aquamarine; */
+
+    background-color: var(--clr-primary-lights);
+    margin-top: 40px;
+    margin-bottom: 0;
+    text-align: center;
+    padding: 20px 10px 20px 10px;
+    font-size: var(--fx-3);
+
+}
