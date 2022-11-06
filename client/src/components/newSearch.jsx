@@ -45,28 +45,7 @@ function NewSearch() {
                 return value;
               }
             })
-            .map((item) => 
-            <h5 key={item.id}>
-              
-              <div className="course">  
-                <div className="course__title" >{item.title}</div>
-                <div className="course__body">{item.body}</div>
-                <div className="sub">  
-                    <div className="course__subboxes">Prerequisites</div>
-                        <Button variant="contained">
-                            {item.id}
-                        </Button>
-                    </div>
-
-                  <div className="sub"> 
-                      <div className="course__subboxes">Dependencies</div>
-                          <Button variant="contained">
-                              {item.userId}
-                          </Button>
-                  </div>
-              </div>         
-            </h5>
-            )
+            .map.slice(0,15).((item) => <h5 key={item.id}>{item.title}</h5>)
         )}
       </div>
     );
