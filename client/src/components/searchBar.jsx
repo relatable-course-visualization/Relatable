@@ -2,6 +2,7 @@ import '../stylings/searchBar.css'
 import SearchIcon from '@mui/icons-material/Search';
 import CloseIcon from '@mui/icons-material/Close';
 import { useState } from 'react';
+import { Link } from 'react-router-dom'
 
 function SearchBar({placeholder, data})  {
 
@@ -27,6 +28,12 @@ function SearchBar({placeholder, data})  {
         setWordEntered("")
     }
 
+    // onClickSubmit(e){
+    //     e.preventDefault();
+    //     alert("clicked");
+    // }
+
+
     return ( 
         <div className="search">
             <div className="searchInputs">
@@ -43,10 +50,22 @@ function SearchBar({placeholder, data})  {
             {filteredData.length !==0 && (
                 <div className="dataResult">
                     {filteredData.slice(0,15).map((value,key)=>{
-                        return <div>{value.class_name}</div>
+                        return (
+                        <a className='dataItem' href={value.description} rel="noopener"> 
+                            <a href="#1" onclick="resetHref();">Content</a>
+                            <a>{value.class_name}</a> 
+                            <a>{value.description}</a>
+                            <a>{value.prerequisites}</a>
+                            <a>{value.dependencies}</a>
+                            
+                        </a>
+                        )
                     })}
                 </div>
+                
             )}
+
+
         </div>
     
     )    
