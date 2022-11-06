@@ -2,7 +2,6 @@ import '../stylings/searchBar.css'
 import SearchIcon from '@mui/icons-material/Search';
 import CloseIcon from '@mui/icons-material/Close';
 import { useState } from 'react';
-import { Link } from 'react-router-dom'
 
 function SearchBar({placeholder, data})  {
 
