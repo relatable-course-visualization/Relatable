@@ -16,4 +16,7 @@ class Course:
     def getName(self):
         return '{}'.format(self.name)
 
+    def getDecription(self):
+        return '{}'.format(self.description)
+
 
