@@ -132,11 +132,11 @@ def main():
     # test cases for each method
 
     # test case for getSubjectCodes
-    getSubjectCodes()
+    
 
     # test case for getCourseCodes
 
-list_of_subjects = getSubjectCodes() 
+
 # print(list_of_subjects[3])
 # print(getCourseCodes(list_of_subjects[3]))
 

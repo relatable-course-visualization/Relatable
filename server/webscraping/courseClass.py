@@ -34,11 +34,7 @@ class Course:
 
 
 
-lis = getCoursePrerequisites('CMPT')[8]
-lis1 = courseCleaner(initialClean(lis))
-# print(lis)
-# print(lis1)
-course1 = Course(getCourseCodes('CMPT')[8], getCourseNames('CMPT')[8], (getCourseDescriptions('CMPT')[8]), lis1,  getCourseRestrictions('CMPT')[8], getCourseLinks('CMPT')[8] )
-print(course1.getName())
-print(course1.getInfo())
+
+
+
 
