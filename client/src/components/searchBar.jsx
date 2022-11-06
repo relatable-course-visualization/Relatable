@@ -43,11 +43,8 @@ function SearchBar({placeholder, data})  {
             {filteredData.length !==0 && (
                 <div className="dataResult">
                     {filteredData.slice(0,15).map((value,key)=>{
-                        return (<a className='dataItem'> 
-                            <p>{value.class_name}</p>
-                    
-                            </a> 
-                        )})}
+                        return <div>{value.class_name}</div>
+                    })}
                 </div>
             )}
         </div>
