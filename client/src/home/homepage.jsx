@@ -1,13 +1,21 @@
 import React from 'react';
 
-import Course from ".././components/course";
+// import Course from ".././components/course";
 import Header from "../components/header";
+import SearchBar from '../components/searchBar';
+
+import "../stylings/homepage.css";
+
+import ClassData from '../MOCK_DATA.json';
+
 
 const Homepage = () =>  {
+
     return(
-        <div className='container'>
+        <div className='homepage'>
             <Header/>
-            <Course courseName='CMPT370' courseDescription='Learning to build a group project' dependencies='dep-list' prerequisites='pre-list'/>
+            <SearchBar placeholder="Enter an Course..." data = {ClassData}/>
+            {/* <Course courseName='CMPT370' courseDescription='Learning to build a group project' dependencies='dep-list' prerequisites='pre-list'/> */}
         </div>
     )
 }
