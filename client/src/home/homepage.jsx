@@ -1,13 +1,22 @@
 import React from 'react';
 
-import Course from ".././components/course";
+// import Course from ".././components/course";
 import Header from "../components/header";
+import SearchBar from '../components/searchBar';
+import NewSearch from '../components/newSearch';
+
+import "../stylings/homepage.css";
+
+import ClassData from '../MOCK_DATA.json';
+
 
 const Homepage = () =>  {
+
     return(
-        <div className='container'>
+        <div className='homepage'>
             <Header/>
-            <Course courseName='CMPT370' courseDescription='Learning to build a group project' dependencies='dep-list' prerequisites='pre-list'/>
+            <NewSearch/>
+            {/* <Course courseName='CMPT370' courseDescription='Learning to build a group project' dependencies='dep-list' prerequisites='pre-list'/> */}
         </div>
     )
 }
