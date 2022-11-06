@@ -17,7 +17,17 @@ class Prerequisite(models.Model):
     conjunction_expression = models.CharField(max_length=1, null=True)
     course_id_prereq = models.ForeignKey(Course, on_delete=models.CASCADE, related_name='course_id_prereq') # a perequisite course
 
+    class Meta:
+        indexes = [
+            models.Index(fields=['course_id',]),
+        ]
+
 # Dependency table
 class Dependency(models.Model):
     course_id = models.ForeignKey(Course, on_delete=models.CASCADE, related_name='depend_course_id') # a course in the depedency table
     course_id_depend = models.ForeignKey(Course, on_delete=models.CASCADE, related_name='course_id_depend') # a dependent course
+
+    class Meta:
+        indexes = [
+            models.Index(fields=['course_id',]),
+        ]
