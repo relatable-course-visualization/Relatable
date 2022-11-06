@@ -42,7 +42,7 @@ function NewSearch() {
                 return value;
               }
             })
-            .map((item) => <h5 key={item.id}>{item.title}</h5>)
+            .slice(0,15).map((item) => <h5 key={item.id}>{item.title}</h5>)
         )}
       </div>
     );
