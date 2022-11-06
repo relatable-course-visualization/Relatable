@@ -22,4 +22,10 @@ class Course:
     def getPrerequisite(self):
         return '{}'.format(self.prerequisite)
 
+    def getRestricition(self):
+        return '{}'.format(self.restriction)
+    
+    def getLink(self):
+        return '{}'.format(self.link)
+
 
