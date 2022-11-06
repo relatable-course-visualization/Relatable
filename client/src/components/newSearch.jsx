@@ -2,6 +2,9 @@ import React, {useState, useEffect} from 'react';
 import '../stylings/newSearch.css'
 import axios from 'axios';
 
+import Button from '@material-ui/core/Button'
+import "../stylings/course.css";
+
 function NewSearch() {
     const [loading, setLoading] = useState(false);
     const [posts, setPosts] = useState([]);
@@ -42,7 +45,7 @@ function NewSearch() {
                 return value;
               }
             })
-            .slice(0,15).map((item) => <h5 key={item.id}>{item.title}</h5>)
+            .map.slice(0,15).((item) => <h5 key={item.id}>{item.title}</h5>)
         )}
       </div>
     );
