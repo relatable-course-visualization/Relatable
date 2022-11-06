@@ -143,7 +143,12 @@ list_of_subjects = getSubjectCodes()
 # for course in list_of_subjects:
 #     print(getCourseNames(course))
 
-# print(getCourseCodes('CMPT'))
-# print(getCourseLinks('CMPT'))
-# print(len(getCoursePrerequisites('CMPT')))
-# print(len(getCourseRestrictions('CMPT')))
+# print(getCourseCodes('CMPT')[0])
+# print(getCourseLinks('CMPT')[0])
+# print(getCoursePrerequisites('CMPT')[0])
+# print(getCourseRestrictions('CMPT')[0])
+
+# print (getCourseCodes('CMPT'))
+# print (getCourseNames('CMPT'))
+# print (getCoursePrerequisites('CMPT'))
+
