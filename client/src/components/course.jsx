@@ -1,8 +1,6 @@
 import React from "react";
-import Box from '@mui/material/Box';
 import Button from '@material-ui/core/Button'
 import "../stylings/course.css";
-import { Paper } from "@mui/material";
 
 
 const Course = (props) => {
