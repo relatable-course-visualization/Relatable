@@ -10,3 +10,8 @@ class PrerequisiteSerializer(serializers.ModelSerializer):
     class Meta:
         model = Prerequisite
         fields = ['id', 'course_id', 'conjunction_expression', 'course_id_prereq']
+
+class DependencySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Dependency
+        fields = ['id', 'course_id', 'course_id_depend']
