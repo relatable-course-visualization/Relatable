@@ -25,23 +25,31 @@ def initializePrerequisiteTable():
 
         # Algorithm to traverse prerequisite 
 
-        # for every disjunction(inner list) in the list of list
-        # for every prerequisite in the disjunction, set the conjunction_expression in the database prerequiste table to the variable conjunction_expression
-        # get the course_id of that prerequiste and place in the database table as well.
-        # this makes sure all prerequisite with the OR relationship have the same conjunction letter and those with AND have different conjunction letters
-        # e.g consider (103 OR 31) AND (12 OR 11 OR 66)
-        # 103 and 31 would have the conjunction letter, a because of the OR expression
-        # 12, 11 and 66 would have the same conjunction letter, b because of their OR expression
-        # but between these two sets, there is an AND hence why they have different conjunction letters
+        '''
+        for every disjunction(inner list) in the list of list
+        for every prerequisite in the disjunction, set the conjunction_expression in the database prerequiste table to the variable conjunction_expression
+        get the course_id of that prerequiste and place in the database table as well.
+        this makes sure all prerequisite with the OR relationship have the same conjunction letter and those with AND have different conjunction letters
+        e.g consider (103 OR 31) AND (12 OR 11 OR 66)
+        103 and 31 would have the conjunction letter, a because of the OR expression
+        12, 11 and 66 would have the same conjunction letter, b because of their OR expression
+        but between these two sets, there is an AND hence why they have different conjunction letters
+        '''
         conjunction_expression = 'a'
         for disjunction in prerequisites:
             for prerequisite in disjunction:
-                print(" ")
-                # set the conjunction_expression in the table to conjunctio_expression
-                # set the course_Id in the preq table to be prerequisite.get("id")
+               
+                # Get course corresponding to prerequisite
+                prerequisite_without_space = prerequisite.replace(" ", "")
+                r = requests.get(f"http://127.0.0.1:8000/getCourse/{prerequisite_without_space}")
+                prerequisite_course = r.json()
+                course_id_prereq = prerequisite_course.get("id")
+
+                # POSt request to store records in prerequisite table
+                prerequisite_object = {'course_id': str(course_id), 'conjunction_expression': str(conjunction_expression), 
+                    'course_id_prereq': course_id_prereq}
+                requests.post("http://127.0.0.1:8000/postPrerequisite", data=prerequisite_object)
+
             conjunction_expression = chr(ord(conjunction_expression) + 1)
-                
-
     
-
 initializePrerequisiteTable()
