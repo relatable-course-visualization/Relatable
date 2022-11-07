@@ -9,6 +9,23 @@ from rest_framework.decorators import api_view
 from .models import Course
 from .serializers import CourseSerializer
 
+@api_view(['POST'])
+def postAllCourses(request, courses):
+    """ Iterate through all courses, instantiating Course objects for each, 
+        and POSTing them into the Course table
+        : param courses - list of Course objects
+    """
+    if request.method == 'POST':
+        for course_object in courses:
+            try:
+                course_object_db = Course(course_code=course_object.course_code, name=course_object.name, 
+                description=course_object.description, restrictions=course_object.restrictions, 
+                hyperlink=course_object.hyperlink, num_credits=0)
+
+                course_object_db.save() 
+            except ValueError as e:
+                print("Error with postAllCourses(): " + e)
+
 
 @api_view(['GET'])
 def getAllCourses(request):
