@@ -44,12 +44,19 @@ def getAllCourses(request):
 
 
 @api_view(['GET'])
-def getCourse(request, course_id):
+def getCourse(request, course_code):
     """ Return a single course, given the ID if possible"""
     # may need to slightly edit
-    course = Course.objects.get(id=course_id)
-    serializer = CourseSerializer(course)
 
+    #add space to course code
+    course_code_with_space = list(course_code)
+    course_code_with_space.insert(-4," ")
+    course_code_with_space = ''.join(course_code_with_space)
+    course_code_with_space = str(course_code_with_space)
+
+    course = Course.objects.get(course_code=course_code_with_space)
+    serializer = CourseSerializer(course)
+    
     return Response(serializer.data)
 
 
