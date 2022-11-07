@@ -21,7 +21,7 @@ class Course:
         return '{}'.format(self.description)
 
     def getPrerequisite(self):
-        return '{}'.format(self.prerequisite)
+        return (self.prerequisite)
 
     def getRestriction(self):
         return '{}'.format(self.restrictions)
@@ -29,7 +29,7 @@ class Course:
     def getLink(self):
         return '{}'.format(self.hyperlink)
 
-    def getInfo(self):
+    def getInfo(self): # change how you return Prerequisite, should be a string
         return 'Code: {}\n Name: {} \n Description: {}\n Prerequisite(s): {}\n Restriction:{}\n Link: {}'.format(self.course_code, self.name, self.description, self.prerequisite, self.restrictions, self.hyperlink)
 
 
