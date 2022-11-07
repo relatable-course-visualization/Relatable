@@ -32,6 +32,17 @@ def postPrerequisite(request):
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
+@api_view(['POST'])
+def postDependency(request):
+    """ Insert dependency entry into Depedency table 
+    """
+    if request.method == 'POST':
+        serializer = DependencySerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
 @api_view(['GET'])
 def getAllCourses(request):
     """ Return all course objects from DB
