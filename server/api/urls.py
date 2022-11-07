@@ -10,5 +10,5 @@ urlpatterns = [
     re_path(r'^getPrereqs/([A-za-z]{2,4}\d{2,3})/$', views.getPrereqs), 
     re_path(r'^getDependants/([A-za-z]{2,4}\d{2,3})/$', views.getDependants),
 
-    path('postCourses', views.postAllCourses)
+    path('postCourse', views.postCourse)
 ]
