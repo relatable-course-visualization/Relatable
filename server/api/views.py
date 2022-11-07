@@ -1,5 +1,6 @@
 from urllib import response
 from django.shortcuts import render
+from rest_framework import status
 
 # imports for API views
 from rest_framework import generics #View
@@ -10,22 +11,17 @@ from .models import Course
 from .serializers import CourseSerializer
 
 @api_view(['POST'])
-def postAllCourses(request, courses):
+def postCourse(request):
     """ Iterate through all courses, instantiating Course objects for each, 
         and POSTing them into the Course table
         : param courses - list of Course objects
     """
     if request.method == 'POST':
-        for course_object in courses:
-            try:
-                course_object_db = Course(course_code=course_object.course_code, name=course_object.name, 
-                description=course_object.description, restrictions=course_object.restrictions, 
-                hyperlink=course_object.hyperlink, num_credits=0)
-
-                course_object_db.save() 
-            except ValueError as e:
-                print("Error with postAllCourses(): " + e)
-
+        serializer = CourseSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 @api_view(['GET'])
 def getAllCourses(request):
