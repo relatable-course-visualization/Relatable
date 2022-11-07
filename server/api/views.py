@@ -8,16 +8,25 @@ from rest_framework.views import APIView #APIView
 from rest_framework.response import Response #APIView
 from rest_framework.decorators import api_view
 from .models import Course
-from .serializers import CourseSerializer
+from .serializers import *
 
 @api_view(['POST'])
 def postCourse(request):
-    """ Iterate through all courses, instantiating Course objects for each, 
-        and POSTing them into the Course table
-        : param courses - list of Course objects
+    """ Insert course object into Course table
     """
     if request.method == 'POST':
         serializer = CourseSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+@api_view(['POST'])
+def postPrerequisite(request):
+    """ Insert prerequisite entry into Prerequisite table 
+    """
+    if request.method == 'POST':
+        serializer = PrerequisiteSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
