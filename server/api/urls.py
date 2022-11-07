@@ -13,5 +13,6 @@ urlpatterns = [
 
     # Database endpoints
     path('postCourse', views.postCourse),
-    path('postPrerequisite', views.postPrerequisite)
+    path('postPrerequisite', views.postPrerequisite),
+    path('postDependency', views.postDependency)
 ]
