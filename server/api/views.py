@@ -53,7 +53,10 @@ def getCourse(request, course_code):
     course_code_with_space = ''.join(course_code_with_space)
     course_code_with_space = str(course_code_with_space)
 
-    course = Course.objects.get(course_code=course_code_with_space)
+    try:
+        course = Course.objects.get(course_code=course_code_with_space)
+    except:
+        course = None
     serializer = CourseSerializer(course)
     
     return Response(serializer.data)

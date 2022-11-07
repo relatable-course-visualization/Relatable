@@ -42,6 +42,10 @@ def initializePrerequisiteTable():
                 # Get course corresponding to prerequisite
                 prerequisite_without_space = prerequisite.replace(" ", "")
                 r = requests.get(f"http://127.0.0.1:8000/getCourse/{prerequisite_without_space}")
+                # skips to the next prerequisite if the prerequisite course does not exist
+                if (r == None):
+                    return
+                    
                 prerequisite_course = r.json()
                 course_id_prereq = prerequisite_course.get("id")
 
