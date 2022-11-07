@@ -72,6 +72,15 @@ def getCourse(request, course_code):
     
     return Response(serializer.data)
 
+@api_view(['GET'])
+def getAllPrereqs(request):
+    """ Return all prerequisite objects from DB
+        :param: none
+        :return: serialized Prerequisite objects
+    """
+    prerequisites = Prerequisite.objects.all()
+    serializer = PrerequisiteSerializer(prerequisites, many=True)
+    return Response(serializer.data)
 
 @api_view(['GET'])
 def getPrereqs(request, course_id):
