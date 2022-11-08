@@ -36,21 +36,22 @@ def initializePrerequisiteTable():
         but between these two sets, there is an AND hence why they have different conjunction letters
         '''
         conjunction_expression = 'a'
+        prerequisites = prerequisites[0]
         if prerequisites != []:
             for disjunction in prerequisites:
                 for prerequisite in disjunction:
 
                     # Get course corresponding to prerequisite
                     prerequisite_without_space = prerequisite.replace(" ", "")
-                    r = requests.get(f"http://127.0.0.1:8000/getCourse/{prerequisite_without_space}")
+                    req = requests.get(f"http://127.0.0.1:8000/getCourse/{prerequisite_without_space}")
                     # skips to the next prerequisite if the prerequisite course does not exist
-                    if (r == None):
+                    if (req == None):
                         return
 
-                    prerequisite_course = r.json()
+                    prerequisite_course = req.json()
                     course_id_prereq = prerequisite_course.get("id")
 
-                    # POSt request to store records in prerequisite table
+                    # POST request to store records in prerequisite table
                     prerequisite_object = {'course_id': str(course_id), 'conjunction_expression': str(conjunction_expression), 
                         'course_id_prereq': course_id_prereq}
                     requests.post("http://127.0.0.1:8000/postPrerequisite", data=prerequisite_object)
