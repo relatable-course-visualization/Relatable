@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, Link} from 'react';
 import '../stylings/newSearch.css'
 import axios from 'axios';
 
@@ -27,7 +27,6 @@ function NewSearch() {
       <div className="App">
         <h3>Search Filter</h3>
         <input
-          //style={{ width: "30%", height: "25px" }}
           type="text"
           placeholder="Search..."
           onChange={(e) => setSearchTitle(e.target.value)}
@@ -49,6 +48,8 @@ function NewSearch() {
               <h5 key={item.id}>            
                 <div className="course">  
                 <div className="course__title" >{item.title}</div>
+                <div className="course__title" >Placeholder for course code</div>
+                <div className="course__title" >Placeholder for number of credits</div>
                 <div className="course__body">{item.body}</div>
                 <div className="sub">  
                     <div className="course__subboxes">Prerequisites</div>
@@ -60,9 +61,15 @@ function NewSearch() {
                   <div className="sub"> 
                       <div className="course__subboxes">Dependencies</div>
                           <Button variant="contained">
-                              {item.Id}
+                              {item.id}
                           </Button>
                   </div>
+                  <div className="sub">Placeholder for Restrictions </div>
+                  <div className="course_body" >
+                    <a href="Placeholder for hyperlink">
+                      Link To Course
+                    </a>
+                    </div>
               </div> 
           </h5>)
         )}
