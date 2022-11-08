@@ -40,12 +40,5 @@ def courseScraper():
             course1 = createCourse(codeList[index], nameList[index], descList[index], cleanedPreq, restrictionList[index], hyperlinkList[index])
             courseObjectsList.append(course1)
             index = index + 1
-            
-
 
     return courseObjectsList
-
-
-list1 = courseScraper()
-for i in list1:
-    print(i.getInfo())
