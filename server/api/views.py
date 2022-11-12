@@ -100,11 +100,6 @@ def getPrereqs(request, course_code):
     course = req.json()
     course_id = course.get("id")
 
-    #add space to course code
-    course_code_with_space = list(course_code)
-    course_code_with_space.insert(-3," ")
-    course_code_with_space = ''.join(course_code_with_space)
-    course_code_with_space = str(course_code_with_space)
 
     # get all the prerequisite records with course_id matching with the above course_id
     prerequisites = Prerequisite.objects.filter(course_id_id=course_id) # SELECT * FROM prerequisite WHERE course_id=course_id
@@ -142,7 +137,28 @@ def getDependants(request, course_code):
         :param: course_id - course ID in the form [A-Z]{2,4}\d{2,3}
         :return: all dependant courses of the given course
     """
-    # ** need to set up dependant table **
-    courses = Course.objects.all()
-    serializer = CourseSerializer(courses, many=True)
-    return Response(serializer.data)
+    # find course in course table corresponding to course_code
+    req = requests.get(f"http://127.0.0.1:8000/getCourse/{course_code}")
+    if (req == None):
+        return
+
+    course = req.json()
+    course_id = course.get("id")
+
+    # get a querySet that contains all dependant records such that course_id=course_id
+    dependancy_records = Dependency.objects.filter(course_id_id=course_id) # SELECT * FROM dependancy WHERE course_id=course_id
+
+    # for each record, use the course_id_depend to find its course_code in course table
+    data = []
+    for record in dependancy_records:
+        serialized_record = DependencySerializer(record)
+
+        dependant_course = Course.objects.get(id=serialized_record['course_id_depend'].value) # get course object corresponding to 
+        dependant_serializer = CourseSerializer(dependant_course)
+        dependant_course_code = dependant_serializer["course_code"].value
+
+        data.append(dependant_course_code)
+
+    # convert python list into json
+    data_json = json.dumps(data)
+    return Response(data_json)
