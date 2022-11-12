@@ -106,30 +106,15 @@ def getPrereqs(request, course_code):
     course_code_with_space = ''.join(course_code_with_space)
     course_code_with_space = str(course_code_with_space)
 
-    # course = Course.objects.filter(course_code=str(course_code_with_space))
-    # course_id = course.get("id")
-    print("course_id: " + str(course_id))
-
-
     # get all the prerequisite records with course_id matching with the above course_id
-    #prerequisites = Prerequisite.objects.filter(course_id=course_id) # SELECT * FROM prerequisite WHERE course_id=course_id
     prerequisites = Prerequisite.objects.filter(course_id_id=course_id) # SELECT * FROM prerequisite WHERE course_id=course_id
-
-    print(prerequisites)
-
-    # prerequisite_serializer = PrerequisiteSerializer(prerequisites)
-    # print(prerequisite_serializer)
 
     # create a list of lists, where each inner list is a disjuction. Each entry is a course_code
     data = []
     current_char = None
     current_inner_list_index = 0
     for prerequisite1 in prerequisites:
-        # print(prerequisite.get('course_id'))
         prerequisite = PrerequisiteSerializer(prerequisite1)
-
-        print("prereq follows ")
-        print(prerequisite['course_id_prereq'])
 
         prerequisite_courses = Course.objects.get(id=prerequisite['course_id_prereq'].value)
         course_serializer = CourseSerializer(prerequisite_courses)
@@ -138,7 +123,6 @@ def getPrereqs(request, course_code):
         if current_char == None:
             current_char = prerequisite['conjunction_expression'].value
             data.append([serialized_course_code])
-            print(data)
         else:
             if prerequisite['conjunction_expression'].value == current_char:
                 data[current_inner_list_index].append(serialized_course_code)
@@ -148,26 +132,9 @@ def getPrereqs(request, course_code):
                 current_char = prerequisite['conjunction_expression'].value
 
     # convert python list into json
-    print(data)
     data_json = json.dumps(data)
-    print(data_json)
 
-    # # ** need to set up prerequisite table **
-    # courses = Course.objects.all()
-    # serializer = CourseSerializer(courses, many=True)
-    #return Response(serializer.data)
-
-    #return HTTPResponse(data_json)
     return Response(data_json)
-
-
-    
-
-    
-
-     
-
-
 
 @api_view(['GET'])
 def getDependants(request, course_code):
