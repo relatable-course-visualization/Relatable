@@ -5,8 +5,8 @@ from courseCleaner import *
 '''
 function that creates a new course object using the arguments as attributes
 '''
-def createCourse(code, name, desc, preq, restriction,link ):
-    new_course = Course(code, name, desc, preq, restriction, link)
+def createCourse(code, name, desc, preq, restriction,link, creditUnits):
+    new_course = Course(code, name, desc, preq, restriction, link, creditUnits)
     return new_course
 
 '''
@@ -22,7 +22,7 @@ function that scrapes every single course on the usask catalogue website and ret
 def courseScraper():
     courseObjectsList = []    # list of course objects, this list would contain every course on the usask website
     listOfSubjects = getSubjectCodes() # gets the list of every subject on the usask webpage
-    
+
     # for every subject in the list of subjects, scrape the details for every course, then create a course object for each course
     # and append to courseObjectList
     for subject in listOfSubjects:
@@ -32,13 +32,17 @@ def courseScraper():
         preqList = getCoursePrerequisites(subject)
         restrictionList = getCourseRestrictions(subject)
         hyperlinkList = getCourseLinks(subject)
+        creditUnitList = getCourseCredits(subject)
 
         # create a course object for every course in the subject and store in the courseObjectList
         index = 0
         while index < len(codeList):
             cleanedPreq = preqCleaner(preqList[index])
-            course1 = createCourse(codeList[index], nameList[index], descList[index], cleanedPreq, restrictionList[index], hyperlinkList[index])
+            course1 = createCourse(codeList[index], nameList[index], descList[index], cleanedPreq, restrictionList[index], hyperlinkList[index], creditUnitList[index])
             courseObjectsList.append(course1)
             index = index + 1
 
     return courseObjectsList
+
+
+
