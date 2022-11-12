@@ -135,7 +135,17 @@ def getPrereqs(request, course_code):
         course_serializer = CourseSerializer(prerequisite_courses)
         serialized_course_code = course_serializer["course_code"].value
 
-        
+        if current_char == None:
+            current_char = prerequisite['conjunction_expression'].value
+            data.append([serialized_course_code])
+            print(data)
+        else:
+            if prerequisite['conjunction_expression'].value == current_char:
+                data[current_inner_list_index].append(serialized_course_code)
+            else:
+                data.append([serialized_course_code])
+                current_inner_list_index = current_inner_list_index + 1
+                current_char = prerequisite['conjunction_expression'].value
 
     # convert python list into json
     print(data)
