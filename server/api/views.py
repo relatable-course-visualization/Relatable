@@ -1,6 +1,9 @@
+from http.client import HTTPResponse
+import json
 from urllib import response
 from django.shortcuts import render
 from rest_framework import status
+import requests
 
 # imports for API views
 from rest_framework import generics #View
@@ -83,19 +86,43 @@ def getAllPrereqs(request):
     return Response(serializer.data)
 
 @api_view(['GET'])
-def getPrereqs(request, course_id):
+def getPrereqs(request, course_code):
     """ Return prerequisites in logical form of given course
         :param: course_id - course ID in the form [A-Z]{2,4}\d{2,3}
         :return: the prerequisites for the given course
     """
-    # ** need to set up prerequisite table **
-    courses = Course.objects.all()
-    serializer = CourseSerializer(courses, many=True)
-    return Response(serializer.data)
+
+    # find course in course table corresponding to course_code
+    req = requests.get(f"http://127.0.0.1:8000/getCourse/{course_code}")
+    if (req == None):
+        return
+
+    course = req.json()
+    course_id = course.get("id")
+
+    #add space to course code
+    course_code_with_space = list(course_code)
+    course_code_with_space.insert(-3," ")
+    course_code_with_space = ''.join(course_code_with_space)
+    course_code_with_space = str(course_code_with_space)
+
+    # course = Course.objects.filter(course_code=str(course_code_with_space))
+    # course_id = course.get("id")
+    print("course_id: " + str(course_id))
+
+
+
+
+    
+
+    
+
+     
+
 
 
 @api_view(['GET'])
-def getDependants(request, course_id):
+def getDependants(request, course_code):
     """ Return dependant courses of given course
         :param: course_id - course ID in the form [A-Z]{2,4}\d{2,3}
         :return: all dependant courses of the given course
@@ -104,11 +131,3 @@ def getDependants(request, course_id):
     courses = Course.objects.all()
     serializer = CourseSerializer(courses, many=True)
     return Response(serializer.data)
-
-
-
-
-
-
-
-
