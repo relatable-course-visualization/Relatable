@@ -16,7 +16,7 @@ function NewSearch() {
       const loadPosts = async () => {
         setLoading(true);
         const response = await axios.get(
-          "https://jsonplaceholder.typicode.com/posts"
+          `${process.env.REACT_APP_SERVER_ENDPOINT}/courses`
         );
         setPosts(response.data);
         setLoading(false);
