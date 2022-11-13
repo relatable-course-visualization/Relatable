@@ -1,16 +1,10 @@
 .course{
-    /* margin-top: 10px;
-    margin-bottom: 20px;
-    font-family: 'Quicksand';
-    font-size: 25px; */
-
-
     font-size: var(--fs-4);
     font-weight: var(--fw-bold);
     background: var(--clr-course-background);
-    box-shadow: 0 2px 8px rgba(0,0,0,0.26);
+    box-shadow: var(--bs);
     border-radius: var(--br-background);
-    margin: 1rem 1rem 1rem 0;
+    margin: var(--margin-wide);
     padding: var(--fs-3);
     width: var(--bw-large);
     transition: transform .3s ease;
@@ -21,9 +15,9 @@
     font-size: var(--fs-4);
     font-weight: var(--fw-bold);
     background: var(--clr-subbox-background);
-    box-shadow: 0 2px 8px rgba(0,0,0,0.26);
+    box-shadow: var(--bs);
     border-radius: var(--br-background);
-    margin: 0 0 0.5rem 0;
+    margin: var(--margin-thin);
     padding: var(--fs-3);
     width: var(--bw-small);
     transition: transform .3s ease;
@@ -35,6 +29,7 @@
     font-weight: var(--fw-light);
     font-size: var(--fs-5);
     padding-left: 5%;
+    cursor: var(--crsr-pointercrsr-);
 }
 
 .course:hover{
@@ -46,6 +41,8 @@
     color: rgb(61, 27, 35);
     font-weight: var(--fw-bold);
     font-size: var(--fs-3);
+    text-decoration: underline;
+    cursor: var(--crsr-pointercrsr-);
 }
 
 .course__subboxes{
@@ -54,15 +51,11 @@
     font-size: var(--fs-5);
     color: rgb(75, 75, 78);
     text-decoration: underline;
+    cursor: var(--crsr-pointercrsr-);
 }
-
 
 
 .course__image{
     display: flex;
     justify-content: flex-end;
-}
-
-.paper__colour{
-    background-color: rgb(255, 255, 0);
 }

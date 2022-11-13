@@ -12,17 +12,14 @@
     --fs-5: 1.2rem;
   
     /*Colors*/
-    --clr-primary: #0393d2;
-    --clr-secondary: #ff6400;
-    --clr-primary-light: #66d0ff;
-    --clr-secondary-light: #ff9856;
-    --clr-primary-light-background: #ddfdff;
     --clr-hover: #ffc156;
     --clr-black: rgb(45, 45, 45);
     --clr-white: #fff;
     
     --clr-course-background: rgb(70, 191, 54);
     --clr-subbox-background: rgb(116, 219, 103);
+    
+    --clr-course-title: rgb(61, 27, 35);
   
     /*Font Weights*/
     --fw-light: 200;
@@ -30,7 +27,7 @@
     --fw-bold: 900;
   
     /*Box Shadows*/
-    --bs: 0 4px 12px -6px var(--clr-black);
+    --bs: 0 2px 8px rgba(0,0,0,0.26);
 
     /*Box Width*/
     --bw-large: 400px;
@@ -43,5 +40,8 @@
      /*Cursor pointers*/
      --crsr-pointer: pointer;
 
+      /*Margin*/
+      --margin-wide: 1rem 1rem 1rem 0;;
+      --margin-thin: 0rem 0rem 0.5rem 0;
 
   }
