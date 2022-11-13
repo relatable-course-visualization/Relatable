@@ -1,6 +1,11 @@
 from courseClass import *
 from courseScraper import *
 import requests
+import environ
+
+# setting up environmental variables
+env = environ.Env()
+environ.Env.read_env()
 
 """ Initialize the prerequisite table in the database by parsing prerequites for each 
     every course in the course table and inserting. 
@@ -8,7 +13,7 @@ import requests
 def initializePrerequisiteTable():
     # Get all data
     web_scraper_courses = courseScraper()
-    r = requests.get("http://127.0.0.1:8000/courses")
+    r = requests.get(f"{env('DATABASE_URL')}/courses")
     course_table_courses = r.json() # list of dictionaries, each dictionary is a Course with key value pairs
 
     # Create dictionary of web_scraper_courses where key is course_code and value is the prerequisites
@@ -43,7 +48,7 @@ def initializePrerequisiteTable():
 
                     # Get course corresponding to prerequisite
                     prerequisite_without_space = prerequisite.replace(" ", "")
-                    req = requests.get(f"http://127.0.0.1:8000/getCourse/{prerequisite_without_space}")
+                    req = requests.get(f"{env('DATABASE_URL')}/getCourse/{prerequisite_without_space}")
                     # skips to the next prerequisite if the prerequisite course does not exist
                     if (req == None):
                         return
@@ -54,7 +59,7 @@ def initializePrerequisiteTable():
                     # POST request to store records in prerequisite table
                     prerequisite_object = {'course_id': str(course_id), 'conjunction_expression': str(conjunction_expression), 
                         'course_id_prereq': course_id_prereq}
-                    requests.post("http://127.0.0.1:8000/postPrerequisite", data=prerequisite_object)
+                    requests.post(f"{env('DATABASE_URL')}/postPrerequisite", data=prerequisite_object)
 
                 conjunction_expression = chr(ord(conjunction_expression) + 1)
     

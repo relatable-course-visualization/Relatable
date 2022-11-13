@@ -4,6 +4,7 @@ from urllib import response
 from django.shortcuts import render
 from rest_framework import status
 import requests
+import environ
 
 # imports for API views
 from rest_framework import generics #View
@@ -12,6 +13,10 @@ from rest_framework.response import Response #APIView
 from rest_framework.decorators import api_view
 from .models import Course
 from .serializers import *
+
+# setting up environmental variables
+env = environ.Env()
+environ.Env.read_env()
 
 @api_view(['POST'])
 def postCourse(request):
@@ -93,7 +98,7 @@ def getPrereqs(request, course_code):
     """
 
     # find course in course table corresponding to course_code
-    req = requests.get(f"http://127.0.0.1:8000/getCourse/{course_code}")
+    req = requests.get(f"{env('DATABASE_URL')}/getCourse/{course_code}")
     if (req == None):
         return
 
@@ -138,7 +143,7 @@ def getDependants(request, course_code):
         :return: all dependant courses of the given course
     """
     # find course in course table corresponding to course_code
-    req = requests.get(f"http://127.0.0.1:8000/getCourse/{course_code}")
+    req = requests.get(f"{env('DATABASE_URL')}/getCourse/{course_code}")
     if (req == None):
         return
 
