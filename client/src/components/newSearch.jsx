@@ -16,7 +16,8 @@ function NewSearch() {
       const loadPosts = async () => {
         setLoading(true);
         const response = await axios.get(
-          `${process.env.REACT_APP_SERVER_ENDPOINT}/courses`
+          // `${process.env.REACT_APP_SERVER_ENDPOINT}/courses`
+          "https://jsonplaceholder.typicode.com/posts"
         );
         setPosts(response.data);
         setLoading(false);
@@ -27,12 +28,16 @@ function NewSearch() {
 
     return (
       <div className="App">
+        <>
         <div className='searchFilterText'>Search Filter</div>
+        <div className='searchFilterText'>
         <input
           type="text"
           placeholder="Search..."
           onChange={(e) => setSearchTitle(e.target.value)}
         />
+        </div>
+        </>
         {loading ? (
           <h4>Loading ...</h4>
         ) : (
@@ -47,7 +52,8 @@ function NewSearch() {
               }
             })
             .slice(0,15).map((item) => 
-              <h5 key={item.id}>            
+              <h5 key={item.id}>   
+              <div className='wrapper'>      
                 <div className="course">  
                   <div className="course__title" >{item.title}</div>
                   {/* <div className="course__body" >Placeholder for course code</div>
@@ -73,6 +79,7 @@ function NewSearch() {
                       </a>
                     </div>
               </div> 
+              </div>   
           </h5>)
         )}
       </div>
