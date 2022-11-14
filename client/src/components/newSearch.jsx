@@ -27,7 +27,7 @@ function NewSearch() {
 
     return (
       <div className="App">
-        <h3>Search Filter</h3>
+        <div className='searchFilterText'>Search Filter</div>
         <input
           type="text"
           placeholder="Search..."
@@ -77,6 +77,7 @@ function NewSearch() {
         )}
       </div>
     );
+    
 }
 
 export default NewSearch;

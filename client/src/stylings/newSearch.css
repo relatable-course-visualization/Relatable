@@ -3,6 +3,11 @@
     display: flex;
   }
 
+.searchFilterText{
+  text-align: center;
+  font-size: var(--fs-6);
+} 
+
 .search input {
 background-color: white;
 border: 0;
@@ -27,7 +32,7 @@ input:focus {
 outline: none;
 }
 .searchIcon svg {
-font-size: 35px;
+font-size: 12px;
 }
 
 .dataResult {
