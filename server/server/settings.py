@@ -25,9 +25,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-)%!fl7*sluufu+g#2htpm0dptnn#l)ae)l^yppvj*_5sa=82a1'
-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -46,6 +43,7 @@ INSTALLED_APPS = [
     'api.apps.ApiConfig',
     'rest_framework',
     'server',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
@@ -56,6 +54,12 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
+]
+
+CORS_ALLOWED_ORIGINS = [
+    'http://localhost:3000',
 ]
 
 ROOT_URLCONF = 'server.urls'
