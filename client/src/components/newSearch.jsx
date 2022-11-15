@@ -31,7 +31,7 @@ function NewSearch() {
       <div className="App">
         <>
           <div className='searchFilterText'>Search Filter</div>
-          <div className='searchFilterText'>
+          <div className='searchFilterTextBar'>
             <input
               type="text"
               placeholder="Search..."
@@ -77,7 +77,7 @@ function NewSearch() {
                               </li>
                           )}
                         </ul> */}
-                        
+
                           <Button variant="contained" onClick={(e) => setSearchTitle( e.currentTarget.innerText )}>
                               {item.title}
                           </Button>

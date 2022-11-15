@@ -6,6 +6,12 @@
 .searchFilterText{
   text-align: center;
   font-size: var(--fs-6);
+  padding-top: 120px;
+} 
+
+.searchFilterTextBar{
+  text-align: center;
+  font-size: var(--fs-6);
 } 
 
 .search input {
