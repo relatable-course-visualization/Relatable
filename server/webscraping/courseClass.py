@@ -3,13 +3,14 @@ from webscrape import *
 from courseCleaner import *
 
 class Course:
-    def __init__(self, code, name, description, prerequisite, restriction, link):
+    def __init__(self, code, name, description, prerequisite, restriction, link, credit_units):
         self.course_code = code
         self.name = name
         self.description = description
         self.prerequisite = prerequisite
         self.restrictions = restriction
         self.hyperlink = link
+        self.num_credits = credit_units
 
     def getCode(self):
         return '{}'.format(self.course_code)
