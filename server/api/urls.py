@@ -15,5 +15,8 @@ urlpatterns = [
     # POST endpoints
     path('postCourse', views.postCourse),
     path('postPrerequisite', views.postPrerequisite),
-    path('postDependency', views.postDependency)
+    path('postDependency', views.postDependency),
+
+    # PUT endpoints
+    path('updateCourse', views.updateCourse)
 ]
