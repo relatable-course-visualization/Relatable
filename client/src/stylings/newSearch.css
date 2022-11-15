@@ -3,6 +3,17 @@
     display: flex;
   }
 
+.searchFilterText{
+  text-align: center;
+  font-size: var(--fs-6);
+  padding-top: 120px;
+} 
+
+.searchFilterTextBar{
+  text-align: center;
+  font-size: var(--fs-6);
+} 
+
 .search input {
 background-color: white;
 border: 0;
@@ -15,20 +26,20 @@ padding-left: 15px;
 width: 300px;
 }
 
-.searchIcon {
+/* .searchIcon {
 height: 60px;
 width: 50px;
 background-color: white;
 display: grid;
 place-items: center;
-}
+} */
 
-input:focus {
+/* input:focus {
 outline: none;
 }
 .searchIcon svg {
-font-size: 35px;
-}
+font-size: 12px;
+} */
 
 .dataResult {
 margin-top: 5px;
