@@ -2,7 +2,6 @@ import React from 'react';
 
 // import Course from ".././components/course";
 import Header from "../components/header";
-import SearchBar from '../components/searchBar';
 import NewSearch from '../components/newSearch';
 
 import "../stylings/homepage.css";

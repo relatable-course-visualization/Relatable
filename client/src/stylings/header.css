@@ -6,5 +6,6 @@
     padding: 20px 10px 20px 10px;
     font-size: var(--fx-3);
     font-size: 64px;
+    color: var( --clr-course-title);
 
 }
