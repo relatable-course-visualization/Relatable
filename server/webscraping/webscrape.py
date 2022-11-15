@@ -63,30 +63,6 @@ def getCourseDescriptions(subject_code):
     return course_description
 
 
-
-
-# course_1 = web.find_all("b", string=re.compile("Pre"))
-# for course in course_1:
-#     course = course_1.find("b", string=re.compile("Pre"))
-#     course1 = course.next_element.next_element
-#     print(course1)
-# r = requests.get("https://catalogue.usask.ca/?subj_code=CMPT&cnum=")
-# web = bs(r.content)
-# course_1_1 = web.select("div.col-md-5 p")
-# for c in course_1_1:
-#    c1 =  c.find("b", string=re.compile("Pre"))
-#    c1 = c1.find("b", string=re.sub("Co"))
-#    print(c1)
-#    if c1 == None:
-#     c2 = "none"
-#     print(c2)
-#    else:
-#     c2 = c1.next_element.next_element
-#     print(c2)
-# course_1_2 = [c.find("b", string=re.compile("Pre")) for c in course_1_1]
-# course_1_3 = [c.next_element.next_element for c in course_1_2]
-# print(course_1_2)
-
 def getCoursePrerequisites(subject_code):
     course_weblink = catalogue_link+"?subj_code="+str(subject_code)+"&cnum="
     course_catalogue = requests.get(course_weblink)
@@ -128,26 +104,18 @@ def getCourseLinks(subject_code):
     return course_links
             
 
-# def main():
-    # test cases for each method
+def getCourseCredits(subject_code):
+    # api call to get the content of the catalogie for a specific subject e.g CMPT
+    course_weblink = catalogue_link+"?subj_code="+str(subject_code)+"&cnum="
+    course_catalogue = requests.get(course_weblink)
+    course_webpage = bs(course_catalogue.content)
+    # select the particular html tag/component that has the course code
+    course = course_webpage.select("div h4 a")
+    # use regex to get only the string that includes the Course information in every course without the unneccessary tag elements
+    course_credit = [str(c.find(string=re.compile(str(subject_code)))).strip() for c in course]
+    # split the string by fullstop and colon to get only the course credit
+    course_credit = [str(c).split(".", 1)[1] for c in course_credit]
+    course_credit = [str(c).split(":", 1)[0] for c in course_credit]
+    return(course_credit) 
 
-    # test case for getSubjectCodes
-    
 
-    # test case for getCourseCodes
-
-
-# print(list_of_subjects[3])
-# print(getCourseCodes(list_of_subjects[3]))
-
-# for course in list_of_subjects:
-#     print(getCourseNames(course))
-
-# print(getCourseCodes('CMPT')[0])
-# print(getCourseLinks('CMPT')[0])
-# print(getCoursePrerequisites('CMPT')[0])
-# print(getCourseRestrictions('CMPT')[0])
-
-# print (getCourseCodes('CMPT'))
-# print (getCourseNames('CMPT'))
-# print (getCoursePrerequisites('CMPT'))
