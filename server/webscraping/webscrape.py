@@ -119,3 +119,25 @@ def getCourseCredits(subject_code):
     return(course_credit) 
 
 
+
+def main():
+    
+    # Test cases for getSubjectCodes()
+    listOfSubjectCodes = getSubjectCodes()
+    # black box tests
+    # test that the number of courses gotten is correct
+   
+    if (len(listOfSubjectCodes) != 170):
+        print("Error in subjectCodes(), scraped "+str(len(listOfSubjectCodes)) + " instead of 170")
+    # test that there is no duplicate course
+    for subject in listOfSubjectCodes:
+        if (listOfSubjectCodes.count(subject) > 1):
+            print("Error in getSubjectCodes, there is a duplication in the list")
+            return
+    # test that the value returned is a list
+    if (type(listOfSubjectCodes) != list):
+        print("Error in getSubjectCodes, expected return type to be a list but got back " + str(type(listOfSubjectCodes)))
+
+
+
+main()
