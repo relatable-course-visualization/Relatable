@@ -139,5 +139,80 @@ def main():
         print("Error in getSubjectCodes, expected return type to be a list but got back " + str(type(listOfSubjectCodes)))
 
 
+    #Test cases for getCourseCodes()
+
+    #test when the input passed in null
+    listOfCourseCodes = getCourseCodes(None)
+    # test when the input passed does not exist
+    listOfCourseCodes = getCourseCodes('BMPT')
+    #test when the input passed in of the wrong variable type
+    listOfSubjectCodes = getCourseCodes(2)
+
+    # check the number of course codes returned is the right one
+    #using CMPT, MUS, and HIST
+    listOfCourseCodes = getCourseCodes('CMPT')
+    if (len(listOfCourseCodes) != 103):
+        print("Error in getCourseCodes, got " + str(len(listOfCourseCodes)) + "  CMPT courses rather than 103 " )
+
+    # test for duplicates 
+    for course in listOfCourseCodes:
+        if (listOfCourseCodes.count(course) > 1):
+            print("Error in getCourseCodes, there is a duplication in the list")
+
+     # check the for different index values if the course code is consistent with the one of the website
+    if (listOfCourseCodes[0] != 'CMPT 100'):
+        print("Error in getCourseCodes, expected CMPT 100 got " + str(listOfCourseCodes[0]))
+    if (listOfCourseCodes[13] != 'CMPT 298'):
+        print("Error in getCourseCodes, expected CMPT 298 got " + str(listOfCourseCodes[13]))
+    if (listOfCourseCodes[37] != 'CMPT 404'):
+            print("Error in getCourseCodes, expected CMPT 404 got " + str(listOfCourseCodes[37]))
+
+    # MUS
+    listOfCourseCodes = getCourseCodes('MUS')
+    if (len(listOfCourseCodes) != 81):
+        print("Error in getCourseCodes, got " + str(len(listOfCourseCodes)) + "  MUS courses rather than 81 " )
+    # test for duplicates 
+    for course in listOfCourseCodes:
+        if (listOfCourseCodes.count(course) > 1):
+            print("Error in getCourseCodes, there is a duplication in the list")
+    if (listOfCourseCodes[4] != 'MUS 120'):
+        print("Error in getCourseCodes, expected MUS 120 got " + str(listOfCourseCodes[4]))
+    if (listOfCourseCodes[13] != 'MUS 180'):
+        print("Error in getCourseCodes, expected MUS 180 got " + str(listOfCourseCodes[13]))
+    if (listOfCourseCodes[37] != 'MUS 364'):
+        print("Error in getCourseCodes, expected MUS 364 got " + str(listOfCourseCodes[37]))
+
+    # HIST
+    listOfCourseCodes = getCourseCodes('HIST')
+    if (len(listOfCourseCodes) != 153):
+        print("Error in getCourseCodes, got " + str(len(listOfCourseCodes)) + "  HIST courses rather than 153 " )
+    # test for duplicates 
+    for course in listOfCourseCodes:
+        if (listOfCourseCodes.count(course) > 1):
+            print("Error in getCourseCodes, there is a duplication in the list")
+    if (listOfCourseCodes[8] != 'HIST 193'):
+        print("Error in getCourseCodes, expected HIST 193 got " + str(listOfCourseCodes[8]))
+    if (listOfCourseCodes[19] != 'HIST 212'):
+        print("Error in getCourseCodes, expected HIST 212 got " + str(listOfCourseCodes[19]))
+    if (listOfCourseCodes[152] != 'HIST 996'):
+        print("Error in getCourseCodes, expected HIST 996 got " + str(listOfCourseCodes[152]))
+   
+    # search for a course code in the list
+    listOfCourseCodes = getCourseCodes('CMPT')
+    if (listOfCourseCodes.count('CMPT 370') != 1):
+        print("Error in getCourseCode() did not find CMPT 370")
+    if (listOfCourseCodes.count('CMPT 215') != 1):
+        print("Error in getCourseCode() did not find CMPT 215")
+    if (listOfCourseCodes.count('CMPT 400') != 1):
+        print("Error in getCourseCode() did not find CMPT 400")
+
+    # search for one that does not exist
+    if (listOfCourseCodes.count('CMPT 444') > 0 ):
+        print("Error in getCourseCode(), found a course that does not exist")
+
+    
+
+# To do:
+# add try catch statments or if != null
 
 main()
