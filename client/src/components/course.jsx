@@ -70,6 +70,7 @@ const Course = (props) => {
             ).then((response) => {
                 
                 var data = response.data;
+                var subdata;
         
                 // no prerequisites
                 if(data == "[]"){
@@ -93,7 +94,24 @@ const Course = (props) => {
                         }
 
                         // obtain inner list
-
+                        // if item has a comma it means an OR
+                        var subdata = subdata.substring(leftBracketIndex+1, rightBracketIndex)
+                        if(subdata.includes(",")){
+                            subdata.split(",")
+                            // store jsx into an array
+                            subdata.forEach((course) => {
+                                arrayedData.push( 
+                                    <Button variant="contained"  onClick={(e) => courseHandler( e.currentTarget.innerText )}> 
+                                        <h1>{course} OR </h1>
+                                    </Button>)
+                            })}
+                        else{ // if only one item
+                            <Button variant="contained"  onClick={(e) => courseHandler( e.currentTarget.innerText )}> 
+                                <h1>{subdata}</h1>
+                            </Button>
+                            }
+                        
+   
 
                         //console.log(data.substring(leftBracketIndex, rightBracketIndex));
 
