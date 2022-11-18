@@ -58,6 +58,56 @@ const Course = (props) => {
     
         loadDependency(code);
     }, []);
+
+
+    // prerequisites buttons
+    const [prerequisites, setprerequisites] = useState([]);
+    const [isprerequisitesEmpty, setIsprerequisitesEmpty] = useState(false);
+
+    var code = props.course_code.replace(" ", "");
+    useEffect(() => {
+        const loadDependency = (code) => {
+
+            // list of prerequisites 
+            axios.get(
+            `${process.env.REACT_APP_SERVER_ENDPOINT}/getPrereqs/${code}`  // Not Sure what it's called
+            ).then((response) => {
+                
+                var data = response.data;
+        
+                // no prerequisites
+                if(data == "[]"){
+                    setprerequisites([]); 
+                    setIsprerequisitesEmpty(true);
+                }
+                // prerequisites
+                else{
+                    // clean up data
+                    // data = data.replace('[', "");
+                    // data = data.replace("]", "");
+                    // data = data.replaceAll('"', "");
+
+                    // data is now a list
+                    data = data.split(',');
+
+                    var arrayedData = [];
+
+                    // store jsx into an array
+                    data.forEach((course) => {
+                        arrayedData.push( 
+                            <Button variant="contained"  onClick={(e) => courseHandler( e.currentTarget.innerText )}> 
+                                <h1>{course}</h1>
+                            </Button>)
+                    })
+
+                    setprerequisites(arrayedData);
+                    setIsprerequisitesEmpty(false);
+                }
+            })
+        }
+    
+        loadDependency(code);
+    }, []);
     
     return(
         <div className="wrapper">
@@ -66,9 +116,7 @@ const Course = (props) => {
                 <div className="course__body">{props.body}</div>
                 <div className="sub">  
                     <div className="course__subboxes">Prerequisites</div>
-                        <Button variant="contained" onClick={(e) => courseHandler(e.target.value)}>
-                            {props.title}
-                        </Button>
+                            {isprerequisitesEmpty ? <h2>No Prerequisites</h2> : <h2>{prerequisites}</h2>} 
                     </div>
 
                 <div className="sub"> 
