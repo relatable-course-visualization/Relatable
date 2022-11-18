@@ -121,8 +121,10 @@ def getCourseCredits(subject_code):
 
 
 def main():
-    
+
+    '''
     # Test cases for getSubjectCodes()
+    '''
     listOfSubjectCodes = getSubjectCodes()
     # black box tests
     # test that the number of courses gotten is correct
@@ -138,8 +140,9 @@ def main():
     if (type(listOfSubjectCodes) != list):
         print("Error in getSubjectCodes, expected return type to be a list but got back " + str(type(listOfSubjectCodes)))
 
-
+    '''
     #Test cases for getCourseCodes()
+    '''
 
     #test when the input passed in null
     listOfCourseCodes = getCourseCodes(None)
@@ -210,8 +213,9 @@ def main():
     if (listOfCourseCodes.count('CMPT 444') > 0 ):
         print("Error in getCourseCode(), found a course that does not exist")
 
-
-    # getCourseNames()
+    '''
+    getCourseNames()
+    '''
     listOfCourseNames = getCourseNames('AGRC')
     if (len(listOfCourseNames) != 10):
         print("Error in getCourseNames, got " + str(len(listOfCourseNames)) + "  AGRIC course names rather than 10 " )
@@ -236,8 +240,9 @@ def main():
     if (listOfCourseDescriptions[2] != 'Concepts in Computing such as algorithms, problem solving, and programming are explored using interactive multimedia systems as the creative focus. Basic skills in problem solving, programming, design and interaction, event-based behaviour, and prototyping are developed.'):
         print("Error in getCourseDescriptions expected a different output from " + listOfCourseDescriptions[2])
 
-
-    #getCoursePrerequisites
+    '''
+    getCoursePrerequisites
+    '''
     listOfCoursePrerequisites = getCoursePrerequisites('ECON')
     # check to make sure it is the right size
     if (len(listOfCoursePrerequisites) != 74):
@@ -263,8 +268,28 @@ def main():
     if (listOfCourseRestricitions[6] != ' Restricted to students in the College of Engineering.' ):
         print("Error in getCourseRestricitions, expected the restriction to be Restricted to students in the College of Engineering. but got " + listOfCourseRestricitions[6])
 
-    if (listOfCourseRestricitions[65] != ' None' ):
+    if (listOfCourseRestricitions[65] != 'None' ):
         print("Error in getCourseRestricitions, expected the restriction to be None. but got " + listOfCourseRestricitions[65])
+
+    '''
+    getCourseLinks()
+    '''
+    listOfCourseLinks = getCourseLinks('GEOG')
+    if (len(listOfCourseLinks) != 69):
+        print("Error in getCourseLinks expected 69 links from GEOG classes but got " + len(listOfCourseLinks)) 
+
+     # check at random indexes to make sure the values are correct 
+    if (listOfCourseLinks[5] != 'https://catalogue.usask.ca/GEOG-204' ):
+        print("Error in getCourseLinks expected course link to be https://catalogue.usask.ca/GEOG-204 but got " + listOfCourseLinks[5] ) 
+    
+    if (listOfCourseLinks[16] != 'https://catalogue.usask.ca/GEOG-299' ):
+        print("Error in getCourseLinks expected course link to be https://catalogue.usask.ca/GEOG-299 but got " + listOfCourseLinks[16] ) 
+
+    if (listOfCourseLinks[51] != 'https://catalogue.usask.ca/GEOG-825' ):
+        print("Error in getCourseLinks expected course link to be https://catalogue.usask.ca/GEOG-825 but got " + listOfCourseLinks[51] ) 
+
+   
+
 
 # To do:
 # add try catch statments or if != null
