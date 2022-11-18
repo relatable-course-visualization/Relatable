@@ -24,6 +24,24 @@ const Course = (props) => {
             ).then((response) => {
                 
                 var data = response.data;
+        
+                // no dependencies
+                if(data == "[]"){
+                    setDependencies([]); 
+                    setIsDependenciesEmpty(true);
+                }
+                // dependencies
+                else{
+                    // clean up data
+                    data = data.replace('[', "");
+                    data = data.replace("]", "");
+                    data = data.replaceAll('"', "");
+
+                    // data is now a list
+                    data = data.split(',');
+
+                    
+                }
             })
         }
     
