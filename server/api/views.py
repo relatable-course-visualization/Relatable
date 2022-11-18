@@ -10,6 +10,7 @@ from rest_framework.decorators import api_view
 from .models import Course
 from .serializers import *
 
+
 @api_view(['POST'])
 def postCourse(request):
     """ Insert course object into Course table
@@ -49,8 +50,16 @@ def updateCourse(request):
         :param: none
         :return: none
     """
-    serialized_course = CourseSerializer(request.data)
+    # course object = request.data
+    course_code = request.data.get("course_code")
+    course_code_without_spaces = course_code.replace(" ", "")
+    course_db = getCourse(course_code_without_spaces)
+    # need to make sure course corresponds correctly to the request.data course
+    serialized_course = CourseSerializer(course_db, request.data) 
+    # to do a partial update instead then:
+    # serialized_course = CourseSerializer(course, request.data, partial=true)
     if serialized_course.is_valid():
+        serialized_course.save()
         return Response(serialized_course)
     
     return Response(serialized_course.error_messages, status=status.HTTP_400_BAD_REQUEST)

@@ -5,7 +5,7 @@ import requests
 """ Initialize the course table in the database by capturing 
     all cleaned Course objects and POSTing them into the database
 """
-def initializeCourseTable():
+def updateCourseTable():
     list_of_courses = courseScraper()
     for course in list_of_courses:
         course_object = {'course_code': str(course.getCode()), 'name': str(course.getName()), 'description': str(course.getDescription())
@@ -13,4 +13,4 @@ def initializeCourseTable():
 
         requests.put("http://127.0.0.1:8000/updateCourse", data=course_object)
 
-initializeCourseTable()
+updateCourseTable()
