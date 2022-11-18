@@ -229,6 +229,13 @@ def main():
         print ("Error in getCourseNames() expected to return the name: An Introduction to Cultural Studies " + str(listOfCourseNames[6]))
 
     #getCourseDescriptions()
+    listOfCourseDescriptions = getCourseDescriptions('CMPT')
+    if (len(listOfCourseDescriptions) != 103):
+        print("Error in getCourseDescriptions, got " + str(len(listOfCourseDescriptions)) + "  CMPT course descriptions rather than 103 " )
+
+    if (listOfCourseDescriptions[2] != 'Concepts in Computing such as algorithms, problem solving, and programming are explored using interactive multimedia systems as the creative focus. Basic skills in problem solving, programming, design and interaction, event-based behaviour, and prototyping are developed.'):
+        print("Error in getCourseDescriptions expected a different output from " + listOfCourseDescriptions[2])
+
     
 
 # To do:
