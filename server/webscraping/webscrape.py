@@ -289,6 +289,23 @@ def main():
         print("Error in getCourseLinks expected course link to be https://catalogue.usask.ca/GEOG-825 but got " + listOfCourseLinks[51] ) 
 
    
+    '''
+    getCourseCredits()
+    '''
+
+    listOfCourseCredits = getCourseCredits('EP')
+    if (len(listOfCourseCredits) != 21):
+        print("Error in getCourseCredits expected 21 from EP classes but got " + str(len(listOfCourseCredits))) 
+
+    if (listOfCourseCredits[3] != '1'):
+        print("Error in getCourseCredits expected the course credit for the class to be 1 but got " + str(listOfCourseCredits[3])) 
+
+    if (listOfCourseCredits[14] != '3'):
+        print("Error in getCourseCredits expected the course credit for the class to be 3 but got " + str(listOfCourseCredits[15])) 
+    
+    if (listOfCourseCredits[18] != '6'):
+        print("Error in getCourseCredits expected the course credit for the class to be 6 but got " + str(listOfCourseCredits[26])) 
+
 
 
 # To do:
