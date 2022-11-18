@@ -236,7 +236,24 @@ def main():
     if (listOfCourseDescriptions[2] != 'Concepts in Computing such as algorithms, problem solving, and programming are explored using interactive multimedia systems as the creative focus. Basic skills in problem solving, programming, design and interaction, event-based behaviour, and prototyping are developed.'):
         print("Error in getCourseDescriptions expected a different output from " + listOfCourseDescriptions[2])
 
+
+    #getCoursePrerequisites
+    listOfCoursePrerequisites = getCoursePrerequisites('ECON')
+    # check to make sure it is the right size
+    if (len(listOfCoursePrerequisites) != 74):
+        print("Error in getCoursePrerequisites expected 74 prerequisites from ECON classes but got " + len(listOfCoursePrerequisites))
     
+    # test if the prerequisites at the index valuees are valid
+    if (listOfCoursePrerequisites[1] != 'None'):
+        print("Error in getCoursePrerequisites()(line 248) expected prerequisite to be none but got " + listOfCoursePrerequisites[1])
+    
+    if (listOfCoursePrerequisites[42]!= ' ECON 214 or ECON 274; and one of MATH 104, MATH 110, MATH 121, MATH 123, MATH 125, or MATH 176.'):
+        print("Error in getCoursePrerequisites()(line 251) expected prerequisite to be ECON 214 or ECON 274; and one of MATH 104, MATH 110, MATH 121, MATH 123, MATH 125, or MATH 176. but got " + listOfCoursePrerequisites[42])
+
+    if (listOfCoursePrerequisites[72] != 'None'):
+        print("Error in getCoursePrerequisites()(line 254) expected prerequisite to be None but got " + listOfCoursePrerequisites[72])
+
+
 
 # To do:
 # add try catch statments or if != null
