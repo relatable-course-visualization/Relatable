@@ -14,8 +14,8 @@ const Course = (props) => {
     const [isDependenciesEmpty, setIsDependenciesEmpty] = useState(false);
 
     // prerequisites buttons
-    const [prerequisites, setprerequisites] = useState([]);
-    const [isprerequisitesEmpty, setIsprerequisitesEmpty] = useState(false);
+    const [prerequisites, setPrerequisites] = useState([]);
+    const [isPrerequisitesEmpty, setIsPrerequisitesEmpty] = useState(false);
 
     var code = props.course_code.replace(" ", "");
 
@@ -62,43 +62,79 @@ const Course = (props) => {
     
         loadDependency(code);
 
-        
         const loadPrerequisites = (code) => {
 
             // list of prerequisites 
             axios.get(
-            `${process.env.REACT_APP_SERVER_ENDPOINT}/getPrereqs/${code}`  // Not Sure what it's called
+            `${process.env.REACT_APP_SERVER_ENDPOINT}/getPrereqs/${code}`
             ).then((response) => {
                 
                 var data = response.data;
         
                 // no prerequisites
                 if(data == "[]"){
-                    setprerequisites([]); 
-                    setIsprerequisitesEmpty(true);
+                    setPrerequisites([]); 
+                    setIsPrerequisitesEmpty(true);
                 }
                 // prerequisites
                 else{
                     // clean up data
-                    // data = data.replace('[', "");
+                    data = data.replace('[', "");
+                    data = data.slice(0, -1);
+                    
+                    /* Iterate through disjunctions */
+                    var leftBracketIndex = 0;
+                    var rightBracketIndex = 0;
+
+                    while(leftBracketIndex <= data.length){
+                        // find closing bracket for inner list 
+                        while(data[rightBracketIndex] != ']'){
+                            rightBracketIndex++;
+                        }
+
+                        // obtain inner list
+
+
+                        //console.log(data.substring(leftBracketIndex, rightBracketIndex));
+
+                        // insert AND 
+
+                        // Update both indicies 
+                        leftBracketIndex = rightBracketIndex + 3;
+                        rightBracketIndex += 3; 
+                    }
+
+
+
+                    //console.log(data)
+                    
+                    
+                    
+                    
+                    
                     // data = data.replace("]", "");
                     // data = data.replaceAll('"', "");
 
+
+
+
+
+
                     // data is now a list
-                    data = data.split(',');
+                    // data = data.split(',');
 
-                    var arrayedData = [];
+                    // var arrayedData = [];
 
-                    // store jsx into an array
-                    data.forEach((course) => {
-                        arrayedData.push( 
-                            <Button variant="contained"  onClick={(e) => courseHandler( e.currentTarget.innerText )}> 
-                                <h1>{course}</h1>
-                            </Button>)
-                    })
+                    // // store jsx into an array
+                    // data.forEach((course) => {
+                    //     arrayedData.push( 
+                    //         <Button variant="contained"  onClick={(e) => courseHandler( e.currentTarget.innerText )}> 
+                    //             <h1>{course}</h1>
+                    //         </Button>)
+                    // })
 
-                    setprerequisites(arrayedData);
-                    setIsprerequisitesEmpty(false);
+                    // setPrerequisites(arrayedData);
+                    // setIsPrerequisitesEmpty(false);
                 }
             })
         }
@@ -115,7 +151,7 @@ const Course = (props) => {
                 <div className="course__body">{props.body}</div>
                 <div className="sub">  
                     <div className="course__subboxes">Prerequisites</div>
-                            {isprerequisitesEmpty ? <h2>No Prerequisites</h2> : <h2>{prerequisites}</h2>} 
+                            {isPrerequisitesEmpty ? <h2>No Prerequisites</h2> : <h2>{prerequisites}</h2>} 
                     </div>
 
                 <div className="sub"> 
