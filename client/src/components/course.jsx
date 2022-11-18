@@ -13,6 +13,10 @@ const Course = (props) => {
     const [dependencies, setDependencies] = useState([]);
     const [isDependenciesEmpty, setIsDependenciesEmpty] = useState(false);
 
+    // prerequisites buttons
+    const [prerequisites, setprerequisites] = useState([]);
+    const [isprerequisitesEmpty, setIsprerequisitesEmpty] = useState(false);
+
     var code = props.course_code.replace(" ", "");
 
     useEffect(() => {
@@ -57,16 +61,9 @@ const Course = (props) => {
         }
     
         loadDependency(code);
-    }, []);
 
-
-    // prerequisites buttons
-    const [prerequisites, setprerequisites] = useState([]);
-    const [isprerequisitesEmpty, setIsprerequisitesEmpty] = useState(false);
-
-    var code = props.course_code.replace(" ", "");
-    useEffect(() => {
-        const loadDependency = (code) => {
+        
+        const loadPrerequisites = (code) => {
 
             // list of prerequisites 
             axios.get(
@@ -106,8 +103,10 @@ const Course = (props) => {
             })
         }
     
-        loadDependency(code);
+        loadPrerequisites(code);
     }, []);
+
+
     
     return(
         <div className="wrapper">
