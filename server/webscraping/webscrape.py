@@ -49,7 +49,7 @@ def getCourseNames(subject_code):
     course_name = [str(c).split(":", 1)[1] for c in course_name]
     return (course_name)
 
-    # dic ('key course_code) text course_name
+    
 '''
 function that takes a course as a subject code as an input and returns the description for every course in the subject
 '''
@@ -210,6 +210,25 @@ def main():
     if (listOfCourseCodes.count('CMPT 444') > 0 ):
         print("Error in getCourseCode(), found a course that does not exist")
 
+
+    # getCourseNames()
+    listOfCourseNames = getCourseNames('AGRC')
+    if (len(listOfCourseNames) != 10):
+        print("Error in getCourseNames, got " + str(len(listOfCourseNames)) + "  AGRIC course names rather than 10 " )
+
+    # there are actually duplicates names in course like AGRC 298, 398 and 498
+
+    # test at random that the course name returns the right thing
+    if (listOfCourseNames[6] != ' International Study Tour'):
+        print ("Error in getCourseNames() expected to return the name: International Study Tour but got " + str(listOfCourseNames[6]))
+
+    listOfCourseNames = getCourseNames('ENG')
+    if (len(listOfCourseNames) != 110 ):
+        print("Error in getCourseNames, got " + str(len(listOfCourseNames)) + "  AGRIC course names rather than 110 " )
+    if (listOfCourseNames[6] != ' An Introduction to Cultural Studies'):
+        print ("Error in getCourseNames() expected to return the name: An Introduction to Cultural Studies " + str(listOfCourseNames[6]))
+
+    #getCourseDescriptions()
     
 
 # To do:
