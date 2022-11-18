@@ -8,8 +8,7 @@ import requests
 def updateCourseTable():
     list_of_courses = courseScraper()
     for course in list_of_courses:
-        course_object = {'course_code': str(course.getCode()), 'name': str(course.getName()), 'description': str(course.getDescription())
-        , 'restrictions': str(course.getRestriction()), 'hyperlink': str(course.getLink()), 'num_credits': int(course.getCredit())}
+        course_object = {'course_code': str(course.getCode()), 'num_credits': int(course.getCredit())}
 
         requests.put("http://127.0.0.1:8000/updateCourse", data=course_object)
 

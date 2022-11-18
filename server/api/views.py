@@ -54,10 +54,8 @@ def updateCourse(request):
     course_code = request.data.get("course_code")
     course_code_without_spaces = course_code.replace(" ", "")
     course_db = getCourse(course_code_without_spaces)
-    # need to make sure course corresponds correctly to the request.data course
-    serialized_course = CourseSerializer(course_db, request.data) 
-    # to do a partial update instead then:
-    # serialized_course = CourseSerializer(course, request.data, partial=true)
+    # need to make sure course corresponds correctly to the request.data course. Note only updating course_code and course_credits
+    serialized_course = CourseSerializer(course_db, request.data, partial=True) 
     if serialized_course.is_valid():
         serialized_course.save()
         return Response(serialized_course)
