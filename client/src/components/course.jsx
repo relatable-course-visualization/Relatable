@@ -40,7 +40,18 @@ const Course = (props) => {
                     // data is now a list
                     data = data.split(',');
 
-                    
+                    var arrayedData = [];
+
+                    // store jsx into an array
+                    data.forEach((course) => {
+                        arrayedData.push( 
+                            <Button variant="contained"  onClick={(e) => courseHandler( e.currentTarget.innerText )}> 
+                                <h1>{course}</h1>
+                            </Button>)
+                    })
+
+                    setDependencies(arrayedData);
+                    setIsDependenciesEmpty(false);
                 }
             })
         }
