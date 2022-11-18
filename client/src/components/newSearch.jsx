@@ -2,10 +2,7 @@ import React, {useState, useEffect, Link} from 'react';
 import '../stylings/newSearch.css'
 import axios from 'axios';
 
-import Button from '@material-ui/core/Button'
 import "../stylings/course.css";
-import CloseIcon from '@mui/icons-material/Close';
-import { useRef } from 'react';
 import Course from './course';
 
 function NewSearch() {
@@ -17,8 +14,8 @@ function NewSearch() {
       const loadPosts = async () => {
         setLoading(true);
         const response = await axios.get(
-          // `${process.env.REACT_APP_SERVER_ENDPOINT}/courses`
-          "https://jsonplaceholder.typicode.com/posts"
+          `${process.env.REACT_APP_SERVER_ENDPOINT}/courses`
+          
         );
         setPosts(response.data);
         setLoading(false);
@@ -52,50 +49,10 @@ function NewSearch() {
                 return value;
               }
             })
-            .slice(0,15).map((item) => 
-              <h5 key={item.id}>   
+            .slice(0,1).map((item) => 
+              <h5 key={item.id}>  
               <div className='wrapper'>   
-
-              {/*
-              this would be if you wanted to make the list a prop
-               <Course title={item.title}/>    
-              */}
-                <div className="course">  
-                  <div className="course__title" >{item.title}</div>
-                  {/* <div className="course__body" >Placeholder for course code</div>
-                  <div className="course__title" >Placeholder for number of credits</div> */}
-                  <div className="course__body">{item.body}</div>
-                  <div className="sub">  
-                      <div className="course__subboxes">Prerequisites</div>
-                      {/* potential template for looping of list of prerequisites
-                      <ul>
-                          {item.title.map(titl=>
-                            <li>{
-                              <Button variant="contained" onClick={(e) => setSearchTitle( e.currentTarget.innerText )}>
-                                {titl}
-                              </Button>}
-                              </li>
-                          )}
-                        </ul> */}
-
-                          <Button variant="contained" onClick={(e) => setSearchTitle( e.currentTarget.innerText )}>
-                              {item.title}
-                          </Button>
-                      </div>
-
-                    <div className="sub"> 
-                        <div className="course__subboxes">Dependencies</div>
-                            <Button variant="contained" onClick={(e) => setSearchTitle( e.currentTarget.innerText )}>
-                                {item.id}
-                            </Button>
-                    </div>
-                    <div className="sub">Placeholder for Restrictions </div>
-                    <div className="course_body" >
-                      <a href="Placeholder for hyperlink">
-                        Link To Course
-                      </a>
-                    </div>
-              </div> 
+                <Course body={item.description} course_code={item.course_code}/>    
               </div>   
           </h5>)
         )}
