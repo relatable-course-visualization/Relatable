@@ -14,7 +14,7 @@ def initializeCourseTable():
     list_of_courses = courseScraper()
     for course in list_of_courses:
         course_object = {'course_code': str(course.getCode()), 'name': str(course.getName()), 'description': str(course.getDescription())
-        , 'restrictions': str(course.getRestriction()), 'hyperlink': str(course.getLink()), 'num_credits': '0'}
+        , 'restrictions': str(course.getRestriction()), 'hyperlink': str(course.getLink()), 'num_credits': int(course.getCredit())}
 
         requests.post(f"{env('DATABASE_URL')}", data=course_object)
 
