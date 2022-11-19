@@ -294,7 +294,7 @@ def main():
 
     listOfCourseRestricitions = getCourseRestrictions('INDG')
 
-    if (listOfCourseRestricitions[48] != 'Restricted to students in the College of Graduate Studies and Research' ):
+    if (listOfCourseRestricitions[48] != ' Restricted to students in the College of Graduate Studies and Research' ):
             print("Error in getCourseRestricitions, expected the restriction to be Restricted to students in the College of Graduate Studies and Research.. but got " + listOfCourseRestricitions[48])
     if (listOfCourseRestricitions[3] != 'None' ):
             print("Error in getCourseRestricitions, expected the restriction to be None. but got " + listOfCourseRestricitions[3])
