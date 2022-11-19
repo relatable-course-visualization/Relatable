@@ -49,7 +49,7 @@ const Course = (props) => {
                     // store jsx into an array
                     data.forEach((course) => {
                         arrayedData.push( 
-                            <Button variant="contained"  onClick={(e) => courseHandler( e.currentTarget.innerText )}> 
+                            <Button noWrap variant="contained" onClick={(e) => courseHandler( e.currentTarget.innerText )}> 
                                 <h1>{course}</h1>
                             </Button>)
                     })
@@ -109,7 +109,7 @@ const Course = (props) => {
                                 course = course.replaceAll('"', "");
                                 arrayedData.push( 
                                     <Button variant="contained"  onClick={(e) => courseHandler( e.currentTarget.innerText )}> 
-                                        <h1>{course}</h1>
+                                        {course}
                                     </Button>);
                                 if(i != subdata.length -1){
                                     arrayedData.push(<h2>OR</h2>)
@@ -126,7 +126,7 @@ const Course = (props) => {
                             subdata = subdata.replaceAll('"', "");
                             arrayedData.push(
                                 <Button variant="contained"  onClick={(e) => courseHandler( e.currentTarget.innerText )}> 
-                                    <h1>{subdata}</h1>
+                                    {subdata}
                                 </Button>
                             )}
 
@@ -164,7 +164,7 @@ const Course = (props) => {
                 <div className="course__body">{props.body}</div>
                 <div className="sub">  
                     <div className="course__subboxes">Prerequisites</div>
-                            {isPrerequisitesEmpty ? <h2>No Prerequisites</h2> : <h2>{prerequisites}</h2>} 
+                            {isPrerequisitesEmpty ? <h2>No Prerequisites</h2> : <div className="rowPrerequisites">{prerequisites}</div>} 
                     </div>
 
                 <div className="sub"> 
