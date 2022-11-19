@@ -232,13 +232,28 @@ def main():
     if (listOfCourseNames[6] != ' An Introduction to Cultural Studies'):
         print ("Error in getCourseNames() expected to return the name: An Introduction to Cultural Studies " + str(listOfCourseNames[6]))
 
-    #getCourseDescriptions()
+    
+    '''
+    getCourseDescriptions()
+    '''
     listOfCourseDescriptions = getCourseDescriptions('CMPT')
     if (len(listOfCourseDescriptions) != 103):
         print("Error in getCourseDescriptions, got " + str(len(listOfCourseDescriptions)) + "  CMPT course descriptions rather than 103 " )
 
     if (listOfCourseDescriptions[2] != 'Concepts in Computing such as algorithms, problem solving, and programming are explored using interactive multimedia systems as the creative focus. Basic skills in problem solving, programming, design and interaction, event-based behaviour, and prototyping are developed.'):
         print("Error in getCourseDescriptions expected a different output from " + listOfCourseDescriptions[2])
+
+    if (listOfCourseDescriptions[102] != 'Students writing a Ph.D. thesis must register for this course.'):
+        print("Error in getCourseDescriptions expected a different output from " + listOfCourseDescriptions[102])
+    
+    if (listOfCourseDescriptions[55] != 'This course presents a requirements engineering (RE) approach to usability engineering (UE) by providing in depth coverage of Usability Centered Development (UCD). UE and UCD provide a structured approach to developing usable user interface designs. UE helps integrate human-computer interaction (HCI) requirements and design approaches within development projects managed by software engineering (SE) methodologies.'):
+        print("Error in getCourseDescriptions expected a different output from " + listOfCourseDescriptions[55])
+
+    if (listOfCourseDescriptions[23] != 'Lectures, assignments and projects dealing with the management, storage, and retrieval of large volumes of data. Concentrates on the relational data model, and relational data base management systems. Topics include: temporal data, recovery and concurrency, integrity and security, normalization, and semantic modelling. Additional topics include multimedia databases and other paradigms.'):
+        print("Error in getCourseDescriptions expected a different output from " + listOfCourseDescriptions[23])    
+
+    if (listOfCourseDescriptions[90] != 'Concerns selected design issues in distributed and parallel computer systems, particularly those most relevant to the goal of achieving high performance. In the parallel systems areas, such design issues arise in operating systems, run-time support software, compilers, and architecture. Topics concerning distributed systems may include interprocess communications, file systems, and load sharing, with emphasis on support for advanced parallel or multimedia applications.'):
+        print("Error in getCourseDescriptions expected a different output from " + listOfCourseDescriptions[90])
 
     '''
     getCoursePrerequisites
@@ -270,6 +285,19 @@ def main():
 
     if (listOfCourseRestricitions[65] != 'None' ):
         print("Error in getCourseRestricitions, expected the restriction to be None. but got " + listOfCourseRestricitions[65])
+
+    if (listOfCourseRestricitions[52] != 'None' ):
+        print("Error in getCourseRestricitions, expected the restriction to be None. but got " + listOfCourseRestricitions[52])
+
+    if (listOfCourseRestricitions[32] != 'None' ):
+        print("Error in getCourseRestricitions, expected the restriction to be None. but got " + listOfCourseRestricitions[32])
+
+    listOfCourseRestricitions = getCourseRestrictions('INDG')
+
+    if (listOfCourseRestricitions[48] != 'Restricted to students in the College of Graduate Studies and Research' ):
+            print("Error in getCourseRestricitions, expected the restriction to be Restricted to students in the College of Graduate Studies and Research.. but got " + listOfCourseRestricitions[48])
+    if (listOfCourseRestricitions[3] != 'None' ):
+            print("Error in getCourseRestricitions, expected the restriction to be None. but got " + listOfCourseRestricitions[3])
 
     '''
     getCourseLinks()
@@ -306,9 +334,5 @@ def main():
     if (listOfCourseCredits[18] != '6'):
         print("Error in getCourseCredits expected the course credit for the class to be 6 but got " + str(listOfCourseCredits[26])) 
 
-
-
-# To do:
-# add try catch statments or if != null
 
 main()
