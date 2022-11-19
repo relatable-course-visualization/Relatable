@@ -121,7 +121,14 @@ const Course = (props) => {
                         // insert AND 
 
                         // Update both indicies 
-                        leftBracketIndex = rightBracketIndex + 3;
+                        leftBracketIndex = rightBracketIndex + 2;
+                        if (data[leftBracketIndex] !== undefined) {
+                            if (data[leftBracketIndex] === ","){
+                                // make AND tag in course prerequisite section
+                                console.log("and")
+                            }
+                        }
+                        leftBracketIndex+=1;
                         rightBracketIndex += 3; 
                     }
 
