@@ -52,15 +52,9 @@ function NewSearch() {
             .slice(0,1).map((item) => 
               <h5 key={item.id}>  
               <div className='wrapper'>   
-                <div className="course">  
-                  <div className="course__title" >{item.title}</div>
-                          <Button variant="contained" onClick={(e) => setSearchTitle( e.currentTarget.innerText )}>
-                              {item.title}
-                          </Button>
-                    </div>
-                  </div>   
-              </h5>)
-
+                <Course body={item.description} course_code={item.course_code}/>    
+              </div>   
+          </h5>)
         )}
       </div>
     );
