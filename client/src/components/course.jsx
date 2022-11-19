@@ -63,7 +63,6 @@ const Course = (props) => {
         loadDependency(code);
 
         const loadPrerequisites = (code) => {
-
             // list of prerequisites 
             axios.get(
             `${process.env.REACT_APP_SERVER_ENDPOINT}/getPrereqs/${code}`
@@ -100,6 +99,11 @@ const Course = (props) => {
                             // subdata is a list of courses inside an inner list (disjunction)
                             subdata = subdata.split(",")
                             
+                            // add opening bracket
+                            arrayedData.push(
+                                <h2>{"("}</h2>
+                            );
+
                             // store jsx into an array
                             subdata.forEach((course, i,) => {
                                 course = course.replaceAll('"', "");
@@ -110,7 +114,13 @@ const Course = (props) => {
                                 if(i != subdata.length -1){
                                     arrayedData.push(<h2>OR</h2>)
                                 }
-                            })}
+                            })
+                            // add closing bracket
+                            arrayedData.push(
+                                <h2>{")"}</h2>
+                            );
+                        }
+  
                         // Only one item
                         else{ 
                             subdata = subdata.replaceAll('"', "");
@@ -147,8 +157,6 @@ const Course = (props) => {
         loadPrerequisites(code);
     }, []);
 
-
-    
     return(
         <div className="wrapper">
             <div className="course">  
