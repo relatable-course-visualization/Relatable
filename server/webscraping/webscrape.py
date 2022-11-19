@@ -2,7 +2,6 @@ import requests
 from bs4 import BeautifulSoup as bs
 import re
 
-
 catalogue_link = "https://catalogue.usask.ca/"
 # api call to get the content of the usask catalogue page
 catalogue = requests.get(catalogue_link)
@@ -11,8 +10,12 @@ webpage = bs(catalogue.content)
 
 # get the course codes from the webpage
 
-# function that returns the a list of subject codes from the webpage.
 def getSubjectCodes():
+    '''
+    desc: function that returns the a list of subject codes(e.g CMPT, BIOL, CHEM) from the catalogue.
+    param: none
+    return: a list of subject codes from the course catalogue
+    '''
     # get the csubject codes from the webpage
     subject_code_raw = webpage.select('option[value]')
     subject_code = [subject.get('value') for subject in subject_code_raw]
@@ -21,10 +24,12 @@ def getSubjectCodes():
     subject_code_refined.pop(0)
     return subject_code_refined
 
-'''
-gets all the course codes for a particular subject code 
-'''
 def getCourseCodes(subject_code):
+    '''
+    desc: function that gets all the course codes for a particular subject code 
+    param: subject code
+    return: a list of course codes from the subject passed in (e.g for the input CMPT, a list that has CMPT 100, CMPT 140...)
+    '''
     # api call to get the content of the catalogie for a specific subject e.g CMPT
     course_weblink = catalogue_link+"?subj_code="+str(subject_code)+"&cnum="
     course_catalogue = requests.get(course_weblink)
@@ -37,10 +42,12 @@ def getCourseCodes(subject_code):
     course_code = [str(c).split(".", 1)[0] for c in course_code]
     return(course_code) 
 
-'''
-function that returns the course name for each course in a subject
-'''
 def getCourseNames(subject_code):
+    '''
+    desc: function that returns the course name for each course in a subject 
+    param: subject code
+    return: a list of course names from the subject passed in (e.g for the input CMPT, a list that has 'Intro to computer science', 'Data Structures and Algorithms'...)
+    '''
     course_weblink = catalogue_link+"?subj_code="+str(subject_code)+"&cnum="
     course_catalogue = requests.get(course_weblink)
     course_webpage = bs(course_catalogue.content)
@@ -49,11 +56,12 @@ def getCourseNames(subject_code):
     course_name = [str(c).split(":", 1)[1] for c in course_name]
     return (course_name)
 
-    
-'''
-function that takes a course as a subject code as an input and returns the description for every course in the subject
-'''
 def getCourseDescriptions(subject_code):
+    '''
+    desc: function that takes a subject code as an input and returns the description for every course in the subject
+    param: subject code
+    return: a list of course descriptions from the subject passed in
+    '''
     course_weblink = catalogue_link+"?subj_code="+str(subject_code)+"&cnum="
     course_catalogue = requests.get(course_weblink)
     course_webpage = bs(course_catalogue.content)
@@ -64,6 +72,11 @@ def getCourseDescriptions(subject_code):
 
 
 def getCoursePrerequisites(subject_code):
+    '''
+    desc: function that takes a subject code as an input and returns the prerequisites for every course in the subject
+    param: subject code
+    return: a list of prerequisites for every course in the input subject
+    '''
     course_weblink = catalogue_link+"?subj_code="+str(subject_code)+"&cnum="
     course_catalogue = requests.get(course_weblink)
     course_webpage = bs(course_catalogue.content)
@@ -79,6 +92,11 @@ def getCoursePrerequisites(subject_code):
 
 
 def getCourseRestrictions(subject_code):
+    '''
+    desc: function that takes a subject code as an input and returns the restricition for every course in the subject
+    param: subject code
+    return: a list of course restrictions for every course from the subject passed in
+    '''
     course_weblink = catalogue_link+"?subj_code="+str(subject_code)+"&cnum="
     course_catalogue = requests.get(course_weblink)
     course_webpage = bs(course_catalogue.content)
@@ -95,6 +113,11 @@ def getCourseRestrictions(subject_code):
 function that return the web links for every course in a particlar subject
 '''
 def getCourseLinks(subject_code):
+    '''
+    desc: function that takes a subject code as an input and returns the catalogue hyperlinks for every course that belongs to the subjects
+    param: subject code
+    return: a list of hyperlinks for every course from the subject passed in
+    '''
     course_weblink = catalogue_link+"?subj_code="+str(subject_code)+"&cnum="
     course_catalogue = requests.get(course_weblink)
     course_webpage = bs(course_catalogue.content)
@@ -103,8 +126,12 @@ def getCourseLinks(subject_code):
     course_links = [link['href'] for link in course]
     return course_links
             
-
 def getCourseCredits(subject_code):
+    '''
+    desc: function that takes a subject code as an input and returns the number of credits for every course that belongs to the subjects
+    param: subject code
+    return: a list of credit units for every course from the subject passed in
+    '''
     # api call to get the content of the catalogie for a specific subject e.g CMPT
     course_weblink = catalogue_link+"?subj_code="+str(subject_code)+"&cnum="
     course_catalogue = requests.get(course_weblink)
@@ -119,9 +146,7 @@ def getCourseCredits(subject_code):
     return(course_credit) 
 
 
-
 def main():
-
     '''
     # Test cases for getSubjectCodes()
     '''
@@ -143,7 +168,6 @@ def main():
     '''
     #Test cases for getCourseCodes()
     '''
-
     #test when the input passed in null
     listOfCourseCodes = getCourseCodes(None)
     # test when the input passed does not exist
@@ -335,4 +359,3 @@ def main():
         print("Error in getCourseCredits expected the course credit for the class to be 6 but got " + str(listOfCourseCredits[26])) 
 
 
-main()
