@@ -164,7 +164,7 @@ const Course = (props) => {
                 <div className="course__body">{props.body}</div>
                 <div className="sub">  
                     <div className="course__subboxes">Prerequisites</div>
-                            {isPrerequisitesEmpty ? <h2>No Prerequisites</h2> : <h2>{prerequisites}</h2>} 
+                            {isPrerequisitesEmpty ? <h2>No Prerequisites</h2> : <div className="rowPrerequisites">{prerequisites}</div>} 
                     </div>
 
                 <div className="sub"> 

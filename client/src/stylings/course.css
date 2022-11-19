@@ -12,6 +12,8 @@
     min-width: 28rem;
 }
 
+.rowPrerequisites{display:flex; flex-direction:row;}
+
 .sub{ 
     font-size: var(--fs-4);
     font-weight: var(--fw-bold);
