@@ -52,15 +52,16 @@ def updateCourse(request):
     """
     # course object = request.data
     course_code = request.data.get("course_code")
-    course_code_without_spaces = course_code.replace(" ", "")
-    # course_db = getCourse(course_code=course_code_without_spaces) # views get does NOT have space
-    course_db = Course.objects.get(course_code=course_code) # database does HAVE space
+    try:
+        course_db = Course.objects.get(course_code=course_code) # database does HAVE space
+    except Exception as e:
+        print("Error updating course with exception: " + e)
 
     # need to make sure course corresponds correctly to the request.data course. Note only updating course_code and course_credits
     serialized_course = CourseSerializer(course_db, request.data, partial=True) 
     if serialized_course.is_valid():
         serialized_course.save()
-        return Response(serialized_course)
+        return Response(serialized_course.data)
     
     return Response(serialized_course.error_messages, status=status.HTTP_400_BAD_REQUEST)
 
