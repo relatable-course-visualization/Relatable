@@ -14,6 +14,11 @@
 
 .rowPrerequisites{display:flex; flex-direction:row;}
 
+.btn{
+    white-space: nowrap;
+    color: rgb(140, 13, 13);
+}
+
 .sub{ 
     font-size: var(--fs-4);
     font-weight: var(--fw-bold);
