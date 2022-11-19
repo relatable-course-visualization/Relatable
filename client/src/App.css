@@ -32,6 +32,7 @@
     --bs: 0 2px 8px rgba(0,0,0,0.26);
 
     /*Box Width*/
+    --bw-verylarge: 500px;
     --bw-large: 400px;
     --bw-small: 350px;
   

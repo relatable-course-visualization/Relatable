@@ -6,10 +6,10 @@
     border-radius: var(--br-background);
     margin: var(--margin-wide);
     padding: var(--fs-3);
-    width: var(--bw-large);
+    width: var(--bw-verylarge);
     transition: transform .3s ease;
     cursor: var(--crsr-pointercrsr-);
-    min-width: 28rem;
+    min-width: 40rem;
 }
 
 .rowPrerequisites{display:flex; flex-direction:row;}

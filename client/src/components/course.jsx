@@ -109,7 +109,7 @@ const Course = (props) => {
                                 course = course.replaceAll('"', "");
                                 arrayedData.push( 
                                     <Button variant="contained"  onClick={(e) => courseHandler( e.currentTarget.innerText )}> 
-                                        <h1>{course}</h1>
+                                        {course}
                                     </Button>);
                                 if(i != subdata.length -1){
                                     arrayedData.push(<h2>OR</h2>)
@@ -126,7 +126,7 @@ const Course = (props) => {
                             subdata = subdata.replaceAll('"', "");
                             arrayedData.push(
                                 <Button variant="contained"  onClick={(e) => courseHandler( e.currentTarget.innerText )}> 
-                                    <h1>{subdata}</h1>
+                                    {subdata}
                                 </Button>
                             )}
 
