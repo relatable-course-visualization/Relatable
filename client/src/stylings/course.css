@@ -22,7 +22,7 @@
     border-radius: var(--br-background);
     margin: var(--margin-thin);
     padding: var(--fs-3);
-    width: var(--bw-small);
+    width: var(--bw-mediumlarge);
     transition: transform .3s ease;
     cursor: pointer;
 }
