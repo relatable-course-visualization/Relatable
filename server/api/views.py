@@ -113,7 +113,19 @@ def getAllPrereqs(request):
         :param: none
         :return: serialized Prerequisite object
     """
-        # find course in course table corresponding to course_code
+    prerequisites = Prerequisite.objects.all()
+    serializer = PrerequisiteSerializer(prerequisites, many=True)
+    return Response(serializer.data)
+
+
+
+@api_view(['GET'])
+def getPrereqs(request, course_id):
+    """ Return prerequisites in logical form of given course
+        :param: course_id - course ID in the form [A-Z]{2,4}\d{2,3}
+        :return: the prerequisites for the given course
+    """
+    # find course in course table corresponding to course_code
     req = requests.get(f"{env('DATABASE_URL')}/getCourse/{course_code}")
     if (req == None):
         return
@@ -152,17 +164,6 @@ def getAllPrereqs(request):
 
     return Response(data_json)
 
-
-@api_view(['GET'])
-def getPrereqs(request, course_id):
-    """ Return prerequisites in logical form of given course
-        :param: course_id - course ID in the form [A-Z]{2,4}\d{2,3}
-        :return: the prerequisites for the given course
-    """
-    # ** need to set up prerequisite table **
-    courses = Course.objects.all()
-    serializer = CourseSerializer(courses, many=True)
-    return Response(serializer.data)
 
 
 @api_view(['GET'])
