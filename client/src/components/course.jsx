@@ -101,12 +101,15 @@ const Course = (props) => {
                             subdata = subdata.split(",")
                             
                             // store jsx into an array
-                            subdata.forEach((course) => {
+                            subdata.forEach((course, i,) => {
                                 course = course.replaceAll('"', "");
                                 arrayedData.push( 
                                     <Button variant="contained"  onClick={(e) => courseHandler( e.currentTarget.innerText )}> 
-                                        <h1>{course} OR </h1>
-                                    </Button>)
+                                        <h1>{course}</h1>
+                                    </Button>);
+                                if(i != subdata.length -1){
+                                    arrayedData.push(<h2>OR</h2>)
+                                }
                             })}
                         // Only one item
                         else{ 
@@ -117,7 +120,7 @@ const Course = (props) => {
                                 </Button>
                             )}
 
-                        // insert AND 
+                        /* insert AND if disjunctions continue */
 
                         leftBracketIndex = rightBracketIndex + 1;
                         // not out of bounds 
@@ -125,7 +128,7 @@ const Course = (props) => {
                             // another disjunction 
                             if (data[leftBracketIndex] === ","){
                                 // make AND tag in course prerequisite section
-                                arrayedData.push(<h1>AND</h1>)
+                                arrayedData.push(<h2>AND</h2>)
 
                                 // update both indicies
                                 leftBracketIndex += 2;
