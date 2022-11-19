@@ -38,6 +38,7 @@
     font-size: var(--fs-5);
     padding-left: 5%;
     cursor: var(--crsr-pointercrsr-);
+    border-bottom: 10px;
 }
 
 .course:hover{
@@ -51,6 +52,7 @@
     font-size: var(--fs-3);
     text-decoration: underline;
     cursor: var(--crsr-pointercrsr-);
+    border-bottom: 10px;
 }
 
 .course__subboxes{
