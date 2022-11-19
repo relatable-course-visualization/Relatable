@@ -1,1 +1,4 @@
 .env
+/server/api/__pycache__
+/server/server/__pycache__
+/server/webscraping/__pycache__
