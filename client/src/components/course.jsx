@@ -69,8 +69,7 @@ const Course = (props) => {
             `${process.env.REACT_APP_SERVER_ENDPOINT}/getPrereqs/${code}`
             ).then((response) => {
                 
-                var data = response.data;
-                var subdata;
+                var data = response.data
         
                 // no prerequisites
                 if(data == "[]"){
@@ -86,7 +85,7 @@ const Course = (props) => {
                     /* Iterate through disjunctions */
                     var leftBracketIndex = 0;
                     var rightBracketIndex = 0;
-
+                    var arrayData = [];
                     while(leftBracketIndex <= data.length){
                         // find closing bracket for inner list 
                         while(data[rightBracketIndex] != ']'){
@@ -106,10 +105,11 @@ const Course = (props) => {
                                     </Button>)
                             })}
                         else{ // if only one item
-                            <Button variant="contained"  onClick={(e) => courseHandler( e.currentTarget.innerText )}> 
-                                <h1>{subdata}</h1>
-                            </Button>
-                            }
+                            arrayedData.push(
+                                <Button variant="contained"  onClick={(e) => courseHandler( e.currentTarget.innerText )}> 
+                                    <h1>{subdata}</h1>
+                                </Button>
+                            )}
                         
    
 
