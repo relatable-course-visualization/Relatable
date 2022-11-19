@@ -9,7 +9,6 @@
     width: var(--bw-verylarge);
     transition: transform .3s ease;
     cursor: var(--crsr-pointercrsr-);
-    min-width: 40rem;
 }
 
 .rowPrerequisites{display:flex; flex-direction:row;}

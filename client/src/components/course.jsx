@@ -49,7 +49,8 @@ const Course = (props) => {
                     // store jsx into an array
                     data.forEach((course) => {
                         arrayedData.push( 
-                            <Button noWrap variant="contained" onClick={(e) => courseHandler( e.currentTarget.innerText )}> 
+                            <Button variant="contained"  onClick={(e) => courseHandler( e.currentTarget.innerText )}> 
+
                                 <h1>{course}</h1>
                             </Button>)
                     })
