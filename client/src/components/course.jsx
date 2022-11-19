@@ -86,7 +86,7 @@ const Course = (props) => {
                     var leftBracketIndex = 0;
                     var rightBracketIndex = 0;
                     var arrayedData = [];
-                    while(leftBracketIndex <= data.length){
+                    while(leftBracketIndex < data.length){
                         // find closing bracket for inner list 
                         while(data[rightBracketIndex] != ']'){
                             rightBracketIndex++;
@@ -97,72 +97,46 @@ const Course = (props) => {
                         // if item has a comma it means an OR
                         var subdata = data.substring(leftBracketIndex+1, rightBracketIndex)
                         if(subdata.includes(",")){
-                            // subdata is a list of courses inside an inner list 
+                            // subdata is a list of courses inside an inner list (disjunction)
                             subdata = subdata.split(",")
+                            
                             // store jsx into an array
                             subdata.forEach((course) => {
+                                course = course.replaceAll('"', "");
                                 arrayedData.push( 
                                     <Button variant="contained"  onClick={(e) => courseHandler( e.currentTarget.innerText )}> 
                                         <h1>{course} OR </h1>
                                     </Button>)
                             })}
-                        // if only one item
+                        // Only one item
                         else{ 
+                            subdata = subdata.replaceAll('"', "");
                             arrayedData.push(
                                 <Button variant="contained"  onClick={(e) => courseHandler( e.currentTarget.innerText )}> 
                                     <h1>{subdata}</h1>
                                 </Button>
                             )}
-                        
-                        //console.log(arrayedData);
-
-                        //console.log(data.substring(leftBracketIndex, rightBracketIndex));
 
                         // insert AND 
 
-                        // Update both indicies 
-                        leftBracketIndex = rightBracketIndex + 2;
-                        if (data[leftBracketIndex] !== undefined) {
+                        leftBracketIndex = rightBracketIndex + 1;
+                        // not out of bounds 
+                        if (data[leftBracketIndex] !== undefined && leftBracketIndex < data.length) {
+                            // another disjunction 
                             if (data[leftBracketIndex] === ","){
                                 // make AND tag in course prerequisite section
-                                console.log("and")
+                                arrayedData.push(<h1>AND</h1>)
+
+                                // update both indicies
+                                leftBracketIndex += 2;
+                                rightBracketIndex += 2; 
                             }
                         }
-                        leftBracketIndex+=1;
-                        rightBracketIndex += 3; 
                     }
 
-
-
-                    //console.log(data)
-                    
-                    
-                    
-                    
-                    
-                    // data = data.replace("]", "");
-                    // data = data.replaceAll('"', "");
-
-
-
-
-
-
-                    // data is now a list
-                    // data = data.split(',');
-
-                    // var arrayedData = [];
-
-                    // // store jsx into an array
-                    // data.forEach((course) => {
-                    //     arrayedData.push( 
-                    //         <Button variant="contained"  onClick={(e) => courseHandler( e.currentTarget.innerText )}> 
-                    //             <h1>{course}</h1>
-                    //         </Button>)
-                    // })
-
-                    // setPrerequisites(arrayedData);
-                    // setIsPrerequisitesEmpty(false);
+                    // update state variables
+                    setPrerequisites(arrayedData);
+                    setIsPrerequisitesEmpty(false);
                 }
             })
         }
