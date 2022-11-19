@@ -85,18 +85,20 @@ const Course = (props) => {
                     /* Iterate through disjunctions */
                     var leftBracketIndex = 0;
                     var rightBracketIndex = 0;
-                    var arrayData = [];
+                    var arrayedData = [];
                     while(leftBracketIndex <= data.length){
                         // find closing bracket for inner list 
                         while(data[rightBracketIndex] != ']'){
                             rightBracketIndex++;
                         }
 
-                        // obtain inner list
+                        /* obtain inner list */
+
                         // if item has a comma it means an OR
-                        var subdata = subdata.substring(leftBracketIndex+1, rightBracketIndex)
+                        var subdata = data.substring(leftBracketIndex+1, rightBracketIndex)
                         if(subdata.includes(",")){
-                            subdata.split(",")
+                            // subdata is a list of courses inside an inner list 
+                            subdata = subdata.split(",")
                             // store jsx into an array
                             subdata.forEach((course) => {
                                 arrayedData.push( 
@@ -104,14 +106,15 @@ const Course = (props) => {
                                         <h1>{course} OR </h1>
                                     </Button>)
                             })}
-                        else{ // if only one item
+                        // if only one item
+                        else{ 
                             arrayedData.push(
                                 <Button variant="contained"  onClick={(e) => courseHandler( e.currentTarget.innerText )}> 
                                     <h1>{subdata}</h1>
                                 </Button>
                             )}
                         
-   
+                        //console.log(arrayedData);
 
                         //console.log(data.substring(leftBracketIndex, rightBracketIndex));
 
