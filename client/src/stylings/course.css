@@ -9,6 +9,7 @@
     width: var(--bw-large);
     transition: transform .3s ease;
     cursor: var(--crsr-pointercrsr-);
+    min-width: 28rem;
 }
 
 .sub{ 
@@ -54,8 +55,22 @@
     cursor: var(--crsr-pointercrsr-);
 }
 
+.wrapper{
+    margin: 2rem;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr;
+    justify-content: center;
+}
 
-.course__image{
-    display: flex;
-    justify-content: flex-end;
+@media screen and (min-width:600px){
+    .wrapper{
+        grid-template-columns: repeat(auto-fit,minmax((14rem,28rem)));
+    }
+
+    .course{
+        flex-direction: column;
+        text-align: center;
+        min-width: 14rem;
+    }
 }

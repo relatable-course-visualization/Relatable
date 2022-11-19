@@ -1,13 +1,18 @@
 import './App.css';
 import NewSearch from './components/newSearch';
 import Homepage from "./home/homepage"
+import {Helmet} from "react-helmet";
 
 
 
 function App() {
-
   return (
-    <Homepage/>
+    <>
+      <Helmet>
+        <title>Relatable</title>
+      </Helmet>
+      <Homepage />
+    </>
   )
      
 }
