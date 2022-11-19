@@ -1,0 +1,94 @@
+/* Basic styling for diffrent portions of the made up class */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body{
+    background-color: white;
+    color: white;
+}
+
+
+div{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+t {
+    font-size: 30px;
+    line-height: 60px;
+    text-align: center;
+}
+
+b {
+    font-size: 30px;
+    line-height: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 30px;
+    line-height: 20px;
+    text-align: center;
+}
+
+d {
+    font-size: 30px;
+    line-height: 20px;
+    text-align: center;
+}
+
+.card{
+    display: flex;
+    flex-wrap: wrap;
+    grid-template-columns: 1fr;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card{
+    flex: 0 0 calc(33.33% - 20px);
+    max-width: calc(33.33% - 20px);
+    max-height: 20px;
+    width: 100%;
+    background: darkgreen;
+    border-radius: 30Spx;
+    padding: 20px;
+    transition: .3s;
+    border: 2px solid transparent;
+}
+
+.card:hover{
+    border-color: black;
+
+}
+/* how things fucntion at the set value of 600px */
+/* therefore handles the reactive portion */
+/* kind of works by overriding styling changes at that px */
+
+/* line 80 is about how many grid rows will be shown depending on window size */
+
+@media(max-width: 600px){
+    .card{
+        flex: 0 0 100%;
+        max-width: 100%;
+        max-height: 100%;
+        grid-template-columns: repeat(auto-fit, minmax(14rem, 16rem));
+    }
+
+    .div{
+        flex-direction: column;
+        text-align: center;
+        min-width: 14rem;
+    }
+
+}
+
+
