@@ -14,10 +14,6 @@
     --fs-6: 30px;
   
     /*Colors*/
-    --clr-hover: #ffc156;
-    --clr-black: rgb(45, 45, 45);
-    --clr-white: #fff;
-    
     --clr-course-background: rgb(70, 191, 54);
     --clr-subbox-background: rgb(116, 219, 103);
     
@@ -47,5 +43,4 @@
       /*Margin*/
       --margin-wide: 1rem 1rem 1rem 0;;
       --margin-thin: 0rem 0rem 0.5rem 0;
-
   }
