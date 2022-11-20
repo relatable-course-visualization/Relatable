@@ -85,6 +85,6 @@
     .course{
         flex-direction: column;
         text-align: center;
-        min-width: 50rem;
+        /*min-width: 50rem;*/
     }
 }
