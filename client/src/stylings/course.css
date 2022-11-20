@@ -40,7 +40,7 @@
 .course__body{
     font-family: var(font-family);
     font-weight: var(--fw-light);
-    font-size: var(--fs-5);
+    font-size: var(--fs-4);
     padding-left: 5%;
     cursor: var(--crsr-pointercrsr-);
     border-bottom: 10px;
@@ -54,7 +54,7 @@
     font-family: var(font-family);
     color: rgb(61, 27, 35);
     font-weight: var(--fw-bold);
-    font-size: var(--fs-3);
+    font-size: var(--fs-2);
     text-decoration: underline;
     cursor: var(--crsr-pointercrsr-);
     border-bottom: 10px;
@@ -63,7 +63,7 @@
 .course__subboxes{
     font-family: var(font-family);
     font-weight: var(--fw-reg);
-    font-size: var(--fs-5);
+    font-size: var(--fs-4);
     color: rgb(75, 75, 78);
     text-decoration: underline;
     cursor: var(--crsr-pointercrsr-);

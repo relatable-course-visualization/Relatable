@@ -51,11 +51,11 @@ function NewSearch() {
     return (
       <div className="App">
         <>
-          <div className='searchFilterText'>Search Filter</div>
+          <div className='searchFilterText'>Search For a Course:</div>
           <div className='searchFilterTextBar'>
             <input
               type="text"
-              placeholder="Search..."
+              placeholder="e.g., CMPT 370"
               onChange={(e) => {setSearchTitle(e.target.value); setNumShown(10)}}
               value={searchTitle}
             />
