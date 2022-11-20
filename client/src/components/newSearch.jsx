@@ -44,6 +44,10 @@ function NewSearch() {
       console.log(numShown);
     }
 
+    const searchHandler = (courseName) => {
+      setSearchTitle(courseName);
+    }
+
     return (
       <div className="App">
         <>
@@ -53,6 +57,7 @@ function NewSearch() {
               type="text"
               placeholder="Search..."
               onChange={(e) => {setSearchTitle(e.target.value); setNumShown(10)}}
+              value={searchTitle}
             />
           </div>
         </>
@@ -71,7 +76,7 @@ function NewSearch() {
             .slice(0, numShown).map((item) => 
               <h5 key={item.id}>  
                 <div className='wrapper'>   
-                  <Course body={item.description} course_code={item.course_code}/>    
+                  <Course body={item.description} course_code={item.course_code} searchHandler={searchHandler}/>    
                 </div>   
               </h5>
             )
