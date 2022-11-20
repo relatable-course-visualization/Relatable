@@ -6,10 +6,16 @@
     border-radius: var(--br-background);
     margin: var(--margin-wide);
     padding: var(--fs-3);
-    width: var(--bw-large);
+    width: var(--bw-verylarge);
     transition: transform .3s ease;
     cursor: var(--crsr-pointercrsr-);
-    min-width: 28rem;
+}
+
+.rowPrerequisites{display:flex; flex-direction:row;}
+
+.btn{
+    white-space: nowrap;
+    color: rgb(140, 13, 13);
 }
 
 .sub{ 
@@ -20,7 +26,7 @@
     border-radius: var(--br-background);
     margin: var(--margin-thin);
     padding: var(--fs-3);
-    width: var(--bw-small);
+    width: var(--bw-mediumlarge);
     transition: transform .3s ease;
     cursor: pointer;
 }
@@ -31,6 +37,7 @@
     font-size: var(--fs-5);
     padding-left: 5%;
     cursor: var(--crsr-pointercrsr-);
+    border-bottom: 10px;
 }
 
 .course:hover{
@@ -44,6 +51,7 @@
     font-size: var(--fs-3);
     text-decoration: underline;
     cursor: var(--crsr-pointercrsr-);
+    border-bottom: 10px;
 }
 
 .course__subboxes{
