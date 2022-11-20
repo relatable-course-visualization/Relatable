@@ -175,7 +175,7 @@ const Course = (props) => {
                 <div className="course__restrictions">Restrictions</div>
                     {restrictions == None ? <h2>No Restrictions</h2> : <h2>{restrictions}</h2>}
                     <div className="course_body" >
-                      <a href="Placeholder for hyperlink">
+                      <a id="hyperlink" href={props.hyperlink}>
                         Link To Course
                       </a>
                     </div>
