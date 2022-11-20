@@ -10,6 +10,9 @@
     transition: transform .3s ease;
     cursor: var(--crsr-pointercrsr-);
     min-width: 40rem;
+    display: flex;
+    align-content: center;
+    align-items: center;
 }
 
 .rowPrerequisites{display:flex; flex-direction:row;}
@@ -26,10 +29,12 @@
     box-shadow: var(--bs);
     border-radius: var(--br-background);
     margin: var(--margin-thin);
+    margin-top: 2rem;
     padding: var(--fs-3);
-    width: var(--bw-mediumlarge);
+    width: var(--bw-verylarge);
     transition: transform .3s ease;
     cursor: pointer;
+   
 }
 
 .course__body{
@@ -80,6 +85,6 @@
     .course{
         flex-direction: column;
         text-align: center;
-        min-width: 14rem;
+        /*min-width: 50rem;*/
     }
 }
