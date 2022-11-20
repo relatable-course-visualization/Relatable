@@ -170,6 +170,8 @@ const Course = (props) => {
                     <div className="course__subboxes">Dependencies</div>
                             {isDependenciesEmpty ? <h2 className="dynamic-text">No Dependencies</h2> : <h2>{dependencies}</h2>}        
                 </div>
+                <div className="course__credits">Number of Credits</div>
+                    {credits == -1 ? <h2>Not Applicable</h2> : <h2>{credits}</h2>}
                 <div className="course__restrictions">Restrictions</div>
                     {restrictions == None ? <h2>No Restrictions</h2> : <h2>{restrictions}</h2>}
                     <div className="course_body" >

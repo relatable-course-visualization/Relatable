@@ -83,6 +83,11 @@
     padding: 5%;
 }
 
+.course__credits{
+    font-weight: normal;
+    padding-top: 5%;
+}
+
 .dynamic-text{
     font-size: var(--fs-4);
 }
