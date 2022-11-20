@@ -86,8 +86,12 @@
 }
 
 .course__restrictions{
-    font-weight: normal;
-    padding: 5%;
+    padding-top: 15px;
+}
+
+.restrictions_text{
+    font-weight: var(--fw-light);
+    font-size: var(--fs-4);
 }
 
 .dynamic-text{
