@@ -76,7 +76,9 @@ function NewSearch() {
             .slice(0, numShown).map((item) => 
               <h5 key={item.id}>  
                 <div className='wrapper'>   
-                  <Course body={item.description} course_code={item.course_code} searchHandler={searchHandler}/>    
+                  <Course body={item.description} course_code={item.course_code} restrictions={item.restrictions}
+                  hyperlink={item.hyperlink} credits={item.num_credits}
+                  searchHandler={searchHandler}/>    
                 </div>   
               </h5>
             )

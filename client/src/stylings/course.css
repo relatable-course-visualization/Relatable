@@ -14,7 +14,14 @@
     align-items: center;
 }
 
-.rowPrerequisites{display:flex; flex-direction:row;}
+.rowPrerequisites{
+    display:flex; 
+    flex-direction:row;
+    max-width: var(--bw-verylarge);
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
 
 .btn{
     white-space: nowrap;
@@ -39,8 +46,9 @@
 .course__body{
     font-family: var(font-family);
     font-weight: var(--fw-light);
-    font-size: var(--fs-5);
+    font-size: var(--fs-4);
     padding-left: 5%;
+    padding-top: 5%;
     cursor: var(--crsr-pointercrsr-);
     border-bottom: 10px;
 }
@@ -53,7 +61,7 @@
     font-family: var(font-family);
     color: rgb(61, 27, 35);
     font-weight: var(--fw-bold);
-    font-size: var(--fs-3);
+    font-size: var(--fs-2);
     text-decoration: underline;
     cursor: var(--crsr-pointercrsr-);
     border-bottom: 10px;
@@ -62,7 +70,7 @@
 .course__subboxes{
     font-family: var(font-family);
     font-weight: var(--fw-reg);
-    font-size: var(--fs-5);
+    font-size: var(--fs-4);
     color: rgb(75, 75, 78);
     text-decoration: underline;
     cursor: var(--crsr-pointercrsr-);
@@ -74,6 +82,34 @@
     gap: 1rem;
     grid-template-columns: 1fr;
     justify-content: center;
+}
+
+.course__restrictions{
+    padding-top: 15px;
+}
+
+.other_text{
+    font-weight: var(--fw-light);
+    font-size: var(--fs-4);
+}
+
+.course__credits{
+    padding-top: 15px;
+}
+
+.course__hyperlink{
+    padding-top: 15px;
+}
+
+.dynamic-text{
+    font-size: var(--fs-3);
+    font-weight: var(--fw-bold);
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+#hyperlink {
+    color: black;
 }
 
 @media screen and (min-width:600px){
