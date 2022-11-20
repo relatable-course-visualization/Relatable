@@ -77,6 +77,10 @@
     justify-content: center;
 }
 
+.dynamic-text{
+    font-size: var(--fs-4);
+}
+
 @media screen and (min-width:600px){
     .wrapper{
         grid-template-columns: repeat(auto-fit,minmax((14rem,28rem)));
