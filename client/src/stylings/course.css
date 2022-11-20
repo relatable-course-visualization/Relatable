@@ -89,14 +89,17 @@
     padding-top: 15px;
 }
 
-.restrictions_text{
+.other_text{
     font-weight: var(--fw-light);
     font-size: var(--fs-4);
 }
 
 .course__credits{
-    font-weight: normal;
-    padding-top: 5%;
+    padding-top: 15px;
+}
+
+.course__hyperlink{
+    padding-top: 15px;
 }
 
 .dynamic-text{
