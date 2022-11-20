@@ -42,6 +42,7 @@
     font-weight: var(--fw-light);
     font-size: var(--fs-4);
     padding-left: 5%;
+    padding-top: 5%;
     cursor: var(--crsr-pointercrsr-);
     border-bottom: 10px;
 }
@@ -79,6 +80,7 @@
 
 .course__restrictions{
     font-weight: normal;
+    padding: 5%;
 }
 
 .dynamic-text{
