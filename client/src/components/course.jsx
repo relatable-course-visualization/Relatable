@@ -48,8 +48,8 @@ const Course = (props) => {
                     // store jsx into an array
                     data.forEach((course) => {
                         arrayedData.push( 
-                            <Button noWrap variant="contained" onClick={(e) => courseHandler( e.currentTarget.innerText )}> 
-                                <h1>{course}</h1>
+                            <Button variant="contained" size="small" onClick={(e) => courseHandler( e.currentTarget.innerText )}> 
+                                <h5>{course}</h5>
                             </Button>)
                     })
 
@@ -100,23 +100,23 @@ const Course = (props) => {
                             
                             // add opening bracket
                             arrayedData.push(
-                                <h2>{"("}</h2>
+                                <h2 className="dynamic-text">{"("}</h2>
                             );
 
                             // store jsx into an array
                             subdata.forEach((course, i,) => {
                                 course = course.replaceAll('"', "");
                                 arrayedData.push( 
-                                    <Button variant="contained"  onClick={(e) => courseHandler( e.currentTarget.innerText )}> 
-                                        {course}
+                                    <Button variant="contained" size="small" onClick={(e) => courseHandler( e.currentTarget.innerText )}> 
+                                        <h5>{course}</h5>
                                     </Button>);
                                 if(i != subdata.length -1){
-                                    arrayedData.push(<h2>OR</h2>)
+                                    arrayedData.push(<h2 className="dynamic-text">OR</h2>)
                                 }
                             })
                             // add closing bracket
                             arrayedData.push(
-                                <h2>{")"}</h2>
+                                <h2 className="dynamic-text">{")"}</h2>
                             );
                         }
   
@@ -124,8 +124,8 @@ const Course = (props) => {
                         else{ 
                             subdata = subdata.replaceAll('"', "");
                             arrayedData.push(
-                                <Button variant="contained"  onClick={(e) => courseHandler( e.currentTarget.innerText )}> 
-                                    {subdata}
+                                <Button variant="contained" size="small" onClick={(e) => courseHandler( e.currentTarget.innerText )}> 
+                                    <h5>{subdata}</h5>
                                 </Button>
                             )}
 
@@ -137,7 +137,7 @@ const Course = (props) => {
                             // another disjunction 
                             if (data[leftBracketIndex] === ","){
                                 // make AND tag in course prerequisite section
-                                arrayedData.push(<h2>AND</h2>)
+                                arrayedData.push(<h2 className="dynamic-text">AND</h2>)
 
                                 // update both indicies
                                 leftBracketIndex += 2;
@@ -163,12 +163,12 @@ const Course = (props) => {
                 <div className="course__body">{props.body}</div>
                 <div className="sub">  
                     <div className="course__subboxes">Prerequisites</div>
-                            {isPrerequisitesEmpty ? <h2>No Prerequisites</h2> : <div className="rowPrerequisites">{prerequisites}</div>} 
+                            {isPrerequisitesEmpty ? <h2 className="dynamic-text">No Prerequisites</h2> : <div className="rowPrerequisites">{prerequisites}</div>} 
                     </div>
 
                 <div className="sub"> 
                     <div className="course__subboxes">Dependencies</div>
-                            {isDependenciesEmpty ? <h2>No Dependencies</h2> : <h2>{dependencies}</h2>}        
+                            {isDependenciesEmpty ? <h2 className="dynamic-text">No Dependencies</h2> : <h2>{dependencies}</h2>}        
                 </div>
                 <div className="course__restrictions">Restrictions</div>
                     {restrictions == None ? <h2>No Restrictions</h2> : <h2>{restrictions}</h2>}
