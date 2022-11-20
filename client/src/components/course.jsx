@@ -5,9 +5,8 @@ import axios from 'axios';
 
 const Course = (props) => {
     
-    const [course] = useState("");
-    const courseHandler =()=>{
-        return {course}
+    const courseHandler = (course) =>{
+       props.searchHandler(course);
     }
 
     const [dependencies, setDependencies] = useState([]);

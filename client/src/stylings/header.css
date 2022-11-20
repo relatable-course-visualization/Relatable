@@ -7,5 +7,6 @@
     font-size: var(--fx-3);
     font-size: 64px;
     color: var( --clr-course-title);
+    max-height: 290px;
 
 }
