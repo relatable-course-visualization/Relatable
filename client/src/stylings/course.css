@@ -101,6 +101,10 @@
     padding-right: 5px;
 }
 
+#hyperlink {
+    color: black;
+}
+
 @media screen and (min-width:600px){
     .wrapper{
         grid-template-columns: repeat(auto-fit,minmax((14rem,28rem)));
