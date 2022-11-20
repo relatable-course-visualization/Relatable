@@ -170,7 +170,8 @@ const Course = (props) => {
                     <div className="course__subboxes">Dependencies</div>
                             {isDependenciesEmpty ? <h2 className="dynamic-text">No Dependencies</h2> : <h2>{dependencies}</h2>}        
                 </div>
-                <div className="sub">Placeholder for Restrictions </div>
+                <div className="course__restrictions">Restrictions</div>
+                    {restrictions == None ? <h2>No Restrictions</h2> : <h2>{restrictions}</h2>}
                     <div className="course_body" >
                       <a href="Placeholder for hyperlink">
                         Link To Course
