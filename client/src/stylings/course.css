@@ -15,7 +15,14 @@
     align-items: center;
 }
 
-.rowPrerequisites{display:flex; flex-direction:row;}
+.rowPrerequisites{
+    display:flex; 
+    flex-direction:row;
+    max-width: var(--bw-verylarge);
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
 
 .btn{
     white-space: nowrap;
@@ -79,8 +86,12 @@
 }
 
 .course__restrictions{
-    font-weight: normal;
-    padding: 5%;
+    padding-top: 15px;
+}
+
+.restrictions_text{
+    font-weight: var(--fw-light);
+    font-size: var(--fs-4);
 }
 
 .course__credits{
@@ -89,7 +100,10 @@
 }
 
 .dynamic-text{
-    font-size: var(--fs-4);
+    font-size: var(--fs-3);
+    font-weight: var(--fw-bold);
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
 @media screen and (min-width:600px){
