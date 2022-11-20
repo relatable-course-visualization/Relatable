@@ -6,8 +6,8 @@ Product Description
 
 Installation Steps (all done in the terminal)
 
-- Client Side
-  -NODE.JS - Install node.js version 19.1.0 from https://nodejs.org/en/
+Client side
+- NODE.JS - Install node.js version 19.1.0 from https://nodejs.org/en/
 
 - REACT
   - Install react using <b>npx-create-react-app</b>
@@ -21,12 +21,33 @@ Server Side
 
     - <b> pip install django </b>
     - <b> pip install django restframework </b>
+  - pip install mysqlclient
+  - pip3 install djangorestframework
 
 - Non Django(Webscraping) Dependencies
   - <b> pip install bs4 </b>
   - <b> pip install requests</b>
   - <b> pip install re </b>
   - <b> pip install nltk </b>
+
+Database
+
+- Installing MySQL
+  - Install the community version from https://www.mysql.com/downloads/
+  - Set up MySQL locally (MySQL Installr), creating a root user and password (keep track of these)
+  - Install the MySQL Workbench for a GUI. You can use the terminal to interact with MySQL if sought; in this case, add MySQL to your device's PATH variable ([tutorial](https://dev.mysql.com/doc/mysql-windows-excerpt/5.7/en/mysql-installation-windows-path.html#:~:text=On%20the%20Windows%20desktop%2C%20right,System%20Variable%20dialogue%20should%20appear))
+
+- Setting up the database
+  - Create a new database (keep track of the name) using command ```CREATE DATABASE```
+
+- Connecting django to the server
+ - Add database details in the corresponding server .env file
+
+- Scraping data and updating the database
+  - Run (e.g., python path_to_file) the following files inside the webscraping directory (note, the first two files will take 10-20 minutes each as they pull 4609 courses from UofS's webpages):
+    - initializeCourse.py
+    - initializeDependency.py
+    - initializePrerequisite.py
 
 Running the server
 
