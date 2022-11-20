@@ -171,6 +171,7 @@ const Course = (props) => {
                             {isDependenciesEmpty ? <h2>No Dependencies</h2> : <h2>{dependencies}</h2>}        
                 </div>
                 <div className="course__restrictions">Restrictions</div>
+                    {restrictions == None ? <h2>No Restrictions</h2> : <h2>{restrictions}</h2>}
                     <div className="course_body" >
                       <a href="Placeholder for hyperlink">
                         Link To Course
