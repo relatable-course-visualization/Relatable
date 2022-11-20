@@ -16,6 +16,6 @@ def initializeCourseTable():
         course_object = {'course_code': str(course.getCode()), 'name': str(course.getName()), 'description': str(course.getDescription())
         , 'restrictions': str(course.getRestriction()), 'hyperlink': str(course.getLink()), 'num_credits': int(course.getCredit())}
 
-        requests.post(f"{env('DATABASE_URL')}", data=course_object)
+        requests.post(f"{env('SERVER_URL')}", data=course_object)
 
 initializeCourseTable()
