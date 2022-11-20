@@ -48,7 +48,7 @@ const Course = (props) => {
                     // store jsx into an array
                     data.forEach((course) => {
                         arrayedData.push( 
-                            <Button variant="contained" size="small" onClick={(e) => courseHandler( e.currentTarget.innerText )}> 
+                            <Button variant="contained" size="small" sx={{m: 30}} onClick={(e) => courseHandler( e.currentTarget.innerText )}> 
                                 <h5>{course}</h5>
                             </Button>)
                     })
@@ -100,7 +100,7 @@ const Course = (props) => {
                             
                             // add opening bracket
                             arrayedData.push(
-                                <h2 className="dynamic-text">{"("}</h2>
+                                <h2 className="dynamic-text">{"( "}</h2>
                             );
 
                             // store jsx into an array
@@ -111,7 +111,7 @@ const Course = (props) => {
                                         <h5>{course}</h5>
                                     </Button>);
                                 if(i != subdata.length -1){
-                                    arrayedData.push(<h2 className="dynamic-text">OR</h2>)
+                                    arrayedData.push(<h2 className="dynamic-text"> OR </h2>)
                                 }
                             })
                             // add closing bracket
@@ -137,7 +137,7 @@ const Course = (props) => {
                             // another disjunction 
                             if (data[leftBracketIndex] === ","){
                                 // make AND tag in course prerequisite section
-                                arrayedData.push(<h2 className="dynamic-text">AND</h2>)
+                                arrayedData.push(<h2 className="dynamic-text"> AND </h2>)
 
                                 // update both indicies
                                 leftBracketIndex += 2;
