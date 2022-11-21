@@ -17,6 +17,15 @@ Client side
 - REACT
   - Install react using <b>npx create-react-app</b>
   - Install all the package.json dependencies using <b>npm install</b>
+    - npm install @material-ui/core
+    - npm install @mui/icons-material
+    - npx json-server -p 3000 -w data/db.json
+    - npm install axios npm install --save react-helmet
+    - npm install @material-ui/core
+    - npm install @mui/icons-material
+    - npx json-server -p 3000 -w data/db.json
+    - npm install axios
+    - npm install --save react-helmet
 
 Server Side
 
@@ -42,11 +51,25 @@ Database
 
 - Installing MySQL
 
-  - Install the community version from https://www.mysql.com/downloads/ (scroll down to see the download link, then download the community server)
-  - Set up MySQL locally (MySQL Installr), creating a root user and password (keep track of these)
+  - Install the community version from https://www.mysql.com/downloads/ (Go to Community addition at the bottom)
+  - Download the “MySQL Installer for Windows”
+  - Download the second one
+  - In the MySQL installer
+  - Select the developer version
+  - Ignore the warning
+  - Install everything by clicking execute
+  - Click next through everything
+  - Create a root password; root is the main user, and we add a password for it (keep the password, you would need it)
+  - Click next through everything and execute
+  - In the “Connect To Server” page, type in password
   - Install the MySQL Workbench for a GUI. You can use the terminal to interact with MySQL if sought; in this case, add MySQL to your device's PATH variable ([tutorial](https://dev.mysql.com/doc/mysql-windows-excerpt/5.7/en/mysql-installation-windows-path.html#:~:text=On%20the%20Windows%20desktop%2C%20right,System%20Variable%20dialogue%20should%20appear))
 
 - Setting up the database
+
+  - Create a new user
+  - Create a new user for each new database
+  - However, they do not have all privileges, so they need to be granted privileges (see below)
+  - CREATE USER ‘username’@‘localhost’
 
   - Create a new database (keep track of the name) using command `CREATE DATABASE`
 
