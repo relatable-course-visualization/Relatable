@@ -117,7 +117,7 @@ def getPrereqs(request, course_code):
         :return: the prerequisites for the given course
     """
     # find course in course table corresponding to course_code
-    req = requests.get(f"{env('DATABASE_URL')}/getCourse/{course_code}")
+    req = requests.get(f"{env('SERVER_URL')}/getCourse/{course_code}")
     if (req == None):
         return
     course = req.json()
@@ -155,7 +155,7 @@ def getDependants(request, course_code):
         :return: all dependant courses of the given course
     """
     # find course in course table corresponding to course_code
-    req = requests.get(f"{env('DATABASE_URL')}/getCourse/{course_code}")
+    req = requests.get(f"{env('SERVER_URL')}/getCourse/{course_code}")
     if (req == None):
         return
     course = req.json()
