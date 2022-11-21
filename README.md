@@ -105,3 +105,5 @@ Running the server/app
 - run the three files using <b>python {the directory path of the file}</b>
 
 - In the client folder use the command <b>npm start </b>
+
+<b> RESTART VS CODE BEFORE RUNNING OR IF YOU'VE DONE ALL THE STEPS CURRENTLY AND IT DOESN'T STILL WORK </b>
