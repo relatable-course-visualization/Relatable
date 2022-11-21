@@ -15,7 +15,7 @@ Client side
 - NODE.JS - Install node.js version 19.1.0 from https://nodejs.org/en/
 
 - REACT
-  - Install react using <b>npx-create-react-app</b>
+  - Install react using <b>npx create-react-app</b>
   - Install all the package.json dependencies using <b>npm install</b>
 
 Server Side
@@ -26,22 +26,23 @@ Server Side
   - Install Django
 
     - <b> pip install django </b>
-    - <b> pip install django restframework </b>
+    - <b> pip3 install djangorestframework-jsonapi </b>
 
-  - pip install mysqlclient
-  - pip3 install djangorestframework
+    - <b> pip install mysqlclient </b>
+    - <b> pip3 install djangorestframework </b>
 
 - <h2> Non Django(Webscraping) Dependencies </h2>
-  - <b> pip install bs4 </b>
-  - <b> pip install requests</b>
-  - <b> pip install re </b>
-  - <b> pip install nltk </b>
+  <b> NOTE: MAKE SURE TO DO THIS IN THE DIRECTORY Relatable/server/webscraping </b>
+   <p> <b> pip install bs4 </b> </p>
+    <p> <b> pip install requests</b> </p>
+    <p> <b> pip install regex </b> </p>
+    <p> <b> pip install nltk </b> </p>
 
 Database
 
 - Installing MySQL
 
-  - Install the community version from https://www.mysql.com/downloads/
+  - Install the community version from https://www.mysql.com/downloads/ (scroll down to see the download link, then download the community server)
   - Set up MySQL locally (MySQL Installr), creating a root user and password (keep track of these)
   - Install the MySQL Workbench for a GUI. You can use the terminal to interact with MySQL if sought; in this case, add MySQL to your device's PATH variable ([tutorial](https://dev.mysql.com/doc/mysql-windows-excerpt/5.7/en/mysql-installation-windows-path.html#:~:text=On%20the%20Windows%20desktop%2C%20right,System%20Variable%20dialogue%20should%20appear))
 
