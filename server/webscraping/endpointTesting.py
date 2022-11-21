@@ -57,11 +57,37 @@ def testGetCourse():
     if(r.json() != correctData):
         print("Fail - Test Case A8 for getCourse() failed. Expected {} but got {}.".format(correctData, r.json()))
 
+# print(r.json())
+
 def testGetPrereqs():
-    print()
+    # Test B1
+    r = requests.get(f"{env('SERVER_URL')}/getPrereqs/AGMD990")
+    correctData = "[]"
+    if(r.json() != correctData):
+        print("Fail - Test Case b1 for getPrereqs() failed. Expected {} but got {}.".format(correctData, r.json()))
+
+    # Test B2
+    r = requests.get(f"{env('SERVER_URL')}/getPrereqs/GEOE414")
+    correctData = '[["GEOE 315"]]'
+    if(r.json() != correctData):
+        print("Fail - Test Case b2 for getPrereqs() failed. Expected {} but got {}.".format(correctData, r.json()))
+
+    # Test B3
+    r = requests.get(f"{env('SERVER_URL')}/getPrereqs/GEOE380")
+    correctData = '[["CE 225"], ["ME 215"], ["CHE 220"]]'
+    if(r.json() != correctData):
+        print("Fail - Test Case b3 for getPrereqs() failed. Expected {} but got {}.".format(correctData, r.json()))
+
+    # Test B4
+    r = requests.get(f"{env('SERVER_URL')}/getPrereqs/CMPT141")
+    correctData = '[["CMPT 140", "BINF 151"], ["MATH 110", "MATH 133", "MATH 176"]]'
+    if(r.json() != correctData):
+        print("Fail - Test Case b4 for getPrereqs() failed. Expected {} but got {}.".format(correctData, r.json()))
+
 
 def testGetDependants():
     print()
 
 # Running functions
-testGetCourse();
+testGetCourse()
+testGetPrereqs()
