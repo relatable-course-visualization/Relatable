@@ -11,7 +11,7 @@ environ.Env.read_env()
     and inverting the relationship. 
 """
 def initializeDependencyTable():
-    r = requests.get(f"{env('DATABASE_URL')}/prerequisites")
+    r = requests.get(f"{env('SERVER_URL')}/prerequisites")
     prerequisites_table = r.json()
 
     for prerequisite in prerequisites_table:
@@ -20,6 +20,6 @@ def initializeDependencyTable():
 
         # POST request to store records in dependency table
         dependency_object = {'course_id': course_id_prereq, 'course_id_depend' : str(course_id)}
-        requests.post(f"{env('DATABASE_URL')}/postDependency", data=dependency_object)
+        requests.post(f"{env('SERVER_URL')}/postDependency", data=dependency_object)
         
 initializeDependencyTable()

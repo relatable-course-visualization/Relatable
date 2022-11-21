@@ -13,9 +13,13 @@ environ.Env.read_env()
 def initializeCourseTable():
     list_of_courses = courseScraper()
     for course in list_of_courses:
-        course_object = {'course_code': str(course.getCode()), 'name': str(course.getName()), 'description': str(course.getDescription())
-        , 'restrictions': str(course.getRestriction()), 'hyperlink': str(course.getLink()), 'num_credits': int(course.getCredit())}
+        try:
+            course_object = {'course_code': str(course.getCode()), 'name': str(course.getName()), 'description': str(course.getDescription())
+            , 'restrictions': str(course.getRestriction()), 'hyperlink': str(course.getLink()), 'num_credits': int(course.getCredit())}
+        except ValueError:
+            course_object = {'course_code': str(course.getCode()), 'name': str(course.getName()), 'description': str(course.getDescription())
+        , 'restrictions': str(course.getRestriction()), 'hyperlink': str(course.getLink()), 'num_credits': -1}
 
-        requests.post(f"{env('DATABASE_URL')}", data=course_object)
+        requests.post(f"{env('SERVER_URL')}", data=course_object)
 
 initializeCourseTable()
