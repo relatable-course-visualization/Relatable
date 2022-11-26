@@ -5,6 +5,23 @@ Relatable is an interactive course detailer for the University of Saskatchewan. 
 - Technology used: Python, Django, React.js, MySQL, and HTML/CSS.
 - Method: We scrape the data from the course catalogue using [beautiful soup](https://beautiful-soup-4.readthedocs.io/en/latest/). Then, we clean the data and store it in our MySQL database. Finally, users search and interact with courses on the front-end, making API calls to the server to capture relevant data from the database.
 
+
+<h1> Preview </h1>
+
+<img 
+  style="float: left;"
+  src="https://user-images.githubusercontent.com/90867690/204102402-fdc2975d-3120-4ddf-a9c3-e6819db16a8b.png"
+  width="380px"
+  alt="Relatable Example One"
+/>
+
+<img 
+  src="https://user-images.githubusercontent.com/90867690/204102426-74c9e4c2-0611-4e9d-a2fb-7255ce8e5e92.png"
+  width="350px"
+  alt="Relatable Example Two"
+/>
+
+
 <h1> Installation Steps (all done in the terminal) </h1>
 
 Client side
