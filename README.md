@@ -8,19 +8,17 @@ Relatable is an interactive course detailer for the University of Saskatchewan. 
 
 <h1> Preview </h1>
 
-<img 
-  style="float: left;"
-  src="https://user-images.githubusercontent.com/90867690/204102402-fdc2975d-3120-4ddf-a9c3-e6819db16a8b.png"
-  width="380px"
-  alt="Relatable Example One"
-/>
-
-<img 
-  style="float: center;"
-  src="https://user-images.githubusercontent.com/90867690/204102426-74c9e4c2-0611-4e9d-a2fb-7255ce8e5e92.png"
-  width="350px"
-  alt="Relatable Example Two"
-/>
+<p>
+  <img 
+    src="https://user-images.githubusercontent.com/90867690/204102402-fdc2975d-3120-4ddf-a9c3-e6819db16a8b.png"
+    width="380px"
+    alt="Relatable Example One"
+  /> <img 
+    src="https://user-images.githubusercontent.com/90867690/204102426-74c9e4c2-0611-4e9d-a2fb-7255ce8e5e92.png"
+    width="350px"
+    alt="Relatable Example Two"
+  />
+</p>
 
 
 <h1> Installation Steps </h1>
