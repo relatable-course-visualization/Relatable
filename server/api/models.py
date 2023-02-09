@@ -31,3 +31,13 @@ class Dependency(models.Model):
         indexes = [
             models.Index(fields=['course_id',]),
         ]
+
+class CoursePreqInfo(models.Model):
+    course_code = models.CharField(max_length=10, null=True)
+    name = models.CharField(max_length=255, null=True)
+    prereqString = models.TextField(null=True)
+
+class TestDB(models.Model):
+    name = models.CharField(max_length=255, null=True)
+    favColour = models.CharField(max_length=255, null=True)
+    favNumber = models.IntegerField(null=True)

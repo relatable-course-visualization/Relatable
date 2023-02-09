@@ -13,6 +13,8 @@ urlpatterns = [
     path('prerequisites', views.getAllPrereqs),
 
     # POST endpoints
+    path('postTest', views.postTest),
+    path('postCoursePrereqInfo', views.postCoursePrereqInfo),
     path('postCourse', views.postCourse),
     path('postPrerequisite', views.postPrerequisite),
     path('postDependency', views.postDependency),
