@@ -68,8 +68,16 @@ def splitPreq(s: str):
 
 normalForms = []
 specialForms = []
+completeForms = []
+formDict = {'$': ['$'],
+            '$ and $':[['$','$']],
+            '$ or $': '[[$], [$]]',
+            '$ or $ or $': '[[$], [$], [$]]',
+            '$; and $ or $': [['$', [['$'], ['$']]]], 
+            '$; one of $ or $; and one of $ $ or $': [['$', [['$'], ['$']], [['$'], ['$'], ['$']]]]
+            }
 
-courseList = []
+
 # for id in range(2, 10):
 test = requests.get(f"{env('SERVER_URL')}/getCoursePrereqInfo")
 
@@ -85,7 +93,7 @@ for x in test:
     courseList = course_id_tokenizer.tokenize(preqStr)
     if preqStr != 'None':
         cleanPreq = re.sub('[A-Z]{2,4}\s[0-9]{2,3}.[0-9]|[A-Z]{2,4}\s[0-9]{2,3}', '$', preqStr)
-        # if cleanPreq != preqStr:
+        
         cleanPreq = re.sub('\$\sor\s[0-9]{2,3}.[0-9]|\$\sor\s[0-9]{2,3}', '$ or $', cleanPreq)
         cleanPreq = re.sub('\$\sand\s[0-9]{2,3}.[0-9]|\$ and [0-9]{2,3}', '$ and $', cleanPreq)
         cleanPreq = re.sub('permission of the instructor|permission from the instructor|permission of the department', '!', cleanPreq)
@@ -98,31 +106,30 @@ for x in test:
         cleanPreq = re.sub('\.|\,', '', cleanPreq)
         cleanPreq = re.sub('\&', 'and', cleanPreq)
 
-        j = splitPreq(cleanPreq)
-    
-        if j[2] == 1:
-            print(f'Original: {cleanPreq}')
-            print(f'Left: {j[0]}')
-            print(f'Connector: {j[3]}')
-            print(f'Right: {j[1]}')
-
-
-        if j[2] == 0:
-            if j[0] not in normalForms:
-                normalForms.append(j[0])
-            if j[1] not in specialForms:
-                specialForms.append(j[1])
+        preqSplit = splitPreq(cleanPreq)
+        left = preqSplit[0]
+        right = preqSplit[1]
+        normalIndex = preqSplit[2]
+        transitionSymbol = preqSplit[3]
+        completeForm = f"{left} | {transitionSymbol} | {right}"
+        
+        if completeForm not in completeForms:
+            completeForms.append(completeForm)
+        
+        if normalIndex == 0:
+            if left not in normalForms:
+                normalForms.append(left)
+            if right not in specialForms:
+                specialForms.append(right)
         else:
-            if j[1] not in normalForms:
-                normalForms.append(j[1])
-            if j[0] not in specialForms:
-                specialForms.append(j[0])
-
-
-
-
+            if right not in normalForms:
+                normalForms.append(right)
+            if left not in specialForms:
+                specialForms.append(left)
 
         
+        # Need to find associated form
+        # Then need to replace $ with respective class in normal, special, and form        
 
         
     
@@ -130,8 +137,45 @@ for x in test:
         # if k == 1000:
         #     break
 
-print(f'Total Courses: {total}, Course Count: {courseCount}, Normal Forms: {len(normalForms)}, Special Forms: {len(specialForms)}')
 
+print(f'Total Courses: {total}, Course Count: {courseCount}, Normal Forms: {len(normalForms)}, Special Forms: {len(specialForms)}')
+f = open('Normal_Forms.txt', 'w+')
+
+nl = '\n'
+f.write(f"Total Courses Count: {total}{nl}"+
+        f'Course Count with Non-null Prereq String: {courseCount}{nl}'+
+        f'Number of Unique "Normal" Forms: {len(normalForms)}{nl}'+
+        f'Where normal forms contain only classes (denoted $) and logical keywords/symbols{nl}'+
+        f'-------------------------------------------------{nl}')
+for forms in normalForms:
+    f.write(f'{forms}{nl}')
+
+f.close() 
+
+print(normalForms)
+
+f = open('Special_Forms.txt', 'w+')
+f.write(f'Total Courses Count: {total}{nl}'+
+        f'Course Count with Non-null Prereq String: {courseCount}{nl}'+
+        f'Number of Unique "Special" Forms: {len(specialForms)}{nl}'+
+        f'Where special forms contain descriptions of special prerequisite conditiona and{nl}'+
+        f'"CU" = Credit Unit, "!" = Permission of Instructory/Department, and "UL" = University Level{nl}'+
+        f'-------------------------------------------------')
+for forms in specialForms:
+    f.write(f'{forms}{nl}')
+
+f.close()
+
+f = open('Complete_Forms.txt', 'w+')
+f.write(f'Total Courses Count: {total}{nl}'+
+        f'Course Count with Non-null Prereq String: {courseCount}{nl}'+
+        f'Number of Unique "Complete" Forms: {len(completeForms)}{nl}'+
+        f'Where complete forms are left | transition symbol | right{nl}'+
+        f'Either left or right could be normal or null and transition may be null{nl}'
+        f'"CU" = Credit Unit, "!" = Permission of Instructory/Department, and "UL" = University Level{nl}'+
+        f'-------------------------------------------------')
+for forms in completeForms:
+    f.write(f'{forms}{nl}')
 
 
 # want to put courses in form maybe like this:

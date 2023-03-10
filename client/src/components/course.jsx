@@ -4,7 +4,6 @@ import "../stylings/course.css";
 import axios from 'axios';
 
 const Course = (props) => {
-    
     const courseHandler = (course) =>{
        props.searchHandler(course);
     }
@@ -27,7 +26,6 @@ const Course = (props) => {
             ).then((response) => {
                 
                 var data = response.data;
-        
                 // no dependencies
                 if(data == "[]"){
                     setDependencies([]); 

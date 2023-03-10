@@ -95,7 +95,16 @@ def updateCourse(request):
 
 
 @api_view(['GET'])
-def getAllCourses(request):
+def getCoursePrereqInfo(request):
+    """return course object with given id from course-prereq-info table if possible
+    """ 
+    entry = CoursePreqInfo.objects.all()
+    serializer = CoursePreqInfoSerializer(entry, many=True)
+    return Response(serializer.data)
+
+
+@api_view(['GET'])
+def getAllCourses(request, id):
     """ Return all course objects from DB
         :param: none
         :return: serialized course objects OR serialized course ids depending on need

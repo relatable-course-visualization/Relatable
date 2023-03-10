@@ -31,8 +31,8 @@ def courseCleaner(courseList):
         we have a list of lists where the seperation on internal lists means a 'or' and items withi each list 
         are seperated by 'and'. Thus;
             Currently working formats:
-                A and B = [[A,B]]
-                A or B = [[A], [B]]
+                A or B = [[A,B]]
+                A and B = [[A], [B]]
                 (A or B) and c = [[A,B], [C]]
             To be implemented later:
                 (A and B) or c = [ [[A,B], [C]] ]

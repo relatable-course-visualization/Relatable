@@ -1,0 +1,939 @@
+Total Courses Count: 4622
+Course Count with Non-null Prereq String: 2551
+Number of Unique "Complete" Forms: 933
+Where complete forms are left | transition symbol | right
+Either left or right could be normal or null and transition may be null
+"CU" = Credit Unit, "!" = Permission of Instructory/Department, and "UL" = University Level
+-------------------------------------------------($ and $) or $ or $ | None |  
+At least one senior level course in biochemistry genetics or cell biology; or ! | None | 
+Open only to graduate students in the Department of Anatomy and Cell Biology | None | 
+completion of 30 CU at the university level | None | 
+Permission of the instructor | None | 
+Completion of 60 CU at the university-level | None | 
+6 CU of BIOL or ! | None | 
+6 CU of BIOL courses | None | 
+SC 60 CU of UL or ! | None | 
+$ | and | completion of 60 CU
+$ and $ | None | CU or !
+$ and one of $ or $ | None |  
+SC 75 CU including $ | or | $
+SC 60 CU of UL and ! | None | 
+SC 75 CU | None | 
+SC 75 CU Permission of the department required | None | 
+$ | or | !
+6 CU of BIOL | None | 
+$ and $; | or | !
+$ and $ | None |  
+Completion of 30 CU at the university | None | 
+$; | or | !
+$; $ | None | is recommended
+SC 75 CU of UL | None | 
+$ | or | equivalent
+$ | or | with permission from instructor
+$ | None | and/or $ and/or $
+Permission of the instructor; basic genetics and physiology courses are recommended | None | 
+30 CU of university courses | None | 
+$ or $ or $ | or | permission of instructor
+$ | or | completion of 30 CU at the university level including a 100-level social science course
+$ | or | completion of 30 CU at the university level including an introductory social science course
+$ | or | permission of instructor
+$ or $ | None | CU of university courses including an introductory social sciences course
+$ or $ | or | SC 30 CU of university study
+$ or $ | or | permission of instructor
+3 CU of 200-level ANTH or permission of instructor | None | 
+3 CU 200-level ANTH or permission of instructor | None | 
+$; | and | 30 CU of UL or !
+24 CU ANTH or ARCH courses; and ! | None | 
+Admission to Honours program in Archaeology and Anthropology; $; and ! | None | 
+3 CU of 300 level ANTH or ! | None | 
+3 CU 300-level ANTH or permission of instructor | None | 
+3 CU in 300-level Anthropology or ! | None | 
+Open to students admitted to the MA Project-based program in Anthropology | None | 
+$ or $ | or | !
+Permission from instructor | None | 
+$; | or | equivalent and !
+$ | None | (formerly $) and $ or equivalent and !
+$ $ | None |  
+$ or $ | None |  
+12 CU in Archaeology or 30 CU at the university | None | 
+$; or ($ and $) | None |  
+24 CU ARCH or ANTH courses; and permission of department | None | 
+One of $ $ or $ | None |  
+$ $ | and | an additional 6 CU of Archaeology or Anthropology at the 200/300 level or !
+60 CU at the university | None | 
+$ $ and $ | None |  
+$ | and | 3 senior CU in archaeology
+A 300-level course in archaeology | or | $
+$ | None |  
+$; | or | equivalent
+$ | or | equivalent or !
+SC 27 CU of UL or ! | None | 
+SC 27 CU of UL including $ or ! | None | 
+$ and $ | or | !
+$ or $ | or | 121 or 125; $
+SC 30 CU or ! | None | 
+$ and $ | or | SC 60 CU at the university level or !
+: $ or $ (or permission of instructor) | None | 
+SC 60 CU including $ | None | 
+$ and $ | or | ! ($ is highly recommended)
+SC 90 CU of UL; or $ $ and either $ or $; or ! | None | 
+One of $ $ or $ | or | !
+$ or $; | None | some knowledge of macroeconomics preferred
+Completion of 75 CU of UL or consent of the instructor | None | 
+$ and $ | and | SC 75 CU of UL
+SC 90 CU of UL or ! | None | 
+3 CU 100-level ART courses | None | 
+3 CU 100-level ART courses (excluding $) or ! | None | 
+3 CU 100-level ART courses or ! | None | 
+15 CU of university-level coursework and ! | None | 
+$ $ or $; | or | !
+12 CU ART courses or ! | None | 
+$; or $ and $ | None |  
+By ! | None | 
+24 CU ART courses or ! | None | 
+Art 3166 | None | 
+$ $ $ $ $ $ $ $ $ $ or $ | None |  
+$ $ $ $ $ or $ | None |  
+BFA student in the final year of program with minimum CPA of 70% and ! | None | 
+BFA degree | None | 
+$ and $; | or | 6 CU in Art History Studio Art or cognate courses; or !
+3 credits in 100-level ARTH or INDG courses; or ! | None | 
+$ and $ | or | a course in the areas of fine arts or humanities
+$ and $; | or | 6 CU HIST courses; or $ and !
+6 CU ARTH or INDG courses or ! | None | 
+$ and $ | and | a second or third-year course in art history
+$ $ | None | at least two senior Art History courses and/or !
+$ or $ | and | 3 CU ART or ARTH courses at the 300-level or above; or permission of instructor
+$ | None | 102 104 105 and $ or !
+Foundations of Mathematics 20 or Pre-Calculus 20 | None | 
+Physics 30 or $; and (Mathematics B30 and C30; or Foundations of Mathematics 30; or Pre-Calculus 30) | None | 
+One of $ $ $ or $ | None |  
+$ $ or $; and $; and $ $ or $ | None |  
+One of $ or $ or $ | None |  
+$ or $; and one of $ or ($ | None | with !)
+Grade 12 Diploma or equivalent | None | 
+Biology 30 | or | $ or $ or $
+$ or $ or $ | or | 6 CU in GEOL
+$ or $; | None | plus 9 CU BIOL at the 200-level or above; plus one of $ $ or $
+$ and $ $ | and | 3 senior CU in BIOL
+$ | and | at least one of $ $ $ or $
+$; $; $ or $ ($ | None | recommended)
+$ or $; and one of $ $ $ or $; | and | completion of 45 cu of UL
+6 CU selected from $ 108 120 121; or completion of 60 CU at the university level | None | 
+21 senior CU BIOL and restricted to students with minimum CWA of 70% overall and in Biology | None | 
+$ | and | a course in statistics
+$ and $ | and | 3 additional CU of senior BIOL courses; or !
+$ or $; one of $ $ or $ | None |  
+Completion of 12 cu of senior BIOL courses and ! $ is strongly recommended | None | 
+$ $ and $; | or | !
+$; one of $ or $; and one of $ $ or $ | None |  
+$ or $; | or | permission of instructor
+$ | and | 9 additional CU of senior BIOL courses or !
+$; | and | 15 CU of senior BIOL or !
+$ and $ and $ | None |  
+$ and $ | and |  $
+$ and $ | and |  $; or !
+$ | and |  $ or !
+$; | None | 6 additional CU of senior BIOL courses; one of $ $ or $
+$ and $ and $ | and | 6 additional CU of senior BIOL courses and a course in statistics; or !
+$; | and | 12 CU from BIOL courses at the 200-level or above $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ of which at least 3 CU must be at the 300-level or above; and !
+$; and $ or $ | None | additional CU of BIOL courses at the 200-level or above of which at least 6 CU must be at the 300-level or above; and !
+$ | or | an undergraduate limnology course or !
+$ | None | and/or $ or equivalent or instructor’s authorization
+$ | None | 366; or !
+A senior level ecology course and ! | None | 
+$ or $; $; and $ | None | (taken)
+BSc or BE degree | None | 
+$; $; and $ or $ | None |  
+9 CU of BIOC BMIS and/or MCIM courses | None | 
+$ | None | 2103 2203
+Admission to the Honours program in Biochemistry Microbiology and Immunology | None | 
+$ | None | (formerly $) and $ (formerly $) or !
+$ | None | (formerly $) or equivalent
+$; $; | or | !
+3 CU senior undergraduate and/or graduate courses in Immunology | None | 
+$; | None | Biology 30
+Completion of total of 9 CU from $ $ $ $ | or | $
+$ or $ or $ or $ | None |  
+$ | None | (taken)
+$ and $ | None | (taken)
+$ | None | (taken) $ (taken) $ (taken) and $ (taken)
+$ $ | None | (taken) and $ (taken)
+$ $ | None | (taken) and ($ (taken) or $ (taken))
+$ | None | (taken) and $
+$ $ $ $ $ | None | (taken) $ (taken) $ (taken) $ (taken) $ (taken)
+$ | or | its equivalent by permission of instructor
+$ | None | (or equivalent) or approval of the instructor
+Completion of undergraduate coursework in hydrology and environmental physics is required | None | 
+$ or $ or $ | or | equivalent
+Undergraduate course in fluid mechanics | None | 
+$ | and | $3
+($ and $ | None | (taken) or $ and $ (taken))
+$; and one of $ or $ | None |  
+$ or $ or $ | None |  
+$ | None | (taken) $ (taken) and $ (taken)
+$ or $ or $ | or | !
+$ or $ or $ | None | OR !
+Undergraduate training in fluid mechanics mechanics reaction engineering and kinetics ! | None | 
+Physical Science 20 | None | 
+Chemistry 30 or $ or $; and (Mathematics B30 or Foundations of Mathematics 30 or Pre-Calculus 30) | None | 
+$ | None | 112 or 114
+Chemistry 30 or $ or $; and Mathematics B30 or Foundations of Mathematics 30 or Pre-Calculus 30 | None | 
+(Chemistry 30 or $ or $) and (Mathematics B30 or Foundations of Mathematics 30 or Pre-Calculus 30) | and | $
+$ or $; and one of $ $ $ or $ | None |  
+$ and ($ $ $ or $ ($ | None | preferred)) and ($ or $ ($ preferred))
+$ or $; and one of $ $ $ $ or $ | None |  
+21 CU in CHEM | None | 
+$ | and | !
+30 CU in CHEM | None | 
+30 CU of CHEM | None | 
+$ $ or $ | None |  
+Students registering for the international practicum will have already completed $ and $ met the program language requirement completed the Northern Saskatchewan practicum ($) and be engaged in the Inner City Practicum ($) | None | 
+$ $; | or | equivalent
+$ or $ and $ or $ | None |  
+Must be registered graduate student in CHEP or have permission of instructor | None | 
+$ | None | 245; or equivalent
+$ | or | equivalent or with instructor approval
+Must be registered in CHEP graduate program or have permission of instructor | None | 
+One of | None | the following courses: $ $ $ $ $ or !
+This course is intended for upper year graduate students Departmental permission is required | None | 
+$ or $ | or | equivalent
+$ $ | or | equivalent
+Completion of 30 CU at the university or ! | None | 
+3 CU HIST CLAS or ENG; or 30 CU of University | None | 
+3 CU from: ARCH; CLAS; CMRS; HIST; and 30 CU at the university | None | 
+$ and $ | or | completion of 30 CU at the university
+$ and $ | or | 6 CU of ARTH courses or completion of 30 CU at the university
+$ and $ | None | CU of university courses; or !
+Students must be enrolled in a graduate program | None | 
+($ or $ or $) and $ | None |  
+($ | None | (taken) or $ or $) and $
+$ $ $ $ and $ | None |  
+CME Program Core and 6 CU from the CME Program Focus Areas | None | 
+Mathematics A30 or B30 or C30; or Foundations of Mathematics 30; or Pre-Calculus 30 | None | 
+One of | None | (Computer Science 30 $ $ $) and one of (Mathematics B30 Foundations of Mathematics 30 Pre-Calculus 30); or $ $ $ or $ (can be taken concurrently)
+Mathematics B30 or Foundations of Mathematics 30 or Pre-Calculus 30 | None | 
+$; or $ | and | !
+$ and one of $ $ $ $ $ $ or $ | None | (or equivalent)
+$ or $; and one of $ $ or $ | None |  
+$ or $ or $; and one of $ $ $ $ $ $ or $ | None | (or equivalent)
+$; and $; and one of $ or $ or $ or $ | None |  
+$ and $ and $ | or | equivalent
+$ and $ or $ | None |  
+$ | None | 260 and 270
+$ and $; | and | 9 CU MATH or STAT
+$ | and | 9 CU MATH or STAT
+In the final year of an Honours Program; or a cumulative percentage average of at least 70% in 24 CU in computer science and written ! | None | 
+Professional internship placement with a sponsoring employer | None | 
+In the final year of an Honours Program; or a cumulative percentage average of at least 70% in 24 CU in computer science | None | 
+In the final year of Honours program in Applied Computing; or a cumulative percentage of at least 70% in 24 CU of courses in the C4 Major Requirement (for the chosen concentration) and written ! | None | 
+SC 30 CU in computer science including at least 3 CU at the 400-level of computer science | None | 
+$ $ | and | $
+$ | and | 6 CU from: $ $ $
+One of $ | None | 350 or 370
+9 CU of CMPT courses at the 300-level or above | None | 
+$ | and | either of $ or $
+6 CU of 300-level CMPT | and | one of ($ or $ or $ or $)
+$ $ $ or $; and one of $ $ $ or $ | None |  
+$ $ $ or $; and $; and $ or $ | None |  
+An undergraduate course in algorithms (such as $) is recommended | None | 
+Open to graduate students in computer science who have at least one undergraduate course (3 CU) of Artificial Intelligence | None | 
+Open to graduate students in computer science who have at least one undergraduate course (3 CU) in Programming Languages | None | 
+Open to students in computer science life sciences and natural sciences but subject to ! | None | 
+Open to students in computer science life sciences and natural sciences but subject to !s | None | 
+Previous course in operating systems; $; or equivalent | None | 
+$11 or equivalent | None | 
+Experience in web programming or web-based information systems | None | 
+6 CU 200-level or above HIST ENG or CMRS or permission of instructor | None | 
+$ and $; | or | permission of the program director
+Permission of the Program Director | None | 
+60 CU at university | None | 
+12 CU Humanities courses and ! | None | 
+Foundations of Math 30 Pre-Calculus 30 | or | $
+One of ($ $ or $) and $ | None |  
+Completion of 30 CU COMM courses | None | 
+$ $ | and | $BR>
+Completion of $ and $ CU of university courses | None | 
+$ | and | student must be in graduating year
+Completion of 48 COMM CU and student must be in graduating year | None | 
+36 COMM CU including $ $ $ $ | and | $
+$; | None | third or fourth year of study
+$ | and | an extension in the Edwards Co-operative Education Option; the placement must be with the same employer as 480
+$ $ | None | (or $); and one of $ or $
+$; $; $ or $; and $ or $ | or | !
+9 CU from $ $ $ $ $ $ $ $ $ | or | $
+$; and $ or $ | None |  
+$ or $; and $ or $ | None |  
+18 CU at university level or ! | None | 
+$ $ | None |  or 60 CU at the university level
+36 CU of completed university study including $ | or | $
+$ or $ | None | CU of University study
+$ $ $ $ $ $ $ | None |  
+$ $ $ $ $ $ | None |  
+($ $ $) or ($ $ $ $) | None |  
+SC Year 1 of the DMD program Entry to the DMD program requires 3-years of undergraduate education Prior to entry to the BSc (Dent) program each selected student will have completed a minimum of 4 years of university level education | None | 
+SC Year 1 of the DMD program | None | 
+$ | and | SC Year 2 of the DMD program
+$0 and SC Year 2 of the DMD program | None | 
+Restricted to students enrolled in the College of Dentistry | None | 
+Must have successfully completed Years 1 and 2 of the DMD program | None | 
+Must have successfully completed Year 1 of the DMD Program | None | 
+Must have successfully completed Year 3 of the DMD Program | None | 
+$ | or | 3 CU 100-level ENG
+30 CU of university-level course work including at least 6 CU in Drama and/or English | None | 
+30 CU of university level course work including at least 6 CU in Drama and/or English | None | 
+$ $ | or | the !
+$ | and | an audition  A successful audition is required for any student hoping to advance to the third year of the acting program  In the audition the student is required to participate in a voice/movement/acting workshop and to present classical and modern audition pieces
+At least 12 CU in Drama and 12 CU in English | None | 
+$ | and | an audition
+At least 12 CU in English | None | 
+$ | and | approval of the instructor
+$ or $; | and | permission from the department Relevant experience in at least one Greystone Theatre production is required
+12 CU in DRAM and 12 CU in English | None | 
+Students pursuing the BEd Direct Entry Program must complete $; $ | or | $ or $; $ or $; $
+27 CU of course work toward MEd degree including $ 990 | and | one of $ $ or $
+12 CU in ART or ARTH including 6 CU in ARTH | None | 
+$ $ $ and $ | None |  
+$; $ or $; and one of $ $ $ $ $ or $ | None |  
+$; $; and one of $ $ $ $ $ or $ | None |  
+$; $; one of $ $ $ $ $ or $; and one of $ $ | None | (formerly $) $
+$ or $; and one of $ $ $ $ $ or $ | None |  
+60 CU of university level study including 6 CU senior ECON | None | 
+60 CU at the university level | None | 
+$ or $; one of $ $ $ $ $ or $; | and | !
+$; and one of $ $ | None | (formerly $) or $
+$ or $; and one of $ $ $ $ $ or $; and one of $ or $ | or | equivalent
+Graduate standing in economics; or ! | None | 
+$; $ and $ | None | are recommended
+$ | and | a minimum of 15 CU toward the MA in Economics including $ $ $
+Admission to the Economics PhD program | None | 
+6 CU of ENG (literature and composition) or 3 CU of ENG (literature and composition) and 3 CU of LING or 6 CU of LING | None | 
+$; $ or $ or $; $ or $; and $ | None |  
+12 CU in MATH or STAT | None | 
+12 CU in CHEM or (PHYS and/or ASTR) or BIOL | None | 
+12 CU of KIN courses | None | 
+12 CU in English | None | 
+12 CU in Social Studies/Social Sciences | None | 
+Permission of the department required | None | 
+$ | or | $5 or equivalent
+Permission required | None | 
+$ $ and one of | None | either $ or $
+$ $ $ $ | and | at least one of $ or $
+BEd or equivalent | None | 
+Registration in a graduate program is required | None | 
+12 CU in English and 6 senior CU in Language Arts Education; or ! | None | 
+27 CU of course work toward the MEd degree | None | 
+SC the following coursework toward completion of the Internationally Educated Teachers Certificate: $; $; $; | and | $ or $
+$ | None | (for only those students pursuing BEd program routes that require $)
+$ or ($ and $) | None |  
+($ or ($ | and | $)) and ($ or $)
+(($ and $) or ($ and $)) | and | ($ or $ or $)
+($ or $) and ($ | None | (taken) or $ (taken))
+$ $ or $ or $ and $ or $ or $ | None |  
+($ and $) or ($ and $) | None |  
+EE Program Core and 12 CU from the EE Program Focus Areas | None | 
+$ | or | the knowledge in digital integrated circuit design
+$ | or | equivalent ($ can be accepted as co-requisite in place of this prerequisite) $ or equivalent ($ can be accepted as corequisite in place of this prerequisite)
+Undergraduate Degree | None | 
+9 CU of INDG courses plus another 6 CU chosen from Indigenous Studies or other courses inclusive of content that addresses Indigenous languages or history/political science/geography Indigenous issues to a significant extent | None | 
+Completion of the BEd Extended Practicum ($5 or $ and $2 or $ and $2) and one of $ $ or $; or permission of instructor | None | 
+$5 | None | 
+$ | or | permission of the Department of Curriculum Studies
+$; $; $; and one of $ $ $ or $ | or | permission from the department
+$ and $ | None | CU in EMUS
+6 CU of 100-level English | None | 
+6 CU of 100-level ENG | None | 
+6 CU of 100-level ENG; or $; or a senior course in a language | None | 
+6 CU 100-level ENG | None | 
+6 CU of 100-level ENG or permission of department | None | 
+6 CU of 100-level ENG OR 3 CU of 100-level ENG | and | $
+: 6 CU of 100-level ENG | None | 
+3 CU of 200-level English | None | 
+42 CU at the university Category 4 course | None | 
+6 CU of 100-level ENG and ! | None | 
+6 CU of 100-level English and ! | None | 
+3 CU 200-level ENG | None | 
+3 CU 200-level English | None | 
+3 CU of 200-level English or $ or a senior course in a language | None | 
+Normally open to students in an Honours Program or in the upper years of a four-year BA in English | None | 
+Permission of the department | None | 
+Admission to the Honours program in English | None | 
+Admission to MA or PhD program in English | None | 
+Admission into the MA project-based program | None | 
+EN First Year Common Core or EN Two Year Common Core | None | 
+60 CU from this institution | None | 
+$ $ $ $ | None | (taken)
+$ or ($ and $ and $) or ($ | and | 6 CU from $99 $99 $)
+($ or $) | and | 42 CU from EN Senior Courses
+EN Three Year Common Core and 18 CU from EN Senior Courses | None | 
+Completion of 30 CU at the University of Saskatchewan | None | 
+$ | and | !s Please note that students in the BSc(RRM) in Renewable Resource Management; BSA in Environmental Science; and BAand Sc in Environment and Society are not required to complete $ as a prerequisite; please contact the School for a prerequisite override using sustainabilitycertificate@usaskca This course is intended for senior undergraduate students
+Enrolment in the SENS PhD program Course will be made available to students in PhD programs of other units by permission from instructor | None | 
+Enrolment in a graduate program in the School of Environment and Sustainability or ! | None | 
+Students must be registered in the Master of Water Security (MWS) program or have ! | None | 
+Students must be registered in the Master of Water Security (MWS) program | None | 
+Students must be registered in the Master of Water Security program or have ! | None | 
+Approval of the Course Coordinator is necessary | None | 
+Undergraduate degree in natural sciences or engineering or special permission from instructor | None | 
+An undergraduate degree | None | 
+An undergraduate degree in an environmental discipline or ! | None | 
+Bachelor of Science | None | 
+Admission to a graduate program in the School of Environment and Sustainability or ! | None | 
+Enrolled in a graduate program in the School of Environment and Sustainability or ! | None | 
+Registration in a graduate program | None | 
+($ $ or $) ($ $ or $) and ($ or $) | None |  
+$ or $ or $; and $ or $ or $ or $ | None |  
+($ or $) and $ and $ and $ | None |  
+12 CU 300-level engineering or PHYS courses (from any combination of the following: 300-level CHE CE CME EE EP ENVE GEOE ME PHYS courses) | None | 
+EN Two Year Common Core and 30 CU from EN Senior Courses | None | 
+$ or $ or $ or $ | or | departmental approval
+$ or $ $ or $ | or | departmental approval
+$ | None | 414 and 500
+$ | None | 414 500 510 520 530 and 540
+$ | None | 414 500 510 520 530 540 and 551
+Admission into the Master's Program in Education Psychology and Special Education or permission of Department Head/Graduate Chair | None | 
+$ | and | admission into the Master's Program in Educational Psychology and Special Education or permission of Department Head/Graduate Chair
+Admission into the masters or doctoral program in the Department of Educational Psychology and Special Education (EPSE); or permission of EPSE Graduate Chair | None | 
+Admission into the Master's Program in Educational Psychology and Special Education or permission of Department Head/Graduate Chair | None | 
+$ $ or $ | None | for Special Education or $ for Measurement and Evaluation
+Admission into the MEd in Educational Psychology and Special Education | None | 
+$ | or | permission of the College of Education Graduate Chair or Associate Dean of Research required
+Registration in this course is restricted to students who have completed Level UP2: High Advanced Academic English (U of S Language Centre) completed English as a Second Language (University of Regina: “$”) completed an English Proficiency Test (such as the TOEFL) as a condition of admission; or on the recommendation the U of S Language Centre Such students must have completed fewer than 60 CU in which English is the language of instruction | None | 
+SC $ (formerly $) or an equivalent course from another university or ! | None | 
+$ | or | 3 CU GEOG or GEOL
+$ | and | either $ or $ or !
+$ | None | 110 or 125; $ or $; SC 60 CU of UL
+SC 72 CU including $ or 3 CU of 100-level PHYS | or | $ or $ or $
+SC 75 CU of UL For students planning on completing the Certificate in Sustainability it is highly recommended that $ be completed as a prerequisite to this course | None | 
+SC 75 CU towards the Environmental Science BSA degree or permission from the Head of the supervising department | None | 
+$ or $; | None | 24 CU of required 300-level Education course work (inclusive of specific methods courses that vary by program route) with a 60% EDWA; the completion of credits for two teaching areas; and credit for the field experience component of the program
+$ or $; | None | 24 CU of required 300-level Education course work with a 60% EDWA; the completion of credits for two teaching areas; and credit for the field experience component of the program
+3 CU of Biology and 3 CU of Chemistry or ! | None | 
+30 CU of UL or ! | None | 
+$ and $ or $ | or | ! $ is strongly recommended
+SC 60 CU of UL | None | 
+$ and $ | None | (formerly $) or !
+$ | None | (formerly $) or !
+$ | and | either $ or $
+SC 90 CU towards the BSA in the FABS major or towards the BSc in Food Science or ! head | None | 
+$ | None | (formerly $) and $; or !
+SC 90 CU toward either the BSA in Food and Bioproduct Science Program or the BSc in Food Science Program and ! head | None | 
+$ or $ | or | equivalent or !
+: $ or equivalent; or ! | None | 
+$ $ $ | or | !
+: Permission from instructor | None | 
+:$ $ (or $) and $ or equivalents; or ! | None | 
+Basic biochemistry and microbiology knowledge is required such as $ | and | $
+$ or $ | and | Departmental Permission
+French 20 | or | $
+French 30 (Grade 12 Core French) | or | $
+$ | None | École fransaskoise Grade 12 or designated (or immersion) school Grade 12
+$ $ | or | !
+$ $ $ $ $ | or | !
+$ $ $ or $ | None |  
+$ | and | 6 senior CU in French literature and/or civilization and/or linguistics from the following courses: $ 230 252 272 304
+Admission to graduate studies in French | None | 
+$ | and | admission to graduate studies in French
+Admission to French graduate studies within the College of Graduate Studies and Research Students must have a Four-year or Honours degree in French or equivalent | None | 
+$; $; $; and $ | None |  
+$ | and | Prerequisite(s) or Corequisite(s): $ and $
+$ | None | (taken) or $
+EN Two Year Common Core | None | 
+Completion of 30 CU at the university level | None | 
+45 CU from EN Senior Courses | None | 
+($ or $ or $ or $) or ($ and $ and $ | None | CU from $99)
+$ and $ | or | a corequisite of $
+$ and $ and $ | None | as a prerequisite or $ as a prerequisite or corequisite
+24 CU of university course work | None | 
+One of $ $ $ or $; | or | 3 CU of Science courses and 21 CU of additional University course work
+$; | or | 3 CU of Science courses and 21 CU of additional University course work
+3 CU of Science courses and 21 CU of additional University course work | None | 
+Completion of minimum 54 and maximum 84 CU of course work | None | 
+3 CU of GEOG courses and 21 CU of additional University course work | None | 
+$; | or | 99 CU of University course work; or !
+$; | or | 12 CU in GEOL
+$; | or | 12 CU of GEOL
+$; | or | 12 CU in GEOL GEOE EVSC or SLSC
+24 CU in Social Sciences or in Health disciplines including $ or equivalent and at least 3 CU of 200-level ANTH ECON GEOG HIST PLAN SOC; or ! | None | 
+6 CU in science; or ! | None | 
+60 CU of university level study including 6 CU senior GEOG | None | 
+6 CU of Science courses; or ! | None | 
+$; and one of $ $ or $ | None |  
+One of $ $ or $; | or | !
+One of $ $ $ or $; one of $ or $ or $; $ | None |  
+One of $ $ $ $ or $; and $ | None |  
+One of $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ or $ | None |  
+Training in GIS Cartography or related technical or theoretical area | None | 
+$; | or | 6 CU in advanced environmental management; or !
+One of $ $ $ or $ | None | Each student must have completed a minimum of 30 CU and have an overall average of at least 65%
+One | None | course from $ $; $; $ $ $ $ $ $ or !
+$; and $ or $; and $ or $; and $ $ or $ | None |  
+$; and $; and $ $ or $ | None |  
+$ or $ | or | 124; $ ($ 121) or $; $ or $ ($ 121 128) or $ ($)
+$ $ $ | and | !
+Any one or more of the following courses: $ $ $ $ $ $ or by ! | None | 
+$ $ $ | None |  
+$ or $ | or | 141 or 146; $ or $ or 276; $ or $ or 238; ($ and $) or ($ and $) or $
+Any one or more of the following courses are recommended as prerequisites for this course: $ $ $ $ $ $ $ or by ! | None | 
+$; $ or $; $ or $; $ $ or $ | None |  
+$ $ $ and $; | and | ! $ and $ are highly recommended
+$ | None | 229 245 258 and 306
+$ $ and ($ | or | $); or !
+$ | None | 229 and 247
+15 CU in Geology Physics or Chemistry | None | 
+$ | None | 245 and $
+One of $ $ $ $ $ or $; | and | 60 CU UL; and ! Permission will be granted based on grades in the listed courses and overall CWA
+6 CU in geological sciences at the 300-level or above | None | 
+$ | None | 338 $ $; or !
+PhD students must have completed all course work comprehensive field examinations and a significant portion of their research Experience with the Gwenna Moss Teaching and Learning Centre workshops and programs is highly recommended but not required | None | 
+3 CU HIST at the 100 level or 30 CU of University | None | 
+30 CU of University courses | None | 
+3 CU HIST at the 100 level; or 30 CU of University courses | None | 
+3 CU HIST at the 100 level; or 30 CU of University level courses | None | 
+3 CU HIST at the 100 level or 30 CU of University level courses | None | 
+3 CU HIST at the 100-level; or 30 CU of UL | None | 
+$ | or | 3 CU 100-Level HIST or !
+3 CU HIST at the 100 level or 30 CU of university | None | 
+3 CU 100-level HIST; or 30 CU of UL; or by ! | None | 
+6 CU HIST at the 100-level | None | 
+3 CU HIST at the 100 level or 30 CU of UL | None | 
+3 CU HIST at the 100-level or 30 CU of UL | None | 
+3 CU HIST at the 100 level or 30 CU of University courses | None | 
+30 CU of UL or 3 cu of HIST at the 100-level | None | 
+3 CU HIST at the 100-Level or 30 CU of University | None | 
+3 CU HIST at the 100-level or ! | None | 
+3 CU HIST at the 100-level or 3 CU of any natural science or 30 CU of University | None | 
+3 CU of HIST at 100 level or 30 CU of University level courses | None | 
+3 CU HIST at the 100-level or 30 CU of University level courses | None | 
+3 CU HIST at the 100 level; 30 CU of University level courses; or ! | None | 
+3 CU 200-level HIST; or 60 CU of university studies; or by ! | None | 
+3 CU HIST at the 200-level or ! | None | 
+3 CU 200-Level HIST courses or 60 CU of university studies or by ! | None | 
+3 CU HIST at the 200-level | None | 
+3 CU HIST CLAS ARCH or ARTH or 45 CU of UL and permission of the Instructor | None | 
+3 CU 200-level HIST courses or 60 CU of university studies or at the ! | None | 
+3 CU HIST at the 200-level; or 60 CU of university studies; or by ! | None | 
+3 CU 200-level HIST courses or 60 CU of university studies or by ! | None | 
+3 CU HIST or CLAS at the 200-level | None | 
+3 CU 200-level HIST; or 60 CU at the university level; or ! | None | 
+3 CU HIST at the 200 level; 60 CU of University; or ! | None | 
+3 CU 200-level HIST or CLAS | None | 
+3 CU HIST at the 200 level; or 60 CU of University level courses; or ! | None | 
+3 CU 200-level HIST | None | 
+3 CU 200-level HIST or ! | None | 
+3 CU 200-Level HIST courses | None | 
+3 CU 200-level HIST courses | None | 
+6 CU of senior-level HIST of which 3 CU must be 300-level or ! | None | 
+6 CU of senior level HIST of which 3 CU must be at the 300-level; or ! | None | 
+3 CU HIST courses at the 200-level or above; and 3 CU of HIST courses at the 300-level or above; or ! | None | 
+6 CU of senior-level HIST of which 3 CU must be 300-level; or permission of the professor or the department | None | 
+6 CU of senior-level HIST of which 3 CU must be 300-level; or ! | None | 
+6 CU of senior level HIST of which 3 CU must be 300-level or ! | None | 
+3 CU HIST at the 300-level | None | 
+6 CU of senior-level HIST of which 3 CU must be 300-level; or ! or the department | None | 
+Students must be enrolled in a PhD program in History or have ! | None | 
+$; and $ | None | (or equivalent); and permission of the Department
+$; | and | 75 CU of undergraduate course work; and permission of the Department Students must be enrolled in the Bachelor of Arts and Science in Health Studies - Honours
+3 CU 100-level INDG and 3 CU from ANTH ARCH ECON GEOG INDG LING NS POLS PSY SOC or WGST | None | 
+$ | and | 3 additional CU from ANTH ARCH ECON GEOG INDG LING NS POLS PSY SOC or WGST
+$ | and | 3 additional CU from ANTH ARCH ECON ENG GEOG INDG LING NS POLS PSY SOC or WGST
+12 CU INDG courses | None | 
+12 CU in Indigenous Studies | None | 
+$ | and | 6 CU 200-level INDG
+$ | and | 6 CU 200-level NS or INDG
+12 CU in NS or INDG | None | 
+18 CU NS or INDG or ! | None | 
+Two of $ $ $ | and | $
+12 CU in senior NS or INDG courses or ! | None | 
+$; and $ or $; | and | 12 CU INDG courses at the 300-level
+$ | and | 9 CU INDG courses at the 300 level; or !
+Students must have completed fewer than 60 CU | None | 
+Students must have completed fewer than 60 CU including not more than 15 CU from ACB ASTR BIOC BIOL BMSC CHEM CMPT EP GEOL MATH MCIM PHPY PHYS STAT TOX or any GEOG courses that have been identified as “Science Program Type” courses | None | 
+60 CU of university courses and ! | None | 
+18 CU at the 100-level including at least 12 CU from ANTH ECON GEOG HIST POLS RLST RUSS SOC SPAN UKR WGST | None | 
+$ and $; | or | the permission of the IS program adviser or the Political Studies Department Head
+Must have completed at least 50% of the MPA or MPP program course work including core courses | None | 
+Students must have successfully completed an undergraduate course in statistics | None | 
+$ or $ | or | 146
+$ and $; $ or $ | None |  
+$ | None | OR $ and $
+$; | None | OR both of $ and $
+$ and $ | or | 146
+$ and $; or $ | None |  
+$ and $; | None | OR $ $ and $
+$ and $; | None | OR $ along with Level 8/Ranger Patrol or demonstrated equivalent distance swimming (150 meters)
+$ and $; $ or $ or $ | None |  
+$ and $ | None | OR $ $ and $
+A minimum of 30 CU at the university;  successful Interview and acceptance into the Huskie Athletics Student Trainer Volunteer Program; Standard First Aid and CPR; Sport First Responder (hosted by Huskie Health and offered to students in Spring/Summer entering their first year) | None | 
+$ | None | 225 226 and 281
+$ or $ and $ | None |  
+$ and $ | None | Apply to Academic Advisor College of Kinesiology
+$ and $; | None | a minimum of 30 CU at the university level; successful interview and acceptance into the program; standard First Aid and CPR; Sport First Responder (Hosted by Huskie Health and offered to students in Spring/Summer entering their first year)
+$ $ $ | or | an alternate undergraduate course in statistics and $ or an alternate undergraduate course in research methods
+Students enrolled in the MSc or PhD in Kinesiology must have completed an undergraduate course in statistics Students not enrolled in the MSc or PhD in Kinesiology must receive ! before registering in this course | None | 
+Graduate students enrolled in the course must have completed at least two undergraduate courses in exercise physiology (or equivalent) as part of their prior training Students without these courses but a sufficient background in human physiology can take the course with ! | None | 
+$ | or | equivalent with ! such as a 200 or higher undergraduate level course in Exercise Psychology Psychology of Physical Activity and Sport or Social Psychology of Health Behaviour and $ or similar course with ! such as a course in Research Design
+$ and $ | or | permission of instructor
+$ | None | (Contract Law) and $ (Tort Law)
+Negotiation and one of the Family Law courses [Family Law I Family Law II or the advanced Family Law seminar] | None | 
+SC first year law | None | 
+$ | None | recommended
+Completion of first year of the JD degree | None | 
+$ | None | Prerequisite may be waived at the discretion of the coach
+Students must have been awarded a JD or LLB degree | None | 
+JD or LLB with training in criminal law criminal procedure and evidence | None | 
+$; | and | 6 CU of courses in one language other than English or !
+$; and one of $ $ $ $ | or | 6 CU of ARBC CHIN CREE FREN GERM GRK HEB HNDI JPNS LATN RUSS SNSK SPAN or UKR courses
+$; and $ | or | 6 CU ARBC CHIN CREE FREN GERM GRK HEB HNDI JPNS LATN RUSS SNSK SPAN or UKR courses
+$ or $ or $ | None | CU at the university level
+$; | or | 24 CU of university courses; or 6 CU ARBC CHIN CREE FREN GERM GRK HEB HNDI JPNS LATN RUSS SNSK SPAN or UKR courses
+$ or $ | None | CU of university courses
+$ $ $ $ or $ | None |  
+$ $ | and | 6 CU 200 300 or 400-level LING
+6 CU of LING or CMPT; or permission of department | None | 
+Minimum 48 CU of university study and permission of the Linguistics Program Chair | None | 
+$; $; one of $ $ $; | and | 6 CU LING courses at the 200-level or above
+$ | and | 3 CU 200-level LING courses or !
+$ | None | plus either $ or $ and 6 CU of senior Linguistics courses
+$ and $ | and | a minimum of 9 CU of LING courses at the 200-level or higher
+$; and $ | and | 3 CU of senior LING or !
+Registration in a Graduate program | None | 
+Workplace and Apprenticeship Mathematics 30 Foundations of Mathematics 30 or Pre-Calculus 20 or equivalent background in mathematics | None | 
+Foundations of Mathematics 30 Pre-Calculus 30 | or | $
+Pre-Calculus 30 | or | $
+): $; or [($ or $ or $) and ($ or $ or $)] | None | 
+Precalculus 30; or Foundations of Mathematics 30 | None | 
+Pre-Calculus 30; or Foundations of Mathematics 30 | None | 
+Pre-Calculus 30; or Foundations of Mathematics 30; or 3 CU of MATH or STAT | None | 
+Calculus 30 | None | 
+$ or $ $ or $; and $ | None |  
+$ or $ | None |  or $ or $; and $
+$ or $ or $ or $; and $ | None |  
+$ or $; and $ | None |  
+$ or $; and $ | or | 6 CU 200-level MATH
+): $ or $; and $ or 6 CU 200-level MATH | None | 
+$ or $ or $ | None | (or approval of instructor)
+$ or $; and $ and $ | and | ($) or ($ and $) or ($)
+$ and $; or $ and $; or $ and $; | or | approval of the instructor
+$; and ($ and $) or ($ and $) or ($ and $ | None | - with grades of at least 80% and !)
+$ and $; or $ | and | !
+$ and $; or $ and $ | None |  
+Students must be registered in an Honours or Double Honours program in Mathematical Physics Mathematics or Statistics | None | 
+$ or $ or $; and $ and $ | None |  
+($ and $) or ($ and $) or ($ and $ | None | - with grades of at least 80% and !); and $
+$ | None | 276 and 277
+A graduate course in applied mathematics or ! | None | 
+($ $ $ and $) | or | equivalents as determined by the college or !
+($ $ $ $ and $) | or | equivalents as determined by the college or !
+$ $ and $ | or | equivalent
+$ $ $ $ $ $ $ $ $ $ $ $ and $ | None |  
+Open only to current Edwards MBA students who have an approved work placement | None | 
+Acceptance into the Graduate Certificate in Leadership | None | 
+An introductory Microbiology course and ! | None | 
+$3 (taken) and $ (taken) | None | 
+($ or $) $ and $ | None | (taken)
+($ or $) | and | [$ (taken) or $ (taken)]
+($ or $) | None | [$ (taken) or $ (taken)] $ and $ (taken)
+[$ (taken) or $ (taken)] $ (taken) and $ (taken) | None | 
+$ | None | (taken) $ [$ or ($ (taken) and $ (taken))] $ (taken) and $ (taken)
+[$ or ($ (taken) and $ (taken))] and $ (taken) | None | 
+($ or $) | None |  
+$ | None | (taken) and $ (taken)
+$ | None | [$ (taken) or $ (taken)] and $ (taken)
+$; and $ | None |  
+$ and $ | None | CU from (EN Four Year Common Core and ME Program Core)
+Students should have experience with undergraduate controls and linear systems Familiarity with Matlab is expected | None | 
+Graduate standing or permission of the Department Head | None | 
+$ $ or $ | or | !
+Admission to MD program (Year 1 Term 1) | None | 
+Admission to MD program (Year 1 Term1) | None | 
+$8 | None | 
+Admission to the MD program (Year 1 Term 1) | None | 
+$1 | None | 
+Completion of Year One MD program | None | 
+Completion of Year Two MD program | None | 
+Completion of Year Three MD program | None | 
+SC the requirements for an MD but chosen not to graduate at the end Year 4 | None | 
+Permission of department is required | None | 
+Permission of department | None | 
+Admission to Graduate Studies | None | 
+Minimum 80% in $ and ! | None | 
+$; $; $; and one of $ $ $ or $ | or | !
+$ | None | (with a grade of 80% or higher); $; $; and one of $ $ $ or $ or !
+$ | None | (with a grade of 80% or higher) or !
+$; $; $; $ or $ | or | !
+$ | None | (with a grade of 80% or higher) $; $; and $ or $; or !
+): $; and ($) or ($and $); or ! | None | 
+Undergraduate Applied Lessons or ! | None | 
+$ | or | a minimum grade of 65% on the Music Theory Entrance Examination
+$ | None | (formerly $)
+One of $ $ $ $ $ $ $ $ $ or $ | or | 18 CU of university courses
+$ | None | (or 114)
+$ | None | (or 213)
+$ | or | permission of the Department of Music
+$; or $ and $; | or | !
+Two years of applied voice training; $; and $ or $; or ! | None | 
+$; and $; or $ and $; | or | !
+$; $; and $ or $; | or | !
+) $ and $ | or | by !
+$; | and | ($) or ($ and $); or !
+$ and one of $ $ $ or $; | or | by approval of the department
+SC the Graduate Assessment Examination in Music Theory and ! | None | 
+Admission to the Master of Music Performance program | None | 
+Entry into the PhD program | None | 
+ACB/$; OR $ and $ ($ can be taken as a pre- or co-requisite) | None | 
+$ $ and $ or $ | None |  
+9 CU from $ $ $ | or | $
+$ $ | or | equivalent or instructor's permission
+$ or $ or $ or $ or $ or $ or $ or $ or $ | None | Statistics courses from other post-secondary institutions may also be acceptable Please see the College of Nursing for information
+$; $ and $ | None |  
+$; $; $; and $ or $ or $ | None |  
+$ $ $ $ $ or $ $ $ $ $ $ and $ or $ | None |  
+Enrolment in a graduate program and completion of at least one graduate-level foundational course | None | 
+Enrollment in a graduate program and completion of at least one graduate level foundational course | None | 
+An undergraduate statistics course or by ! | None | 
+All core courses and electives in the Professional Practice MN (21 CU) | None | 
+$ or $ | None | for course-based stream; $ for thesis stream
+$; | None | Basic Food Safety course (FoodSafe I or equivalent)
+$ | and | second year standing in the BSc(Nutr) program
+Basic Food Safety course (FoodSafe I or equivalent); Food Safe II; Immunizations and Criminal Record Check; SC all Year 2 BSc(Nutr) courses | None | 
+$ | and | third year standing in the BSc(Nutr) program
+$; $; | None | minimum third year standing in the BSc(Nutr) program
+Completion of all required courses from Years 1 2 and 3; criminal records check | None | 
+Open to Palaeobiology students normally in their fourth year of studies | None | 
+$ and $ | or | their equivalents
+Students must be registered in the College of Graduate Studies and Research MSc program | None | 
+Students must be registered in the College of Graduate Studies and Research PhD program | None | 
+$ or $ or $ | None | (or equivalent)
+Completion of Year 1 of the PharmD program | and | $
+: $ $ $ $ | and | $
+: $ | None | 
+Completion of Year 2 of the PharmD program | and | $
+Basic course in pharmacokinetics or ! | None | 
+Undergraduate courses in pharmacotherapeutics; and ! | None | 
+Undergraduate degree in Pharmacy or in a health-related discipline or permission of instructor | None | 
+STAT course undergraduate degree in Pharmacy or permission of instructor | None | 
+BSc in natural or medical sciences | None | 
+3 CU in philosophy or completion of 18 CU at the university level or ! | None | 
+3 CU in philosophy; or $ and $; or completion of 18 CU at the university level; or ! | None | 
+3 CU in philosophy or completion of 12 CU at the university | None | 
+Completion of at least 6 CU in 100-level CMPT | None | 
+3 CU in philosophy or 6 CU in science or completion of 18 CU at the university level or ! | None | 
+3 CU in philosophy or 6 CU in fine arts or LIT or completion of 18 CU at the university level or ! | None | 
+3 CU in philosophy at the 200-level or above and completion of 24 CU at the university level; or ! | None | 
+9 CU in Philosophy including at least one of $ $ $ $ $ $ | or | $
+6 CU in philosophy at the 200-level or above and completion of 24 CU at the university level; or ! | None | 
+: $ $ $ | or | $; and $ $ or $
+Physics 30 or $; and (Mathematics B30 and C30; or Foundations of Mathematics 30; or PreCalculus 30) | None | 
+$ $ or $; and $ $ $ | None |  
+36 CU at the university level including $ | or | $ or $
+$ $ or $; | and | ($) or ($) or [($ or $) and ($ or $)]
+SC 45 CU and ! | None | 
+$; $; and $ | None |  
+$ | None | 3 and $; and $ or $
+$; and $ | None | (formerly $) or $; and $ or $
+Minimum 9 CU of 300-level PHYS or EP courses | None | 
+Registration in the final-year Physic Honours program | None | 
+An undergraduate Electromagnetics course or equivalent | None | 
+An undergraduate course in Statistical Mechanics and Quantum Mechanics | None | 
+$ | or | 9 CU from the CE Program Core
+$; and one of $ $ $ $ or $ | None |  
+24 CU in Social Sciences and/or Humanities including at least 3 CU of 200-level ANTH ARCH CMRS GEOG HIST or PLAN; or ! | None | 
+Three of $ $ $ $ | or | $
+60 CU at the University level; and permission of the Department Restricted to students in Regional and Urban Planning | None | 
+Two of $ $ | or | $
+$; | or | 60 CU at the University
+Introductory course in BIOL or ! | None | 
+30 CU or ! | None | 
+$ $ and one of $ or $ | None |  
+$ and $ | None | CU of university credit or !
+SC 75 CU of university course work | None | 
+$ and $ One of $ $ or $ | None | is strongly recommended
+$ and one of $ | None | 2223 or $
+Completion of at least 75 CU including $ (Statistical Methods) or $ and one of $ (Principles of Plant Ecology) or $ (Introduction to Ecology and Ecosystems) or permission of instructor | None | 
+One of $ or $ | and | SC 84 CU
+SC 30 CU of UL | None | 
+$ and one of $ $ or $ | None |  
+One of $ $ or $ and one of $ or $ | None | Or !
+SC 81 CU of UL towards a BSA | None | 
+Completion of 81 CU toward the BSA with a major in a department-based program and a cumulative average of at least 75% | None | 
+Courses in plant ecology and plant physiology or ! | None | 
+$ and $ | or | any 200-level BIOC or permission of instructor or department
+One of $ or $ or $ | or | !
+$ | None | 836 and 837 or !
+Introductory plant pathology and plant breeding courses or ! | None | 
+Any two of $ $ $; or 18 CU at the university level | None | 
+Any two of $ $ $; or $; or 60 CU at university level | None | 
+Any two of $ $ $ $; or 18 CU at the university level | None | 
+Any two of $ $ $; or 18 CU at the university | None | 
+12 CU of POLS and/or IS; or 36 CU at the university level including at least 6 CU of ANTH ENG HIST INDG IS POLS RLST SOC or WGST | None | 
+6 CU 100-level POLS; | or | $
+60 CU of university level study including 6 CU senior POLS | None | 
+60 CU at university level and ! | None | 
+54 CU at the university level including 18 CU POLS and/or IS | None | 
+$; | or | 54 CU at the university level including 18 CU POLS and/or IS
+54 CU at the university level including 18 CU in POLS courses | None | 
+BA in Political Studies | None | 
+Honours degree or its equivalent in Political Studies | None | 
+Open to students admitted to the Department of Political Studies in the Major Research Project Option of the Master's program | None | 
+$ $ | None | (or 203) or equivalents or !
+Graduate students enrolled in a MSc or PhD program in Health Sciences can register in this course if their research projects are supervised or co-supervised by faculty from the Department of Psychiatry Students wishing to enroll in this course are required to have completed a minimum of two undergraduate courses in relevant disciplines or MSc in allied clinical (or health) and biomedical disciplines (eg at least 6 undergraduate course credits in Psychology/ Neuropsychology Physiology and Pharmacology Biochemistry Cell physiology Pharmacology Science Nursing Health Sciences Statistics and/or Neuroscience) Approval from the course instructor his/her/their supervisor and the Graduate Chair (Health Sciences College of Medicine) is also required | None | 
+$ | or | equivalent; completion of MD; enrolment in a MSc or PhD program in Health Sciences with a research project supervised or co-supervised by faculty from the Department of Psychiatry; Approval from the course instructor his/her/their supervisor and the Graduate Chair (Health Sciences College of Medicine) is also required
+12 CU of 200-level psychology; | and | $ or $
+$ $ or $; and $; and $ | None | (or $); and 3 CU of 200-level PSY courses
+$; $ | None | (or $); $; and 3 CU 200-level PSY courses
+$; and $ | None | (or $); and 3 CU from $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ or $; and 9 CU of 200-level PSY courses
+$ or $; and $; and $ | None | (or $); and 3 CU of 200-level PSY courses
+One of $ $ $ or $; and $; and $ | None | (or $); and 3 CU of 200-level PSY courses
+$ or $; | and | 6 CU of 300-level PSY classes
+6 CU from $ $ $ $ $ | None | 
+6 CU of 300-level Psychology | None | 
+$; | and | 6 CU of ANTH PSY SOC or WGST courses at the 200-level or above; and !
+6 CU from $ 243 246 347 | None | 
+6 CU from $ $ | or | $
+Students must be enrolled in the Honours program and must have completed at least one 3 credit unit 300-level PSY A course and one 3 credit unit 300-level PSY B course | None | 
+Registration in the College of Graduate Studies and Research | None | 
+Undergraduate degree | None | 
+$; $ | None |  
+Restricted to PhD students in the Applied Social Psychology concentration | None | 
+Permission of the Instructor | None | 
+$ $ or $ | or | another graduate course in statistics as approved by the instructor
+$ | or | equivalent and an introductory course in microbiology or by !
+$ | and | either $ or $ or by !
+$ | and | either $ or $ or permission of instructor
+$ | or | departmental permission
+$; $; $ or $; $; $ or $; $; $ or $; $ | None |  
+Students must be admitted into the MPH thesis program; have successfully defended a thesis proposal; have been accepted into the MPH thesis option; and have completed $ $ $ $ $ $ $ $ $ | None | 
+24 CU from the institution | None | 
+$ or $ | None | CU of UL (including 6 CU of RCM Non-EN Electives)
+$ or $ | None | CU of UL
+6 CU of undergraduate RCM courses or equivalent; or $; or 24 CU of UL | None | 
+6 CU of undergraduate RCM courses or equivalent OR $ $ CU of undergraduate courses | None | 
+3 CU RLST or 18 CU at the university level | None | 
+3 CU RLST or WGST or 18 CU at the university level | None | 
+3 CU RLST or 18 CU at university level | None | 
+3 CU 100-Level RLST or 18 CU at the university level | None | 
+3 CU $-level or 18 credits at university level | None | 
+24 CU of UL | None | 
+3 CU of 100-level RLST or 18 CU at the university level | None | 
+6 CU of RLST or 24 CU at the university level | None | 
+6 CU in RLST or WGST or 24 CU at the university level | None | 
+6 CU in RLST or 24 CU at the university level | None | 
+6 CU RLST or WGST or 24 CU at the university level | None | 
+6 CU RLST or 24 CU at the university level | None | 
+3 CU 300-level RLST or 18 CU RLST or ! | None | 
+$ and $ or $; $ or $ or $ | None |  
+60 CU or ! | None | 
+SC a minimum of 42 CU university-level coursework | None | 
+24 CU at the university level including $ or equivalent; or ! Restricted to students in the elementary education program at NORTEP College of Education | None | 
+Completion of Term 1 of the Master's program in School and Counselling Psychology including $ | and | $
+$ | and | enrolment in the School and Counselling Psychology program
+$ | and | admission to the Master's program in School and Counselling Psychology
+Enrolment in the Master's program in School and Counselling Psychology or ! | None | 
+Completion of year 1 of the Master's program in School and Counselling Psychology | None | 
+SC $ and admission to the Master's program in School and Counselling | None | 
+Admission to the Master's program in School and Counselling Psychology | None | 
+Completion of Year 1 of the Master's program in School and Counselling Psychology | None | 
+One of $ $ $ $ or $ | None |  
+$ and one of $ or $; and $ or $ | None |  
+SLS2403 | or | $ or $ or $
+SC 60 CU of university courses including $ $ | or | $
+SC 75 CU towards the BSA Soil Science degree | None | 
+Completion of at least one year of a graduate program in soil science | None | 
+One of | None | the following: an undergraduate degree in chemistry an undergraduate course in soil chemistry an undergraduate course in aqueous geochemistry or !
+Students must complete $ – Field Studies and Research Design of Saskatchewan Soil Landscapes prior to registering in $ | None | 
+6 CU of 100- or higher-level Sociology or permission of instructor | None | 
+6 CU of 100-level SOC | None | 
+6 CU of 100-level SOC; or approval of instructor | None | 
+6 CU of 100-level SOC or 12 CU in the social sciences or special ! | None | 
+6 CU of 100-level SOC or equivalent | None | 
+12 CU SOC including $ | None | 
+12 CU SOC | None | 
+12 CU SOC courses | None | 
+$ | and | (234 or 329)
+Two of $ 232 347 and ! Students must be enrolled in the Certificate in Criminology and Additions program | None | 
+12 CU Sociology | None | 
+12 CU SOC including $ | and | $
+12 CU SOC plus one of $ $ $ $ $ $ $ $ $ $ | or | $
+6 CU of 100-level SOC or 18 CU at the University | None | 
+12 CU SOC courses including one of $ | or | $
+12 CU in sociology including $ or $ and $ or ! | None | 
+12 CU SOC or permission of instructor | None | 
+18 CU SOC including $ | None | 
+12 CU SOC courses including $ or ! | None | 
+12 CU SOC plus two of any of $ $ $ $ $ | None | 
+6 CU senior SOC including $ (or its equivalent within another closely related discipline) and admission to the Honours program in Sociology (or a related discipline); or by special ! | None | 
+18 CU SOC including $ | and | $
+18 CU SOC | None | 
+18 CU SOC including $ 234 or 329 | None | 
+Registration as a graduate student in Sociology or by ! | None | 
+Restricted to students registered in the project option | None | 
+60 CU of university level study | None | 
+12 CU at the 200-level or above in Social Science By permission only | None | 
+12 CU of SPAN courses | None | 
+Completion of 18 CU of university courses | None | 
+$ and ($ or $) | None |  
+Foundations of Mathematics 30 or Pre-Calculus 30 | None | 
+A course in a social science or Foundations of Mathematics 30 or Pre-Calculus 30 | None | 
+One of $ $ $ $ $ $ $ or $ | None |  
+Foundations of Mathematics 30 or Pre-Calculus 30; and $ and $ or ! | None | 
+$ or $; $ and $ | None |  
+$ | None | (formerly $) or $ $ and one of $ or $
+$ | None | (formerly $) or $ $ and $ or $
+$ $ and $ | or | by !
+Undergraduate courses in design and analysis of experiments such as ($ or equivalent) mathematical statistics ($ or equivalent) and linear algebra ($ or equivalent) or permission of instructor | None | 
+$ $ and $ | or | !
+Undergraduate courses in mathematical statistics and inference such as $ | and | $
+An undergraduate course in mathematical statistics ($) linear algebra ($) | and | $ or $
+18 CU of university courses | None | 
+6 CU BIOL and 6 CU CHEM | None | 
+$ $; and one of $ $ or $ | None |  
+$ | and | 3 CU of 300- or 400-level TOX courses; or !
+One | None | course in ecology or environmental biology and one course in general or environmental chemistry or ! and student's advisor/advisory committee
+SC Laboratory Safety course | and | $
+$ | or | Ukrainian 20 (Grade 11 Ukrainian)
+$ or $ | None | CU at the university level
+$ | or | Ukrainian 30 (Grade 12 Ukrainian)
+18 CU at the university level including 3 CU from Humanities or Social Sciences | None | 
+A 200-level course in UKR or ! | None | 
+Admission to the College of Graduate Studies and Research and permission of the School of Public Health | None | 
+Students must have completed an undergraduate course in immunology | None | 
+Registration in a graduate program in Toxicology or Veterinary Biomedical Sciences or ! | None | 
+Any undergraduate statistics course | None | 
+SC Year 2 of the Doctor of Veterinary Medicine program | None | 
+A DVM or equivalent and enrolment in the MSc project-based (nonthesis) focused on applied/field epidemiology training | None | 
+A DVM or equivalent and enrolment in the MSc project-based (nonthesis) focused on applied/field epidemiology training with SC Field Epidemiology Competencies I | None | 
+Completion of Clinical Trial Design ($) or enrollment/completion of Introduction to Veterinary Epidemiology ($) or ! | None | 
+$ | None | Statistics for Clinical Research or !
+$ | or | equivalent and !
+$ | None | (or equivalent) $ and $ (or equivalent) and !
+Enrollment in the project-based MSc program in VLAC or ! Instructors | None | 
+SC Year 2 of the Doctor of Veterinary Medicine (DVM) Program Enrolment will be limited to 12 students | None | 
+DVM or equivalent | None | 
+SC $; a DVM or equivalent degree; and enrolment in a clinical rotating internship Certificate of Proficiency program | None | 
+DVM enrolled in a clinical veterinary anesthesia residency program | None | 
+DVM degree | None | 
+Completion of DVM degree and registration in a MSc program | None | 
+DVM degree enrolment in MSc degree program in the Department of Small Animal Clinical Sciences | None | 
+An undergraduate degree in veterinary medicine | None | 
+Graduate or upper undergraduate level course on molecular biology; permission of instructor | None | 
+An undergraduate degree in health or biological sciences and ! | None | 
+Enrolment in a graduate program in Veterinary Pathology | None | 
+$ | and | 343 or equivalent or $ and $ or !
+DVM Degree and SVMA License | None | 
+Individuals wishing to enroll in this course must 1) be graduates of a recognized program of veterinary medicine and therefore have earned a DVM degree or equivalent; 2) have prior training and demonstrated competence in veterinary diagnostic pathology; and 3) be eligible for licensure by the Saskatchewan Veterinary Medical Association | None | 
+$ | or | completion of 18 CU at the university level
+30 CU at the university level or permission of the WGST Coordinator | None | 
+Completion of 30 CU at the university level or permission of the WGST Coordinator | None | 
+$ or $ | None | CU of university course work
+30 CU of university course work | None | 
+$ | and | 3 additional CU in WGST
+$ | and | 6 CU in WGST and/or cognate courses or permission of the WGST Coordinator
+($ or $) | and | (6 CU WGST and/or cognate courses) and 30 CU of university study; or permission of the WGST Program Chair
+30 CU of university courses including at least 6 CU of WGST and/or cognate courses; or permission of the WGST Coordinator | None | 
+$ or $ | or | permission of the WGST Coordinator
+$ | and | 9 CU university courses; or 24 CU university courses; or permission of instructor
+At least 3 CU of 400-level WGST | None | 
+$; | and | 6 CU from $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $; or !
+18 CU WGST and/or cognate courses including $ 3123 | None | 
+Admission to a special case PhD program in Women Gender and Sexualities Studies | None | 

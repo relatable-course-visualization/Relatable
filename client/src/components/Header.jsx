@@ -1,5 +1,6 @@
 import pic from "../images/RelatableIcon.png";
 import "../stylings/header.css";
+import React from 'react';
 
 const Header = () => {
     return(
