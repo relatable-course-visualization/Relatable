@@ -6,7 +6,7 @@ catalogue_link = "https://catalogue.usask.ca/"
 # api call to get the content of the usask catalogue page
 catalogue = requests.get(catalogue_link)
 # scrape the webpage with beautiful soup library
-webpage = bs(catalogue.content)
+webpage = bs(catalogue.content, features="html.parser")
 
 # get the course codes from the webpage
 
@@ -33,7 +33,7 @@ def getCourseCodes(subject_code):
     # api call to get the content of the catalogie for a specific subject e.g CMPT
     course_weblink = catalogue_link+"?subj_code="+str(subject_code)+"&cnum="
     course_catalogue = requests.get(course_weblink)
-    course_webpage = bs(course_catalogue.content)
+    course_webpage = bs(course_catalogue.content, features="html.parser")
     # select the particular html tag/component that has the course code
     course = course_webpage.select("div h4 a")
     # use regex to get only the string that includes the Course information in every course without the unneccessary tag elements
@@ -50,7 +50,7 @@ def getCourseNames(subject_code):
     '''
     course_weblink = catalogue_link+"?subj_code="+str(subject_code)+"&cnum="
     course_catalogue = requests.get(course_weblink)
-    course_webpage = bs(course_catalogue.content)
+    course_webpage = bs(course_catalogue.content, features="html.parser")
     course = course_webpage.select("div h4 a")
     course_name = [str(c.find(string=re.compile(str(subject_code)))).strip() for c in course]
     course_name = [str(c).split(":", 1)[1] for c in course_name]
@@ -64,7 +64,7 @@ def getCourseDescriptions(subject_code):
     '''
     course_weblink = catalogue_link+"?subj_code="+str(subject_code)+"&cnum="
     course_catalogue = requests.get(course_weblink)
-    course_webpage = bs(course_catalogue.content)
+    course_webpage = bs(course_catalogue.content, features="html.parser")
     course = course_webpage.select("div.col-md-7 p")
     # remove the <p> tag from the string so that we have only the description text.
     course_description = [str(c).strip("</p>") for c in course]
@@ -79,7 +79,7 @@ def getCoursePrerequisites(subject_code):
     '''
     course_weblink = catalogue_link+"?subj_code="+str(subject_code)+"&cnum="
     course_catalogue = requests.get(course_weblink)
-    course_webpage = bs(course_catalogue.content)
+    course_webpage = bs(course_catalogue.content, features="html.parser")
     course = course_webpage.select("div.col-md-5 p")
     course_preq_list = []
     for c in course:
@@ -99,7 +99,7 @@ def getCourseRestrictions(subject_code):
     '''
     course_weblink = catalogue_link+"?subj_code="+str(subject_code)+"&cnum="
     course_catalogue = requests.get(course_weblink)
-    course_webpage = bs(course_catalogue.content)
+    course_webpage = bs(course_catalogue.content, features="html.parser")
     course = course_webpage.select("div.col-md-5 p")
     course_restriction_list = []
     for c in course:
@@ -120,7 +120,7 @@ def getCourseLinks(subject_code):
     '''
     course_weblink = catalogue_link+"?subj_code="+str(subject_code)+"&cnum="
     course_catalogue = requests.get(course_weblink)
-    course_webpage = bs(course_catalogue.content)
+    course_webpage = bs(course_catalogue.content, features="html.parser")
     course = course_webpage.select("div h4 a")
     # grab only the href links in the string
     course_links = [link['href'] for link in course]
@@ -135,7 +135,7 @@ def getCourseCredits(subject_code):
     # api call to get the content of the catalogie for a specific subject e.g CMPT
     course_weblink = catalogue_link+"?subj_code="+str(subject_code)+"&cnum="
     course_catalogue = requests.get(course_weblink)
-    course_webpage = bs(course_catalogue.content)
+    course_webpage = bs(course_catalogue.content, features="html.parser")
     # select the particular html tag/component that has the course code
     course = course_webpage.select("div h4 a")
     # use regex to get only the string that includes the Course information in every course without the unneccessary tag elements
