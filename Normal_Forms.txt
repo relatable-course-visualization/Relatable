@@ -1,0 +1,167 @@
+Total Courses Count: 4622
+Course Count with Non-null Prereq String: 2551
+Number of Unique "Normal" Forms: 162
+Where normal forms contain only classes (denoted $) and logical keywords/symbols
+-------------------------------------------------
+($ and $) or $ or $
+
+$
+$ and $
+$ and one of $ or $
+$ and $;
+$;
+$; $
+$ or $ or $
+$ or $
+$ $
+$; or ($ and $)
+One of $ $ or $
+$ $ and $
+$ or $;
+$ $ or $;
+$; or $ and $
+$ $ $ $ $ $ $ $ $ $ or $
+$ $ $ $ $ or $
+One of $ $ $ or $
+$ $ or $; and $; and $ $ or $
+One of $ or $ or $
+$ or $; and one of $ or ($
+$ and $ $
+$; $; $ or $ ($
+$ or $; and one of $ $ $ or $;
+$ or $; one of $ $ or $
+$ $ and $;
+$; one of $ or $; and one of $ $ or $
+$ and $ and $
+$; and $ or $
+$ or $; $; and $
+$; $; and $ or $
+$; $;
+$ or $ or $ or $
+$ $ $ $ $
+($ and $
+$; and one of $ or $
+$ or $; and one of $ $ $ or $
+$ and ($ $ $ or $ ($
+$ or $; and one of $ $ $ $ or $
+$ $ or $
+$ $;
+$ or $ and $ or $
+One of
+($ or $ or $) and $
+($
+$ $ $ $ and $
+$; or $
+$ and one of $ $ $ $ $ $ or $
+$ or $; and one of $ $ or $
+$ or $ or $; and one of $ $ $ $ $ $ or $
+$; and $; and one of $ or $ or $ or $
+$ and $ or $
+One of $
+one of ($ or $ or $ or $)
+$ $ $ or $; and one of $ $ $ or $
+$ $ $ or $; and $; and $ or $
+One of ($ $ or $) and $
+$; $; $ or $; and $ or $
+$ or $; and $ or $
+$ $ $ $ $ $ $
+$ $ $ $ $ $
+($ $ $) or ($ $ $ $)
+$ or $; $ or $; $
+one of $ $ or $
+$ $ $ and $
+$; $ or $; and one of $ $ $ $ $ or $
+$; $; and one of $ $ $ $ $ or $
+$; $; one of $ $ $ $ $ or $; and one of $ $
+$ or $; and one of $ $ $ $ $ or $
+$ or $; one of $ $ $ $ $ or $;
+$; and one of $ $
+$ or $; and one of $ $ $ $ $ or $; and one of $ or $
+$; $ and $
+$; $ or $ or $; $ or $; and $
+$ $ and one of
+$ $ $ $
+$ or ($ and $)
+($ or ($
+($ or $ or $)
+($ or $) and ($
+$ $ or $ or $ and $ or $ or $
+($ and $) or ($ and $)
+$; $; $; and one of $ $ $ or $
+$ or ($ and $ and $) or ($
+($ or $)
+($ $ or $) ($ $ or $) and ($ or $)
+$ or $ or $; and $ or $ or $ or $
+($ or $) and $ and $ and $
+$ or $ $ or $
+$ $ $
+$ $ $ or $
+$; $; $; and $
+($ or $ or $ or $) or ($ and $ and $
+One of $ $ $ or $;
+$; and one of $ $ or $
+One of $ $ or $;
+One of $ $ $ or $; one of $ or $ or $; $
+One of $ $ $ $ or $; and $
+One of $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ or $
+One
+$; and $ or $; and $ or $; and $ $ or $
+$; and $; and $ $ or $
+$; $ or $; $ or $; $ $ or $
+$ $ $ and $;
+$ $ and ($
+One of $ $ $ $ $ or $;
+$; and $
+$; and $ or $;
+$ and $; $ or $
+$ and $; or $
+$ and $; $ or $ or $
+$ or $ and $
+$; and one of $ $ $ $
+$ $ $ $ or $
+$; $; one of $ $ $;
+$ or $ $ or $; and $
+$ or $ or $ or $; and $
+$ or $; and $
+$ or $; and $ and $
+$ and $; or $ and $; or $ and $;
+$; and ($ and $) or ($ and $) or ($ and $
+$ and $; or $ and $
+$ or $ or $; and $ and $
+($ and $) or ($ and $) or ($ and $
+($ $ $ and $)
+($ $ $ $ and $)
+$ $ $ $ $ $ $ $ $ $ $ $ and $
+($ or $) $ and $
+$; $; $; $ or $
+One of $ $ $ $ $ $ $ $ $ or $
+$; or $ and $;
+$; and $; or $ and $;
+$; $; and $ or $;
+) $ and $
+$ and one of $ $ $ or $;
+$ $ and $ or $
+$ or $ or $ or $ or $ or $ or $ or $ or $
+$; $; $; and $ or $ or $
+$ $ $ $ $ or $ $ $ $ $ $ and $ or $
+$; and $ $ or $
+$ $ or $; and $ $ $
+$; $; and $
+$; and one of $ $ $ $ or $
+$ $ and one of $ or $
+$ and $ One of $ $ or $
+$ and one of $
+One of $ or $
+$ and one of $ $ or $
+One of $ $ or $ and one of $ or $
+$ $ or $; and $; and $
+$ or $; and $; and $
+One of $ $ $ or $; and $; and $
+$; $; $ or $; $; $ or $; $; $ or $; $
+$ and $ or $; $ or $ or $
+One of $ $ $ $ or $
+$ and one of $ or $; and $ or $
+$ and ($ or $)
+One of $ $ $ $ $ $ $ or $
+$ or $; $ and $
+$ $; and one of $ $ or $

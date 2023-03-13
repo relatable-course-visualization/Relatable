@@ -16,6 +16,29 @@ from .serializers import *
 env = environ.Env()
 environ.Env.read_env()
 
+@api_view(['POST'])
+def postTest(request):
+    """ Test db connection by posting fake data into test table
+    """   
+    if request.method == 'POST':
+        serializer = TestSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST) 
+
+
+@api_view(['POST'])
+def postCoursePrereqInfo(request):
+    """ Post Course into course prereq string table
+    """   
+    if request.method == 'POST':
+        serializer = CoursePreqInfoSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST) 
+
 
 @api_view(['POST'])
 def postCourse(request):
@@ -72,7 +95,16 @@ def updateCourse(request):
 
 
 @api_view(['GET'])
-def getAllCourses(request):
+def getCoursePrereqInfo(request):
+    """return course object with given id from course-prereq-info table if possible
+    """ 
+    entry = CoursePreqInfo.objects.all()
+    serializer = CoursePreqInfoSerializer(entry, many=True)
+    return Response(serializer.data)
+
+
+@api_view(['GET'])
+def getAllCourses(request, id):
     """ Return all course objects from DB
         :param: none
         :return: serialized course objects OR serialized course ids depending on need

@@ -15,3 +15,13 @@ class DependencySerializer(serializers.ModelSerializer):
     class Meta:
         model = Dependency
         fields = ['id', 'course_id', 'course_id_depend']
+
+class TestSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = TestDB
+        fields = ['name', 'favColour', 'favNumber']
+
+class CoursePreqInfoSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = CoursePreqInfo
+        fields = ['course_code', 'name', 'prereqString']
