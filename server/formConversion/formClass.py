@@ -4,19 +4,31 @@ from nltk.tokenize import RegexpTokenizer
 
 class Form():
     # Regex that we need to reference throughout
-    fullCourseRegEx = '([A-Z]{2,4}\s[0-9]{2,3}.[0-9]|[A-Z]{2,4}\s[0-9]{2,3})'
+    fullCourseRegEx = '([A-Z]{2,4}\s[0-9]{3}.[0-9]|[A-Z]{2,4}\s[0-9]{3})'
     courseCodeRegEx = '([A-Z]{2,4})'
-    courseNumRegEx = '([0-9]{2,3}.[0-9]|[0-9]{2,3})'
-
+    courseNumRegEx = '([0-9]{3}.[0-9]|[0-9]{3})'
+    permissionOfInstructor = 'permission\sof\sthe\sinstructor|permission\sfrom\sthe\sinstructor|permission\sof\sthe\sdepartment|by\spermission\sof\sthe\sinstructor|permission of instructor'
+    
     def __init__(self, preq:str) -> None:
         self.originalPreq = preq
         self.workingPreq = preq
+        self.regCoursePreq = ''
+        self.dollarCoursePreq = ''
         self.finalPreq = ''
         self.type = None
+        self.formDict = self.createFormDict('Normal_Forms.txt')
 
     def transformForms(self):
+        # Makes things like MATH 176 and 177 -> MATH 176 and MATH 177
         self.formalizeCourseNames()
+        # Removes irrelevant statements, replaces symbols/punctuation with appropriate words, and then removes punctuation
         self.removeIrrelevant()
+        # Creates string that has $ in place of course codes
+        self.replaceCourseCodes()
+        # characterizes form (Normal Form, Simple String, Complex String, Normal-Simple)
+        self.characterizeForm()
+        # create final forms - note, only works for normal forms right now
+        self.createFinalForms()
         return self.workingPreq
     
     def formalizeCourseNames(self):
@@ -46,10 +58,13 @@ class Form():
         #7. ex: SOC 212 and (234 or 329).
         s7 = self.courseCodeRegEx+'\s'+self.courseNumRegEx+'\sand\s\('+self.courseNumRegEx+'\sor\s'+self.courseNumRegEx
         s7Replace = '\g<1> \g<2> and (\g<1> \g<3> or \g<1> \g<4>'
+        # Change MATH 164.3 to MATH 164
+        s7 = '([A-Z]{2,4}\s[0-9]{3}).[0-9]'
+        s7Replace = '\g<1>'
         # Special Case
         s8 = 'Art\s316.6' #Case where they did not put capitals
         s8Replace = 'ART 316'
-
+        
 
         # Note - from testing this catches all cases that occur - will have to test after each new cycle
 
@@ -78,12 +93,6 @@ class Form():
         self.workingPreq = cur
         return self.workingPreq
 
-    def identifyForms(self):
-        """Identifies all possible logical forms and seperates them from strings
-        """
-        # Need to tokenize and then analyze collection of strings
-        # seperate into sections splitting on 'or', 'and', 'and one of', ';'
-        # this will give us smaller and simpler strings to analyize
 
     def removeIrrelevant(self):
         """Remove irrelevant phrases such as 'or equivalent'. Also replace things like & with 'and'
@@ -94,23 +103,51 @@ class Form():
         # (or equivalent) | or equivalent
         # (taken)
         cur = self.workingPreq
-        s1 = '\(formerly\s'+self.courseCodeRegEx+'\)'
-        s2 = '\(or\sequivalent\s\)|or\sequivalent'
+        s1 = 'formerly\s'+self.courseCodeRegEx
+        s2 = '\(or\sequivalent\)|or\sequivalent'
+        
         s3 = '\(taken\)'
-        # s4 = '\.' Math 166.3
+        s4 = 'either\s'+self.fullCourseRegEx+'\sor\s'+self.fullCourseRegEx
+        s4Replace = '(\g<1> or \g<2>)'
         s5 = '\&'
-
+        s6 = '3\scredit\sunits\sof|3\scredit\sunits\sfrom'
+        s6Replace = 'one of'
+        # s7 = ';'
+        s8 = '\.'
+        
+        
 
         cur = re.sub(s1, '', cur)
         cur = re.sub(s2, '', cur)
         cur = re.sub(s3, '', cur)
-        # cur = re.sub(s4, '', cur)
+        cur = re.sub(s4, s4Replace, cur)
         cur = re.sub(s5, 'and', cur)
+        cur = re.sub(s6, s6Replace, cur)
+        # cur = re.sub(s7, ' and', cur)
+        cur = re.sub(s8, '', cur)
+        # and/or -> or
+        cur = re.sub('and/or', 'or', cur)
+        
+        
 
         self.workingPreq = cur
         return self.workingPreq
     
+    def replaceCourseCodes(self):
+        """ replace courses with '$' and permission of instructor with '!'
+        """
+        mod = self.workingPreq
+        if self.workingPreq != 'None':
+            # remove punctuation and replace courses with '$'
+            # mod = re.sub(r'[^\w\s]', '', mod)
+            mod = re.sub('[A-Z]{2,4}\s[0-9]{2,3}.[0-9]|[A-Z]{2,4}\s[0-9]{2,3}', '$', mod)
+
+        self.dollarCoursePreq = mod
+
+
+
     def characterizeForm(self):
+        
         if self.workingPreq == 'None':
             self.type = 'None'
             return 'None'
@@ -119,9 +156,9 @@ class Form():
             mod = re.sub(r'[^\w\s]', '', self.workingPreq)
             mod = re.sub('[A-Z]{2,4}\s[0-9]{2,3}.[0-9]|[A-Z]{2,4}\s[0-9]{2,3}', '$', mod)
             # # TESTING - rreplace permission of instrucot/department with ! and count as class essentially
-            mod = re.sub('permission\sof\sthe\sinstructor|permission\sfrom\sthe\sinstructor|permission\sof\sthe\sdepartment|by\spermission\sof\sthe\sinstructor', '!', mod)
+            # mod = re.sub('permission\sof\sthe\sinstructor|permission\sfrom\sthe\sinstructor|permission\sof\sthe\sdepartment|by\spermission\sof\sthe\sinstructor|permission of instructor', '!', mod)
             # list of accepted words for form to be considered 'simple'
-            acceptedRegex = '[Aa]nd|[Oo]ne|of|or|\$|!'
+            acceptedRegex = '[Aa]nd|[Oo]ne|of|or|\$'
             # formType[0] = Is there a course in the form?
             # formType[1] = Is there a non-normal word in the form?
             formType = [False, False]
@@ -131,28 +168,31 @@ class Form():
                 # is the word a course?
                 # Want to catch trailing space
                 if word != '':
-                    if re.search('\$', word) != None:
+                    # if the word is a course
+                    if re.fullmatch('\$', word) != None:
                         formType[0] = True
                         if formType[1] == False:
                             normalStart.append(word)
                     # is the word accepted?
-                    elif re.search(acceptedRegex, word) != None:
+                    elif re.fullmatch(acceptedRegex, word) != None:
                         if formType[1] == False:
                             normalStart.append(word)
                     else:
                         formType[1] = True
                 
-            
+        
             if formType == [True, True]:
                 # print(f'{self.originalPreq}->{self.workingPreq}->{mod}') 
                 
                 # print(mod)               
                 if len(normalStart) == 0:
                     self.type = 'Complex String'
-                    print(self.workingPreq)
-                    print('\n')
+                    # print(f'{self.workingPreq}')
+                    # print('\n')
                 else:
                     self.type = 'Normal-Simple'
+                    # print(f'{self.workingPreq}')
+                    # print('\n')
             elif formType == [True, False]:
                 # print(f'{self.workingPreq}: {mod}')
                 self.type = 'Normal Form'
@@ -163,12 +203,48 @@ class Form():
 
             return self.type
 
-    def characterizeComplex(self):
-        """ Given a form that is characterized as complex, is it possible to split it into two parts:
-            a normal form and a simple form
-        """
-        if self.type != 'Complex Form':
-            return False
+    def createFinalForms(self):
+        if self.type == 'Normal Form':
+            # print(f'{self.originalPreq}\n{self.workingPreq}')
+            # Create a list of all the classes
+            courseList = []
+            # remove punctuation before tokenizing
+            mod = re.sub(r'[^\w\s]', '', self.workingPreq)
+            modTokens = mod.split(' ')
+            for j in range(len(modTokens)-1):
+                word = modTokens[j]+' '+modTokens[j+1]
+                if re.fullmatch(self.fullCourseRegEx, word) != None:
+                    courseList.append(word)
+            
+            # find matching finalForm
+            finalForm = self.formDict[self.dollarCoursePreq]
+            if finalForm == None:
+                print('Error: no matching input for:'+self.dollarCoursePreq)
+                return ''
+            
+            # one by one replace $ with a course from courseList
+            # print(courseList)
+            for j in range(len(courseList)):
+                finalForm = re.sub('\$', courseList[j], finalForm, 1)
+
+            self.finalPreq = finalForm
+            return finalForm
+
+        return ''
+
+    def createFormDict(self, filename):
+        formDict = {}
+        f = open(filename, 'r')
+        lines = f.readlines()
+        for line in lines:
+            inputForm = line.split('\t')[0]
+            outputForm = line.split('\t')[1]
+            formDict[inputForm] = outputForm
+        
+        return formDict
+
+
+            
         
 
 

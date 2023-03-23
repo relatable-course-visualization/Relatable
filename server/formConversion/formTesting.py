@@ -88,21 +88,34 @@ count = 0
 countCourseForms = 0
 originalPreqList = []
 modifiedPreqList = []
-replacedPreeqList = []
+replacedPreqList = []
 k = 0
+
 for course in allCourses:
     preq = course['prereqString']
     originalPreqList.append(preq)
     form = Form(preq)
     modifiedPreqList.append(form.transformForms())
     form.characterizeForm()
-    if form.type == 'Complex String':
+    # form.replaceCourseCodes()
+    if form.type == 'Normal Form':
         # print(form.workingPreq)
         k+= 1
+        if form.dollarCoursePreq not in replacedPreqList:
+            replacedPreqList.append(form.dollarCoursePreq)
+        print(f'{form.originalPreq}\n{form.workingPreq}\n{form.dollarCoursePreq}\n{form.finalPreq}\n')
     # print(f'{form.type}: {form.workingPreq}')
+# form = Form('BIOL 323.3 and/or BIOL 326.3 or equivalent, or instructor’s authorization.')
+# form.transformForms()
 
 print(k)
- 
+print(len(replacedPreqList))
+
+f = open('New_Forms.txt', 'w+')
+
+nl = '\n'
+for forms in replacedPreqList:
+    f.write(f'{forms}{nl}')
 # checkSimplePreqs(modifiedPreqList)
 # print(modifiedPreqList)
 # checkImplicit(modifiedPreqList)
