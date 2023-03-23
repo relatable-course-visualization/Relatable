@@ -1,6 +1,8 @@
 Typography:
 <br/>
-PT Sans
+PT Sans:
+https://fonts.google.com/specimen/PT+Sans?query=PT+Sa
+<br/>
 
 Colors:
 <br/>
