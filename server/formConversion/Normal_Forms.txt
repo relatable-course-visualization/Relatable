@@ -160,3 +160,123 @@ $ or $; $ and $	($ or $) and $ and $
 $, $ and $ or $	$ and $ and ($ or $)
 $, $; and one of $, $ or $	$ and $ and ($ or $ or $)
 $ or $; and one of $, $, or $	($ or $) and ($ or $ or $)
+$; or $	$ or $
+One of $, $ or $, or $	$ or $ or $ or $
+: $ or $ $	$ or $ or $
+$ or $; 	$ or $
+$, $ or $; or $	$ or $ or $ or $
+$, $ $	$ and $ and $
+$ or $, and $	($ or $) and $
+$, $, $, $, and $ or $	($ and $ and $ and $ and $) or $ FLAG(This translation makes sense for specific class but maybe not in general)
+$ or $; and one of $ or $	($ or $) and ($ or $)
+$ and $, $ and $	$ and $ and $ and $
+$ and one of $, $, $, or $	$ and ($ or $ or $ or $)
+$; $; $ or $	$ and $ and ($ or $)
+$; $; $ or $ 	$ and $ and ($ or $)
+$ or $; and one of $, $, $ or $; and $	($ or $) and ($ or $ or $ or $) and $
+$, $ and $; or $	($ and $ and $) or $
+$ or $; or $	$ or $ or $
+$ and $ and $ and $	$ and $ and $ and $
+$, or $	$ or $
+$ or $ $	$ or $ or $
+$, $; or $	($ and $) or $
+$; $; or $	($ and $) or $
+$, or $, or $ $	$ or $ or $ or $
+One of $, $, $, $, $, or $	$ or $ or $ or $ or $ or $
+One of $	$
+$ and $; and $	$ and $ and $
+$, $, and $\r	$ and $ and $
+$;	$
+$ or $;	$ or $
+$ or $; $; and $	($ or $) and $ and $
+$ , $ , $ , and $	$ and $ and $ and $
+$ and $ and $; or $	($ and $ and $) or $
+$, $ and ($ or $ )	$ and $ and ($ or $)
+$ or $, or $	$ or $ or $
+$, $, $, $, $, $, $, $, $	$ and $ and $ and $ and $ and $ and $ and $ and $
+($ and $ or $ and $ )	($ and $) or ($ and $)
+$, $;	$ or $
+$ and one of $, $, $, $, $, $ or $	$ and ($ or $ or $ or $ or $ or $ or $)
+$ or $ or $; and one of $, $, $, $, $, $ or $	($ or $ or $) and ($ or $ or $ or $ or $ or $ or $)
+$, and $, and $	$ and $ and $
+$; $; $ or $; and $ or $, or $	$ and $ and ($ or $) and ($ or $ or $)
+$; $; one of $, $, $, $, $, or $; and one of $, $, $	$ and $ and ($ or $ or $ or $ or $ or $) and ($ or $ or $)
+$ or $; one of $, $, $, $, $, or $; and $	($ or $) and ($ or $ or $ or $ or $ or $) and $
+$ or $; and one of $, $, $, $, $ or $; and one of $ or $	($ or $) and ($ or $ or $ or $ or $ or $) and ($ or $)
+$; $ and $	$ and $ and $ FLAG(Last two are only recommonded)
+$, $, $, $, and one of $ or $	$ and $ and $ and $ and ($ or $)
+$, $, or $; or $	$ or $ or $ or $
+$, $ and ($ or $)	$ and $ and ($ or $)
+($ and $ or $ and $)	($ and $) or ($ and $)
+($ or $) and ($ or $)	($ or $) and ($ or $)
+$; $; $; and one of $, $, $, or $, or $	$ and $ and $ and ($ or $ or $ or $)
+one of $	$
+$, $, $, $	$ and $ and $ and $
+($ or $) and $	($ or $) and $
+$ or $ or $ or $ or $	$ or $ or $ or $ or $
+$, or $, $, or $ or $	$ or $ or $ or $
+$, $, or $ $	$, $, or $ $
+$, $ or $; $ or $; $	($ or $ or $) and ($ or $) and $
+$ or $; $	($ or $) and $
+$ and $ or $, or $	$ and ($ or $ or $)
+: $ $	$ $
+$, $, $ or $	$ or $ or $ or $
+$, ($ or $); and one of $ or $	$ and ($ or $) and ($ or $)
+($ or $ or $ or $) or $	($ or $ or $ or $) or $
+$ and $ and $ $	$ and $ and $ $
+One of $, $, $, or $; or one of $	One of $, $, $, or $; or one of $
+$; or one of $	$; or one of $
+One of $, $, or $; or $	$ or $ or $ or $
+One of $, $, $, or $ $	One of $, $, $, or $ $
+One of $, $; $; $, $, $, $, $, $, or $	$ or $ or $ or $ or $ or $ or $ or $ or $ or $
+$, $, $, and $; and $	$ and $ and $ and $ and $
+One of $ $, $, $, $ or $; and $	($ or $ or $ or $ or $ or $) and $
+$, $, $, $; or $	$ or $ or $ or $ or $
+$; and $; and $	$ and $ and $
+$; and $ or $; and $	$ and ($ or $) and $
+$, or $, or $ or $	$ or $ or $ or $
+$ and $; or $, $, and $	($ and $) or ($ and $ and $)
+$, and $; or $, $	($ and $) or $, $
+$ and $ or $, $, and $	($ and $) or ($ and $ and $)
+$ and $ $	$ and $ $
+$ and $; $	$ and $ and $
+$; $; one of $, $, $; and $	$ and $ and ($ or $ or $) and $
+$; and $ and one of $	$; and $ and one of $
+$; or [($ or $ or $) and ($ or $ or $)]	$ or (($ or $ or $) and ($ or $ or $))FLAG
+$ or $ or $ $	$ or $ or $ $
+$ and $; or $ and $; or $ and $; or $	($ and $) or ($ and $) or ($ and $) or $
+($ and $) or $	($ and $) or $FLAG
+($, $, $, and $), or $	($ and $ and $ and $) or $
+($, $, $, $, and $), or $	($ and $ and $ and $ and $) or $
+($ or $), $, and $	($ or $) and $ and $
+($ or $) and [$ or $]	($ or $) and ($ or $)
+($ or $), [$ or $], $, and $	($ or $) and ($ or $) and $ and $
+[$ or $], $, and $	($ or $) and $ and $
+$, $, [$ or ($ and $)], $, and $	$ and $ and ($ or ($ and $)) and $ and $FLAG
+[$ or ($ and $)] and $	($ or ($ and $)) and $
+$, [$ or $], and $	$ and ($ or $) and $
+$, $, or $, or $	$ or $ or $ or $
+$; $; $; $ or $ or $	$ and $ and $ and ($ or $ or $)
+One of $, $, $, $, $, $, $, $, $, or $, or $	$ or $ or $ or $ or $ or $ or $ or $ or $ or $ or $
+$; or $ and $; or $	$ or ($ and $) or $
+$; and $; or $ and $; or $	($ and $) or ($ and $) or $
+$; $; and $ or $; or $	($ and $ and ($ or $)) or $
+$ and one of $, $, $ or $; or $	($ and ($ or $ or $ or $)) or $
+$ or $ or $ or $ or $ or $ or $ or $ or $ $	$ or $ or $ or $ or $ or $ or $ or $ or $ ($)
+$; $; $	$ and $ and $
+$, $, $, or $; and $, $, or $	($ or $ or $ or $) and ($ or $ or $)
+$; and $ or $; and $ or $	$ and ($ or $) and ($ or $)
+$ and $ One of $, $ or $ $	$ and $ and ($ or $ or $ $)
+One of $ or $ and $	($ or $) and $
+One of $, $ or $, and one of $ or $ or $	($ or $ or $) and ($ or $ or $)
+One of $ or $ or $, or $	$ or $ or $ or $
+$, $ or $, or $	$ or $ or $ or $
+$, $, or $; and $; and $	($ or $ or $) and $ and $
+$ or $; and $; and $	($ or $) and $ and $
+One of $, $, $ or $; and $; and $	($ or $ or $ or $) and $ and $
+$ and, $	$ and $ FLAG
+$ or $, $, and one of $ or $	($ or $) and $ and ($ or $)
+$ or $, $, and $ or $	($ or $) and $ and ($ or $)
+$ and one of $	$ and one of $
+$, $, and $, and $	$ and $ and $ and $
+$ and $, or $ and $, or $	($ and $) or ($ and $) or $

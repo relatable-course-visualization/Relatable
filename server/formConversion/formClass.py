@@ -103,10 +103,17 @@ class Form():
         # (or equivalent) | or equivalent
         # (taken)
         cur = self.workingPreq
-        s1 = 'formerly\s'+self.courseCodeRegEx
-        s2 = '\(or\sequivalent\)|or\sequivalent'
+        if cur[0] == ':':
+            cur = re.sub(':', '', cur, 1)
+        elif cur[0]+cur[1] == '):':
+            cur = re.sub('\):', '', cur)
+        elif cur[0] == ')':
+            cur = re.sub('\)', '', cur, 1)
+
+        s1 = 'formerly\s'+self.fullCourseRegEx+'|formerly\s'+self.courseCodeRegEx
+        s2 = 'or equivalents as determined by the college|or\sequivalents|\(or\sequivalent\)|or\sequivalent'
         
-        s3 = '\(taken\)'
+        s3 = '\s\(taken\)'
         s4 = 'either\s'+self.fullCourseRegEx+'\sor\s'+self.fullCourseRegEx
         s4Replace = '(\g<1> or \g<2>)'
         s5 = '\&'
@@ -114,8 +121,12 @@ class Form():
         s6Replace = 'one of'
         # s7 = ';'
         s8 = '\.'
-        
-        
+        s9 = self.fullCourseRegEx+'\sis\srecommended' # ANSC 316.3 is recommended
+        s9Replace = '\g<1>'
+        s10 = 'some knowledge of macroeconomics preferred'
+        s11 = '\('+self.fullCourseRegEx+'\srecommended\)'#(CHEM 115 recommended)
+        s12 = self.fullCourseRegEx+'\s\(or\s'+self.fullCourseRegEx+'\)'
+        s12Replace = '(\g<1> or \g<2>)'
 
         cur = re.sub(s1, '', cur)
         cur = re.sub(s2, '', cur)
@@ -127,8 +138,17 @@ class Form():
         cur = re.sub(s8, '', cur)
         # and/or -> or
         cur = re.sub('and/or', 'or', cur)
-        
-        
+        cur = re.sub(s9, s9Replace, cur)
+        cur = re.sub(s10, '', cur)
+        cur = re.sub('plus', 'and', cur)
+        cur = re.sub(s11, '', cur)
+        cur = re.sub('at least one of', 'one of', cur)
+        cur = re.sub('One of the following courses:', 'One of', cur)
+        cur = re.sub('\(\)', '', cur)
+        cur = re.sub('are recommended', '', cur)
+        cur = re.sub(s12, s12Replace, cur)
+        cur = re.sub('One course from', 'One of', cur)
+        cur = re.sub('[Oo][Rr]', 'or', cur)
 
         self.workingPreq = cur
         return self.workingPreq
@@ -142,7 +162,11 @@ class Form():
             # mod = re.sub(r'[^\w\s]', '', mod)
             mod = re.sub('[A-Z]{2,4}\s[0-9]{2,3}.[0-9]|[A-Z]{2,4}\s[0-9]{2,3}', '$', mod)
 
-        self.dollarCoursePreq = mod
+        mod = re.sub(' {2}', ' ', mod) # remove double spaces
+        mod = re.sub(' ,', ',', mod)
+        mod = re.sub(' ;', ';', mod)
+        mod = re.sub(',,', ',', mod)
+        self.dollarCoursePreq = mod.strip()
 
 
 
@@ -204,7 +228,13 @@ class Form():
             return self.type
 
     def createFinalForms(self):
-        if self.type == 'Normal Form':
+        if self.type == 'None':
+            self.finalPreq = 'None'
+            return 'None'
+        elif self.type == 'Simple String':
+            self.finalPreq = self.originalPreq
+            return self.finalPreq
+        elif self.type == 'Normal Form':
             # print(f'{self.originalPreq}\n{self.workingPreq}')
             # Create a list of all the classes
             courseList = []
@@ -216,6 +246,7 @@ class Form():
                 if re.fullmatch(self.fullCourseRegEx, word) != None:
                     courseList.append(word)
             
+            print(f'{self.originalPreq}\n{self.workingPreq}\n')
             # find matching finalForm
             finalForm = self.formDict[self.dollarCoursePreq]
             if finalForm == None:
@@ -230,6 +261,50 @@ class Form():
             self.finalPreq = finalForm
             return finalForm
 
+        elif self.type == 'Normal-Simple':
+            print(f'{self.originalPreq}\n{self.workingPreq}\n{self.dollarCoursePreq}')
+            # need to seperate first part of string from second part of string
+            # then treat second part of string as a class
+            # then do same thing as in normal forms
+            courseList = []
+            remainingStr = ''
+            acceptedRegex = '[Aa]nd.{0,1}|[Oo]ne.{0,1}|of.{0,1}|or.{0,1}|\$.{0,1}\W{0,1}'
+            # mod = re.sub(r'[^\w\s]', '', self.workingPreq)
+            mod = self.dollarCoursePreq.split(' ')
+            reached = False
+            for j in range(1, len(mod)):
+                word = mod[j-1]+' '+mod[j]
+                # word = re.sub(r'[^\w\s]', '', word)
+                # print(word)
+                # if re.search(self.fullCourseRegEx, word) != None:
+                #     courseList.append(word)
+                check = re.sub(r'[^\w\s]', '', mod[j])
+                if re.fullmatch(acceptedRegex, mod[j]) == None and not reached:
+                    # add remaining string as if it were a course
+                    # courseList.append(' '.join(mod[j:]))
+                    remainingStr = ' '.join(mod[j:])
+                    # make dollarCoursePreq represent that
+                    newDollarList = mod[:j]
+                    newDollarList.append('$')
+                    self.dollarCoursePreq = ' '.join(newDollarList)
+                    reached = True
+
+            # find matching finalForm
+            finalForm = self.formDict[self.dollarCoursePreq]
+            # we want to replace final dollar sign with remaining string
+            reverse = finalForm[::-1]
+            remainingReverse = remainingStr[::-1]
+            reverse = re.sub('\$', remainingReverse, reverse, 1)
+            finalForm = reverse[::-1]
+            # replace $ with course names
+            for j in range(len(courseList)):
+                finalForm = re.sub('\$', courseList[j], finalForm, 1)
+
+            self.finalPreq = finalForm
+            print(f'{finalForm}\n')
+            return finalForm
+         
+        
         return ''
 
     def createFormDict(self, filename):

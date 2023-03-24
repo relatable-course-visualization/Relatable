@@ -98,18 +98,18 @@ for course in allCourses:
     modifiedPreqList.append(form.transformForms())
     form.characterizeForm()
     # form.replaceCourseCodes()
-    if form.type == 'Normal Form':
+    if form.type == 'Normal-Simple':
         # print(form.workingPreq)
         k+= 1
-        if form.dollarCoursePreq not in replacedPreqList:
-            replacedPreqList.append(form.dollarCoursePreq)
-        print(f'{form.originalPreq}\n{form.workingPreq}\n{form.dollarCoursePreq}\n{form.finalPreq}\n')
+        # if form.dollarCoursePreq not in replacedPreqList:
+        #     replacedPreqList.append(form.dollarCoursePreq)
+        # print(f'{form.originalPreq}\n{form.workingPreq}\n{form.dollarCoursePreq}\n{form.finalPreq}\n')
     # print(f'{form.type}: {form.workingPreq}')
 # form = Form('BIOL 323.3 and/or BIOL 326.3 or equivalent, or instructor’s authorization.')
 # form.transformForms()
 
 print(k)
-print(len(replacedPreqList))
+# print(len(replacedPreqList))
 
 f = open('New_Forms.txt', 'w+')
 
