@@ -246,11 +246,11 @@ class Form():
                 if re.fullmatch(self.fullCourseRegEx, word) != None:
                     courseList.append(word)
             
-            print(f'{self.originalPreq}\n{self.workingPreq}\n')
+            # print(f'{self.originalPreq}\n{self.workingPreq}\n')
             # find matching finalForm
             finalForm = self.formDict[self.dollarCoursePreq]
             if finalForm == None:
-                print('Error: no matching input for:'+self.dollarCoursePreq)
+                # print('Error: no matching input for:'+self.dollarCoursePreq)
                 return ''
             
             # one by one replace $ with a course from courseList
@@ -262,22 +262,25 @@ class Form():
             return finalForm
 
         elif self.type == 'Normal-Simple':
-            print(f'{self.originalPreq}\n{self.workingPreq}\n{self.dollarCoursePreq}')
+            # print(f'{self.originalPreq}\n{self.workingPreq}\n{self.dollarCoursePreq}')
             # need to seperate first part of string from second part of string
             # then treat second part of string as a class
             # then do same thing as in normal forms
             courseList = []
             remainingStr = ''
+            # remove punctuation before tokenizing
+            mod = re.sub(r'[^\w\s]', '', self.workingPreq)
+            modTokens = mod.split(' ')
+            for j in range(len(modTokens)-1):
+                word = modTokens[j]+' '+modTokens[j+1]
+                if re.fullmatch(self.fullCourseRegEx, word) != None:
+                    courseList.append(word)
             acceptedRegex = '[Aa]nd.{0,1}|[Oo]ne.{0,1}|of.{0,1}|or.{0,1}|\$.{0,1}\W{0,1}'
             # mod = re.sub(r'[^\w\s]', '', self.workingPreq)
             mod = self.dollarCoursePreq.split(' ')
             reached = False
             for j in range(1, len(mod)):
-                word = mod[j-1]+' '+mod[j]
-                # word = re.sub(r'[^\w\s]', '', word)
-                # print(word)
-                # if re.search(self.fullCourseRegEx, word) != None:
-                #     courseList.append(word)
+
                 check = re.sub(r'[^\w\s]', '', mod[j])
                 if re.fullmatch(acceptedRegex, mod[j]) == None and not reached:
                     # add remaining string as if it were a course
@@ -301,7 +304,7 @@ class Form():
                 finalForm = re.sub('\$', courseList[j], finalForm, 1)
 
             self.finalPreq = finalForm
-            print(f'{finalForm}\n')
+            # print(f'{finalForm}\n')
             return finalForm
          
         

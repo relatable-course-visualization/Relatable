@@ -97,10 +97,13 @@ for course in allCourses:
     form = Form(preq)
     modifiedPreqList.append(form.transformForms())
     form.characterizeForm()
+    if form.finalPreq != '' and form.finalPreq != 'None':
+        k+=1
+        print(f'{form.originalPreq}\n{form.finalPreq}\n')
     # form.replaceCourseCodes()
-    if form.type == 'Normal-Simple':
-        # print(form.workingPreq)
-        k+= 1
+    # if form.type == 'Normal-Simple':
+    #     # print(form.workingPreq)
+    #     k+= 1
         # if form.dollarCoursePreq not in replacedPreqList:
         #     replacedPreqList.append(form.dollarCoursePreq)
         # print(f'{form.originalPreq}\n{form.workingPreq}\n{form.dollarCoursePreq}\n{form.finalPreq}\n')
