@@ -1,46 +1,45 @@
-/* @import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');} */
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap');
 
 * {
-    font-family: "Lucida Console", Courier, monospace;
-    box-sizing: border-box;
-  
-    /*Font Sizes*/
-    --fs-1: 3rem;
-    --fs-2: 2rem;
-    --fs-3: 1.5rem;
-    --fs-4: 1rem;
-    --fs-5: 1.2rem;
+  font-family: 'PT Sans', sans-serif;
+  box-sizing: border-box;
 
-    --fs-6: 30px;
-  
-    /*Colors*/
-    --clr-course-background: rgb(70, 191, 54);
-    --clr-subbox-background: rgb(116, 219, 103);
-    
-    --clr-course-title: rgb(61, 27, 35);
-  
-    /*Font Weights*/
-    --fw-light: 200;
-    --fw-reg: 400;
-    --fw-bold: 900;
-  
-    /*Box Shadows*/
-    --bs: 0 2px 8px rgba(0,0,0,0.26);
+  /*Font Sizes*/
+  --fs-1: 3rem;
+  --fs-2: 2rem;
+  --fs-3: 1.5rem;
+  --fs-4: 1rem;
+  --fs-5: 1.2rem;
 
-    /*Box Width*/
-    --bw-verylarge: 500px;
-    --bw-mediumlarge: 450px;
-    --bw-large: 400px;
-    --bw-small: 350px;
-  
-    /*Border Radius*/
-    --br-button: 5px;
-    --br-background: 10px;
+  --fs-6: 30px;
 
-     /*Cursor pointers*/
-     --crsr-pointer: pointer;
+  /*Colors*/
+  --clr-primary-color: #b4e4ff;
+  --clr-secondary-color: #f6f1f1;
+  --clr-background-color: #ffff;
 
-      /*Margin*/
-      --margin-wide: 1rem 1rem 1rem 0;;
-      --margin-thin: 0rem 0rem 0.5rem 0;
-  }
+  /*Font Weights*/
+  --fw-light: 200;
+  --fw-reg: 400;
+  --fw-bold: 700;
+
+  /*Box Shadows*/
+  --bs: 0 2px 8px rgba(0, 0, 0, 0.26);
+
+  /*Box Width*/
+  --bw-verylarge: 500px;
+  --bw-mediumlarge: 450px;
+  --bw-large: 400px;
+  --bw-small: 350px;
+
+  /*Border Radius*/
+  --br-button: 5px;
+  --br-background: 10px;
+
+  /*Cursor pointers*/
+  --crsr-pointer: pointer;
+
+  /*Margin*/
+  --margin-wide: 1rem 1rem 1rem 0;
+  --margin-thin: 0rem 0rem 0.5rem 0;
+}
