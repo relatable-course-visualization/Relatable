@@ -1,5 +1,5 @@
 import React from 'react';
-
+import '../stylings/aboutUs.css';
 
 function AboutUs() {
   return (
@@ -8,7 +8,10 @@ function AboutUs() {
       <div className="aboutUsDiv">
         <div className="aboutUsSubDiv1">
           <div className="aboutUsImage1Div">
-            <img src="../images/about_us_image1.jpg" className="aboutUsImage1"></img>
+            <img
+              src="../images/about_us_image1.jpg"
+              className="aboutUsImage1"
+            ></img>
           </div>
           <div className="aboutUsTextBox1">
             <p>
@@ -26,7 +29,10 @@ function AboutUs() {
             </p>
           </div>
           <div className="aboutUsImage2Div">
-            <img src="../images/about_us_image2.jpg" className="aboutUsImage2"></img>
+            <img
+              src="../images/about_us_image2.jpg"
+              className="aboutUsImage2"
+            ></img>
           </div>
         </div>
       </div>

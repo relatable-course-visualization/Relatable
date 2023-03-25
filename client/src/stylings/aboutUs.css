@@ -1,0 +1,52 @@
+.aboutUsDiv {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+}
+
+.aboutUsSubDiv1 {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.aboutUsSubDiv2 {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.aboutUsImage1 {
+  width: 64%;
+}
+.aboutUsImage2 {
+  width: 87%;
+}
+
+.aboutUsImage1Div {
+  margin-left: 30px;
+  width: 100%;
+  padding-bottom: 70px;
+}
+.aboutUsImage2Div {
+  width: 100%;
+  padding-top: 55px;
+}
+.aboutUsTextBox1 {
+  float: left;
+  padding-right: 150px;
+}
+.aboutUsTextBox2 {
+  margin-top: 40px;
+  float: left;
+}
+
+p {
+  font-size: var(--fs-2);
+  font-weight: var(--fw-light);
+}
