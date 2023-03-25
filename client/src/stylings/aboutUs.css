@@ -1,29 +1,17 @@
+.aboutUsHeaderText {
+  text-align: center;
+  font-size: var(--fs-1);
+}
 .aboutUsDiv {
-  height: 100vh;
-  display: flex;
   justify-content: center;
   align-items: center;
   padding: 40px;
 }
 
-.aboutUsSubDiv1 {
-  display: inline-flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-}
-.aboutUsSubDiv2 {
-  display: inline-flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-}
-
 .aboutUsImage1 {
   width: 64%;
 }
+
 .aboutUsImage2 {
   width: 87%;
 }
@@ -33,20 +21,79 @@
   width: 100%;
   padding-bottom: 70px;
 }
+
 .aboutUsImage2Div {
   width: 100%;
   padding-top: 55px;
 }
+
 .aboutUsTextBox1 {
   float: left;
   padding-right: 150px;
 }
+
 .aboutUsTextBox2 {
   margin-top: 40px;
   float: left;
 }
-
 p {
   font-size: var(--fs-2);
   font-weight: var(--fw-light);
+}
+
+/* Media queries */
+@media only screen and (max-width: 768px) {
+  /* Styles for screens up to 768px */
+  .aboutUsDiv {
+    padding: 20px;
+  }
+  .aboutUsSubDiv1,
+  .aboutUsSubDiv2 {
+    display: block;
+    width: 100%;
+  }
+  .aboutUsSubDiv1,
+  .aboutUsSubDiv2 {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .aboutUsImage1,
+  .aboutUsImage2 {
+    width: 100%;
+  }
+
+  .aboutUsImage1Div {
+    margin-left: 0;
+    padding-bottom: 30px;
+  }
+
+  .aboutUsImage2Div {
+    padding-top: 30px;
+  }
+
+  .aboutUsTextBox1,
+  .aboutUsTextBox2 {
+    float: none;
+    text-align: center;
+    justify-content: center;
+    padding-right: 0;
+    margin-top: 20px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  /* Styles for screens above 768px */
+  .aboutUsDiv {
+    display: flex;
+  }
+  .aboutUsSubDiv1,
+  .aboutUsSubDiv2 {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
 }
