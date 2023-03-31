@@ -59,12 +59,15 @@ class Form():
         s7 = self.courseCodeRegEx+'\s'+self.courseNumRegEx+'\sand\s\('+self.courseNumRegEx+'\sor\s'+self.courseNumRegEx
         s7Replace = '\g<1> \g<2> and (\g<1> \g<3> or \g<1> \g<4>'
         # Change MATH 164.3 to MATH 164
-        s7 = '([A-Z]{2,4}\s[0-9]{3}).[0-9]'
-        s7Replace = '\g<1>'
+        s8 = '([A-Z]{2,4}\s[0-9]{3})\.[0-9]{1,2}'
+        s8Replace = '\g<1>'
         # Special Case
-        s8 = 'Art\s316.6' #Case where they did not put capitals
-        s8Replace = 'ART 316'
-        
+        s9 = 'Art\s316.6' #Case where they did not put capitals
+        s9Replace = 'ART 316'
+        s10 = 'SLS240.3'
+        s10Replace = 'SLS 240'
+        s11 = 'CMPT 481/811'
+        s11Replace = 'CMPT 481 or CMPT 811'
 
         # Note - from testing this catches all cases that occur - will have to test after each new cycle
 
@@ -80,6 +83,9 @@ class Form():
             cur = re.sub(s6, s6Replace, cur)
             cur = re.sub(s7, s7Replace, cur)
             cur = re.sub(s8, s8Replace, cur)
+            cur = re.sub(s9, s9Replace, cur)
+            cur = re.sub(s10, s10Replace, cur)
+            cur = re.sub(s11, s11Replace, cur)
             if cur == prev:
                 # print(f'{prev} : {cur}')
                 break       
@@ -144,8 +150,11 @@ class Form():
         cur = re.sub(s11, '', cur)
         cur = re.sub('at least one of', 'one of', cur)
         cur = re.sub('One of the following courses:', 'One of', cur)
+        cur = re.sub('Any one or more of the following courses:', 'One of', cur)
+        cur = re.sub('Any one or more of the following courses are recommended as prerequisites for this course:', 'One of', cur)
         cur = re.sub('\(\)', '', cur)
         cur = re.sub('are recommended', '', cur)
+        # cur = re.sub(r'Students pursuing the B.Ed. Direct Entry Program must complete', '', cur)
         cur = re.sub(s12, s12Replace, cur)
         cur = re.sub('One course from', 'One of', cur)
         cur = re.sub('[Oo][Rr]', 'or', cur)
@@ -231,8 +240,8 @@ class Form():
         if self.type == 'None':
             self.finalPreq = 'None'
             return 'None'
-        elif self.type == 'Simple String':
-            self.finalPreq = self.originalPreq
+        elif self.type == 'Simple String' or self.type == 'Complex String':
+            self.finalPreq = self.workingPreq
             return self.finalPreq
         elif self.type == 'Normal Form':
             # print(f'{self.originalPreq}\n{self.workingPreq}')
@@ -245,7 +254,6 @@ class Form():
                 word = modTokens[j]+' '+modTokens[j+1]
                 if re.fullmatch(self.fullCourseRegEx, word) != None:
                     courseList.append(word)
-            
             # print(f'{self.originalPreq}\n{self.workingPreq}\n')
             # find matching finalForm
             finalForm = self.formDict[self.dollarCoursePreq]
@@ -258,8 +266,9 @@ class Form():
             for j in range(len(courseList)):
                 finalForm = re.sub('\$', courseList[j], finalForm, 1)
 
-            self.finalPreq = finalForm
-            return finalForm
+
+            self.finalPreq = finalForm.rstrip()
+            return finalForm.rstrip()
 
         elif self.type == 'Normal-Simple':
             # print(f'{self.originalPreq}\n{self.workingPreq}\n{self.dollarCoursePreq}')
@@ -303,9 +312,9 @@ class Form():
             for j in range(len(courseList)):
                 finalForm = re.sub('\$', courseList[j], finalForm, 1)
 
-            self.finalPreq = finalForm
+            self.finalPreq = finalForm.rstrip()
             # print(f'{finalForm}\n')
-            return finalForm
+            return finalForm.rstrip()
          
         
         return ''
