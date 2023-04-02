@@ -4,6 +4,7 @@ import RelatableLogo from "../images/relatable_full_logo.png";
 import "../stylings/footer.css";
 
 // MUI's makeStyles hooks is used to add CSS
+// The image is styled in footer.css
 const useStyles = makeStyles({
   footer: {
     position: "absolute",
@@ -21,7 +22,6 @@ const useStyles = makeStyles({
       whiteSpace: "nowrap", // prevents text going into multiple lines
     },
 
-    // media queries
     "@media (max-width: 600px)": {
       fontSize: "var(--fs-4)",
     },
@@ -30,7 +30,6 @@ const useStyles = makeStyles({
   footerButtonGrid: {
     maxWidth: "130px",
 
-    // media queries
     "@media (max-width: 600px)": {
       maxWidth: "100px",
     },
@@ -43,10 +42,6 @@ const useStyles = makeStyles({
       alignItems: "center",
     },
   },
-
-  // footerContainer: {
-  //   textAlign: "center",
-  // },
 });
 
 function Footer() {
