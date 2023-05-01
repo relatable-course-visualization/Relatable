@@ -10,10 +10,12 @@
 
 .aboutUsImage1 {
   width: 64%;
+  border-radius: 10%;
 }
 
 .aboutUsImage2 {
   width: 87%;
+  border-radius: 10%;
 }
 
 .aboutUsImage1Div {
@@ -95,5 +97,8 @@ p {
     justify-content: center;
     align-items: center;
     width: 100%;
+  }
+  .aboutUsTextBox1,
+  .aboutUsTextBox2 {
   }
 }
