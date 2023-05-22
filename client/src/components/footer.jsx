@@ -21,6 +21,9 @@ const useStyles = makeStyles({
     "& .MuiButton-label": {
       whiteSpace: "nowrap", // prevents text going into multiple lines
     },
+    "&:hover": {
+      color: "black",
+    },
 
     "@media (max-width: 600px)": {
       fontSize: "var(--fs-4)",
@@ -59,25 +62,17 @@ function Footer() {
           className={classes.footerGrid}
         >
           <Grid item className={classes.footerButtonGrid}>
-            <Button color="inherit" href="/" className={classes.footerButton}>
+            <Button href="/" className={classes.footerButton}>
               Search
             </Button>
           </Grid>
           <Grid item className={classes.footerButtonGrid}>
-            <Button
-              color="inherit"
-              href="/about-us"
-              className={classes.footerButton}
-            >
+            <Button href="/about-us" className={classes.footerButton}>
               About Us
             </Button>
           </Grid>
           <Grid item className={classes.footerButtonGrid}>
-            <Button
-              color="inherit"
-              href="/contact-us"
-              className={classes.footerButton}
-            >
+            <Button href="/contact-us" className={classes.footerButton}>
               Contact Us
             </Button>
           </Grid>
