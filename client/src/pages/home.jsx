@@ -1,12 +1,12 @@
 import React from "react";
-import NewSearch from "../components/newSearch";
 import "../stylings/home.css";
 import Footer from "../components/footer";
+import Search from "../components/search";
 
 const Home = () => {
   return (
     <div id="home">
-      <NewSearch />
+      <Search />
       <Footer />
     </div>
   );
