@@ -1,14 +1,18 @@
-import './App.css';
-import Homepage from "./home/homepage"
-import React from 'react';
+import "./App.css";
+import Home from "./pages/home";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import React from "react";
 
 function App() {
   return (
-    <>
-      <Homepage />
-    </>
-  )
-     
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        {/* <Route path="/about-us" element={<AboutUs />} />
+        <Route path="/contact-us" element={<Contact />} /> */}
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
 export default App;
