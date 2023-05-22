@@ -104,7 +104,7 @@ def getCoursePrereqInfo(request):
 
 
 @api_view(['GET'])
-def getAllCourses(request, id):
+def getAllCourses(request):
     """ Return all course objects from DB
         :param: none
         :return: serialized course objects OR serialized course ids depending on need
