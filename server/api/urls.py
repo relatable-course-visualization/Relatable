@@ -3,8 +3,20 @@ from django.urls import path, re_path
 from . import views
 
 urlpatterns = [
+
+# Active Endpoints
+########################################################################################
     path('admin/', admin.site.urls), 
 
+    # POST Endpoints
+    path('postCourse2023', views.postCourse2023),
+    
+    # GET Endpoints
+
+
+
+# Old Endpoints:
+######################################################################################
     # GET endpoints
     path('courses', views.getAllCourses), 
     path('getCoursePrereqInfo', views.getCoursePrereqInfo),
