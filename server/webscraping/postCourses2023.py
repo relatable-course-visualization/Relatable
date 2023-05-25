@@ -17,11 +17,11 @@ def initializeCourseTable():
         try:
             course_object = {'course_code': str(course.getCode()), 'name': str(course.getName()), 'description': str(course.getDescription())
             , 'restrictions': str(course.getRestriction()), 'hyperlink': str(course.getLink()), 'num_credits': int(course.getCredit()),
-            'raw_preq': course_object.getPrerequisite(), 'clean_preq': '', 'marked_preq': '', 'dependent_courses': ''}
+            'raw_preq': str(course.getPrerequisite()), 'clean_preq': '', 'marked_preq': '', 'dependent_courses': ''}
         except ValueError:
             course_object = {'course_code': str(course.getCode()), 'name': str(course.getName()), 'description': str(course.getDescription())
             , 'restrictions': str(course.getRestriction()), 'hyperlink': str(course.getLink()), 'num_credits': -1, 
-            'raw_preq': course_object.getPrerequisite(), 'clean_preq': '', 'marked_preq': '', 'dependent_courses': ''}
+            'raw_preq': str(course.getPrerequisite()), 'clean_preq': '', 'marked_preq': '', 'dependent_courses': ''}
 
         requests.post(f"{env('SERVER_URL')}/postCourse2023", data=course_object)
 
