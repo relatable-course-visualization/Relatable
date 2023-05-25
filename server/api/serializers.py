@@ -1,6 +1,17 @@
 from rest_framework import serializers
 from .models import *
 
+
+# 2023 Serializers:
+################################################################################################
+class Course2023Serializer(serializers.ModelSerializer):
+    class Meta:
+        model = CourseTable2023
+        fields = ['id', 'course_code', 'name', 'description', 'restrictions', 'hyperlink', 'num_credits', 'raw_preq', 'clean_preq', 'marked_preq', 'dependent_courses']
+
+
+# Old Serializers:
+############################################################################################################
 class CourseSerializer(serializers.ModelSerializer):
     class Meta:
         model = Course
