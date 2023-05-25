@@ -16,6 +16,77 @@ from .serializers import *
 env = environ.Env()
 environ.Env.read_env()
 
+
+# POSTING Methods
+#############################################################################################
+@api_view(['POST'])
+def postCourse2023(request):
+    """ Insert course object into Course table
+    """
+    if request.method == 'POST':
+        serializer = Course2023Serializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+# @api_view(['PUT'])
+# def updateCourse(request):
+#     """ Update each record in course table.
+#         :param none
+#         :postcond: an entry in postTable is updated
+#         :return: Response - either successfully posted or bad request
+#     """
+#     course_code = request.data.get("course_code")
+#     try:
+#         course_db = Course.objects.get(course_code=course_code) # database does HAVE space
+#     except Exception as e:
+#         print("Error updating course with exception: " + e)
+
+#     # need to make sure course corresponds correctly to the request.data course. 
+#     serialized_course = CourseSerializer(course_db, request.data) 
+#     if serialized_course.is_valid():
+#         serialized_course.save()
+#         return Response(serialized_course.data)
+    
+#     return Response(serialized_course.error_messages, status=status.HTTP_400_BAD_REQUEST)
+
+
+# GET Methods
+###########################################################################################################################
+# @api_view(['GET'])
+# def getAllCourses2023(request, id):
+#     """ Return all course objects from DB
+#         :param: none
+#         :return: serialized course objects OR serialized course ids depending on need
+#     """
+#     courses = Course.objects.all()
+#     serializer = CourseSerializer(courses, many=True)
+#     return Response(serializer.data)
+
+
+# @api_view(['GET'])
+# def getCourse2023(request, course_code):
+#     """ Return a single course, given the ID if possible"""
+#     #add space to course code
+#     course_code_with_space = list(course_code)
+#     course_code_with_space.insert(-3," ")
+#     course_code_with_space = ''.join(course_code_with_space)
+#     course_code_with_space = str(course_code_with_space)
+#     try:
+#         course = Course.objects.get(course_code=course_code_with_space)
+#     except:
+#         course = None
+#     serializer = CourseSerializer(course)
+    
+#     return Response(serializer.data)
+
+
+   
+# Old Methods
+###########################################################################################################################
+###########################################################################################################################
 @api_view(['POST'])
 def postTest(request):
     """ Test db connection by posting fake data into test table
@@ -50,6 +121,7 @@ def postCourse(request):
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    
 @api_view(['POST'])
 def postPrerequisite(request):
     """ Insert prerequisite entry into Prerequisite table 
@@ -92,6 +164,7 @@ def updateCourse(request):
         return Response(serialized_course.data)
     
     return Response(serialized_course.error_messages, status=status.HTTP_400_BAD_REQUEST)
+
 
 
 @api_view(['GET'])
