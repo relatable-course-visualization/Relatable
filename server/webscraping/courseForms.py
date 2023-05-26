@@ -21,7 +21,7 @@ def splitPreq(s: str):
         right = s[j:]
         # We only want strings that contain 'One' 'of' 'and' '$' '!' '(' ')' or spaces
         # any order and any number of repetitions of above
-        # regex would be like: '((one)*(of)*(and)*(\s)*(\$)**\(*)*)*'
+        # regex would be like: '((One) + (of) + (and) + (\$) + (' ') + !'
         # Also we wanr the LARGEST
         accepted = True
         for word in left:
