@@ -31,26 +31,30 @@ def postCourse2023(request):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
-# @api_view(['PUT'])
-# def updateCourse(request):
-#     """ Update each record in course table.
-#         :param none
-#         :postcond: an entry in postTable is updated
-#         :return: Response - either successfully posted or bad request
-#     """
-#     course_code = request.data.get("course_code")
-#     try:
-#         course_db = Course.objects.get(course_code=course_code) # database does HAVE space
-#     except Exception as e:
-#         print("Error updating course with exception: " + e)
+@api_view(['PUT'])
+def updateCourse2023(request):
+    """ Update each record in course table. Likely our most common use case for this will be to:
+            - First, get a course object
+            - Update an empty or inccorect column
+            - Use this function to update course object in db
+        :param request: make sure request.data is a properly formatted dictionary containing needed course data.
+        :postcond: an entry in postTable is updated
+        :return: Response - either successfully posted or bad request
+    """
+    course_code = request.data.get("course_code")
+    try:
+        # does CourseTable2023 have entry with given course code
+        course_db = CourseTable2023.objects.get(course_code=course_code) 
+    except Exception as e:
+        print("Error updating course with exception: " + e)
 
-#     # need to make sure course corresponds correctly to the request.data course. 
-#     serialized_course = CourseSerializer(course_db, request.data) 
-#     if serialized_course.is_valid():
-#         serialized_course.save()
-#         return Response(serialized_course.data)
+    # passing in exisitng course entry ensures that the entry gets updated with new data, rather than create a new row
+    serialized_course = Course2023Serializer(course_db, request.data) 
+    if serialized_course.is_valid():
+        serialized_course.save()
+        return Response(serialized_course.data)
     
-#     return Response(serialized_course.error_messages, status=status.HTTP_400_BAD_REQUEST)
+    return Response(serialized_course.error_messages, status=status.HTTP_400_BAD_REQUEST)
 
 
 # GET Methods
