@@ -55,32 +55,32 @@ def postCourse2023(request):
 
 # GET Methods
 ###########################################################################################################################
-# @api_view(['GET'])
-# def getAllCourses2023(request, id):
-#     """ Return all course objects from DB
-#         :param: none
-#         :return: serialized course objects OR serialized course ids depending on need
-#     """
-#     courses = Course.objects.all()
-#     serializer = CourseSerializer(courses, many=True)
-#     return Response(serializer.data)
+@api_view(['GET'])
+def getAllCourses2023(request, id):
+    """ Return all course objects from DB
+        :param: none
+        :return: serialized course objects OR serialized course ids depending on need
+    """
+    courses = CourseTable2023.objects.all()
+    serializer = Course2023Serializer(courses, many=True)
+    return Response(serializer.data)
 
 
-# @api_view(['GET'])
-# def getCourse2023(request, course_code):
-#     """ Return a single course, given the ID if possible"""
-#     #add space to course code
-#     course_code_with_space = list(course_code)
-#     course_code_with_space.insert(-3," ")
-#     course_code_with_space = ''.join(course_code_with_space)
-#     course_code_with_space = str(course_code_with_space)
-#     try:
-#         course = Course.objects.get(course_code=course_code_with_space)
-#     except:
-#         course = None
-#     serializer = CourseSerializer(course)
+@api_view(['GET'])
+def getCourse2023(request, course_code):
+    """ Return a single course, given the ID if possible"""
+    #add space to course code
+    course_code_with_space = list(course_code)
+    course_code_with_space.insert(-3," ")
+    course_code_with_space = ''.join(course_code_with_space)
+    course_code_with_space = str(course_code_with_space)
+    try:
+        course = CourseTable2023.objects.get(course_code=course_code_with_space)
+    except:
+        course = None
+    serializer = Course2023Serializer(course)
     
-#     return Response(serializer.data)
+    return Response(serializer.data)
 
 
    
