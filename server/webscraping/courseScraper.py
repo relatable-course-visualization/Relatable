@@ -9,12 +9,12 @@ def createCourse(code, name, desc, preq, restriction,link, creditUnits ):
     new_course = Course(code, name, desc, preq, restriction, link, creditUnits)
     return new_course
 
-'''
-helper function that cleans the prequisite strings
-'''
-def preqCleaner(prerequisite):
-    preq_list = courseCleaner(initialClean(prerequisite))
-    return preq_list
+# '''
+# helper function that cleans the prequisite strings
+# '''
+# def preqCleaner(prerequisite):
+#     preq_list = courseCleaner(initialClean(prerequisite))
+#     return preq_list
 
 '''
 function that scrapes every single course on the usask catalogue website and returns a list of course objects with attributes
@@ -37,8 +37,8 @@ def courseScraper():
         # create a course object for every course in the subject and store in the courseObjectList
         index = 0
         while index < len(codeList):
-            cleanedPreq = preqCleaner(preqList[index])
-            course1 = createCourse(codeList[index], nameList[index], descList[index], cleanedPreq, restrictionList[index], hyperlinkList[index],creditUnitList[index])
+            # cleanedPreq = preqCleaner(preqList[index])
+            course1 = createCourse(codeList[index], nameList[index], descList[index], preqList[index], restrictionList[index], hyperlinkList[index],creditUnitList[index])
             courseObjectsList.append(course1)
             index = index + 1
 
