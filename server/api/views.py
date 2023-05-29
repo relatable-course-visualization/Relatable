@@ -60,7 +60,7 @@ def updateCourse2023(request):
 # GET Methods
 ###########################################################################################################################
 @api_view(['GET'])
-def getAllCourses2023(request, id):
+def getAllCourses2023(request):
     """ Return all course objects from DB
         :param: none
         :return: serialized course objects OR serialized course ids depending on need

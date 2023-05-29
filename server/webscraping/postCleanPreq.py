@@ -2,6 +2,9 @@ import requests
 import environ
 import re
 from courseClass import *
+import formConversion
+from formConversion.formClass import *
+
 env = environ.Env()
 environ.Env.read_env()
 
@@ -27,3 +30,12 @@ def createCourseList():
         courseList.append(course)
 
     return courseList
+
+def createCleanPreq(raw_preq: str):
+    """
+    Given a a courses raw_preq, return its clean_preq
+    :return clean_preq - cleaned string that makes all the course_codes explicit
+    """
+    form = Form(raw_preq)
+    clean_preq = Form.formalizeCourseNames()
+    return clean_preq
