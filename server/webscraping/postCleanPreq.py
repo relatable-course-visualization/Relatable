@@ -40,12 +40,32 @@ def createCleanPreq(raw_preq: str):
     clean_preq = form.formalizeCourseNames()
     return clean_preq
 
+def createMarkedPreq(clean_preq: str):
+    """
+    From a cleaned string, mark each course with a '$[' before and ']$' after
+    """
+    # need to add space before and after otherwise we get an infinite loop
+    fullCourseRegEx = '([A-Z]{2,4}\s[0-9]{3})'
+    before_marker = '$['
+    after_marker = ']$'
+    replacement = before_marker + '\g<1>' + after_marker
+
+    marked_preq = re.sub(fullCourseRegEx, replacement, clean_preq)
+
+    return marked_preq
+
+
+
+
 
 # The following lines update each course in courseTable2023, adding in new entry for 'clean_preq' column
 courseList = createCourseList()
 for course in courseList:
     if course['raw_preq'] is not None:
         course['clean_preq'] = createCleanPreq(course['raw_preq'])
+        course['marked_preq'] = createMarkedPreq(course['clean_preq'])
+
     else:
         course['clean_preq'] = ''
+        course['marked_preq'] = ''
     requests.put(f"{env('SERVER_URL')}/updateCourse2023", data=course)
