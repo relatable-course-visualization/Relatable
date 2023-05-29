@@ -72,8 +72,9 @@ def checkImplicit(preqList):
         r4 = '(?<![A-Z]{4}\s)[0-9]{3}'
         if re.search(r2, mod) and re.search(r3, mod) and re.search(r4, mod):
             # visual will have to analyze to see if there are any unrecognized courses
-            print(preq)
-            print(form1.workingPreq)
+            print(f"Raw_preq: {preq}")
+            print(f"New_preq: {form1.workingPreq}")
+            print("\n")
             count += 1
 
     # Count on March 15, 2023 = 11
@@ -138,15 +139,22 @@ def normalSimpleTest():
     
     print(f'Normal-Simple tests: {6-incorrect}/6')            
 
-allCourses = requests.get(f"{env('SERVER_URL')}/getCoursePrereqInfo")
+# allCourses = requests.get(f"{env('SERVER_URL')}/getCoursePrereqInfo")
+allCourses = requests.get(f"{env('SERVER_URL')}/getAllCourses2023")
+# print(allCourses)
 allCourses = allCourses.json()
+# print(allCourses)
 allPreqs = []
 normalPreqs = []
 normalSimplePreqs = []
 complexPreqs = []
 simplePreqs = []
 for course in allCourses:
-    allPreqs.append(course['prereqString'])
+    if course['raw_preq'] == None:
+        print("None Type!")
+    else:
+        allPreqs.append(course['raw_preq'])
+    
 # Testing Script:
 # Note: it is difficult to capture all cases in testing since there are so many variations in the prerequisite string.
 # The functions that have been creating for testing and their purposes are:

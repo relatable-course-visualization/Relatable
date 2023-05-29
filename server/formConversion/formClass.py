@@ -58,9 +58,11 @@ class Form():
         #7. ex: SOC 212 and (234 or 329).
         s7 = self.courseCodeRegEx+'\s'+self.courseNumRegEx+'\sand\s\('+self.courseNumRegEx+'\sor\s'+self.courseNumRegEx
         s7Replace = '\g<1> \g<2> and (\g<1> \g<3> or \g<1> \g<4>'
+        
         # Change MATH 164.3 to MATH 164
         s8 = '([A-Z]{2,4}\s[0-9]{3})\.[0-9]{1,2}'
         s8Replace = '\g<1>'
+        
         # Special Case
         s9 = 'Art\s316.6' #Case where they did not put capitals
         s9Replace = 'ART 316'
@@ -68,7 +70,12 @@ class Form():
         s10Replace = 'SLS 240'
         s11 = 'CMPT 481/811'
         s11Replace = 'CMPT 481 or CMPT 811'
-
+        s12 = 'MATH110.3'
+        s12Replace = 'MATH 110'
+        s13 = 'CMPT146.3'
+        s13Replace = 'CMPT 146'
+        s14 = 'MUS101.3'
+        s14Replace = 'MUS 101'
         # Note - from testing this catches all cases that occur - will have to test after each new cycle
 
         # Now, one by one we want to perform replacements:
@@ -86,6 +93,12 @@ class Form():
             cur = re.sub(s9, s9Replace, cur)
             cur = re.sub(s10, s10Replace, cur)
             cur = re.sub(s11, s11Replace, cur)
+            cur = re.sub(s12, s12Replace, cur)
+            cur = re.sub(s13, s13Replace, cur)
+            cur = re.sub(s14, s14Replace, cur)
+            
+
+
             if cur == prev:
                 # print(f'{prev} : {cur}')
                 break       
