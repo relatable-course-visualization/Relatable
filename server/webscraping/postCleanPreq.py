@@ -2,8 +2,8 @@ import requests
 import environ
 import re
 from courseClass import *
-import formConversion
 from formConversion.formClass import *
+
 
 env = environ.Env()
 environ.Env.read_env()
@@ -37,5 +37,15 @@ def createCleanPreq(raw_preq: str):
     :return clean_preq - cleaned string that makes all the course_codes explicit
     """
     form = Form(raw_preq)
-    clean_preq = Form.formalizeCourseNames()
+    clean_preq = form.formalizeCourseNames()
     return clean_preq
+
+
+# The following lines update each course in courseTable2023, adding in new entry for 'clean_preq' column
+courseList = createCourseList()
+for course in courseList:
+    if course['raw_preq'] is not None:
+        course['clean_preq'] = createCleanPreq(course['raw_preq'])
+    else:
+        course['clean_preq'] = ''
+    requests.put(f"{env('SERVER_URL')}/updateCourse2023", data=course)
