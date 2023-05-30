@@ -47,7 +47,40 @@ def createPreqList(preq: str):
         i += 1
     
     return preqList
-            
+
+def createDependStr(dependList: list):
+    """
+    Given a list of dependent courses, convert it into a marked string
+    """
+    dependStr = ''
+    for i in range(len(dependList)):
+        if i == len(dependList) - 1:
+            dependStr += '$['+dependList[i]+']$'
+        else:
+            # May want to rework how these are seperated in the string
+            dependStr += '$['+dependList[i]+']$, '
+    
+    return dependStr
+
+
+courseRecord, dependDict = createCourseRecords()
+# for each course find its preqs and put it in a list
+for course_code in courseRecord.keys():
+    preqList = createPreqList(courseRecord[courseRecord]['marked_preq'])
+    # for each preq in list, append course_code to its dependent courses
+    for preq in preqList:
+        dependDict[preq].append(course_code)
+
+# for each course
+for course_code in courseRecord.keys():
+    # create a dependent sting from its dependent list, then update the course record
+    dependStr = createDependStr(dependDict[course_code])
+    courseRecord[course_code]['dependent_courses'] = dependStr
+
+    # then post the updated course information
+    requests.put(f"{env('SERVER_URL')}/updateCourse2023", data=courseRecord[course_code])
+
+
 
 
 
