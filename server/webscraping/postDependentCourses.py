@@ -34,6 +34,8 @@ def createPreqList(preq: str):
     """
     Given a marked preq, return a list of prerequisite courses
     """
+    if preq is None:
+        return []
     preqList = []
     i = 0
     while i < len(preq) - 1:
@@ -43,7 +45,7 @@ def createPreqList(preq: str):
             while preq[i] != ']':
                 course_code += preq[i]
                 i+=1
-                preqList.append(course_code)
+            preqList.append(course_code)
         i += 1
     
     return preqList
@@ -64,14 +66,26 @@ def createDependStr(dependList: list):
 
 
 courseRecord, dependDict = createCourseRecords()
+notInCatalogue = []
 # for each course find its preqs and put it in a list
 for course_code in courseRecord.keys():
-    preqList = createPreqList(courseRecord[courseRecord]['marked_preq'])
+    preqList = createPreqList(courseRecord[course_code]['marked_preq'])
     # for each preq in list, append course_code to its dependent courses
+    # print(preqList)
     for preq in preqList:
-        dependDict[preq].append(course_code)
+        try:
+            dependDict[preq].append(course_code)
+        except:
+            # these are courses that are mentioned as prerequisites but are no longer offered at USask
+            if preq not in notInCatalogue:
+                notInCatalogue.append(preq)
+                # print(f'{course_code}: {courseRecord[course_code]["clean_preq"]}')
 
-# for each course
+# Courses mentioned in preqs but not in course catologue - may need to deal with these somehow
+# print(notInCatalogue)
+# print(len(notInCatalogue))
+
+
 for course_code in courseRecord.keys():
     # create a dependent sting from its dependent list, then update the course record
     dependStr = createDependStr(dependDict[course_code])
