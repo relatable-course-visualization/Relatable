@@ -11,8 +11,12 @@ urlpatterns = [
     # POST Endpoints
     path('postCourse2023', views.postCourse2023),
 
-    # GET Endpoints
+    # PUT endpoints
+    path('updateCourse2023', views.updateCourse2023),
 
+    # GET Endpoints
+    path('getAllCourses2023', views.getAllCourses2023),
+    re_path(r'^getCourse/([A-za-z]{2,4}\d{2,3})$', views.getCourse2023), #path like /getCourse/CMPT141/
 
 
 # Old Endpoints:
