@@ -21,7 +21,7 @@ const courses = [
   },
 ];
 
-function NewCourse() {
+function CoursePage() {
   return (
     <div className="courses-div">
       {courses.map((course, index) => (
@@ -33,4 +33,4 @@ function NewCourse() {
   );
 }
 
-export default NewCourse;
+export default CoursePage;
