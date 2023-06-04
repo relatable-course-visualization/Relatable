@@ -3,13 +3,6 @@ import environ
 
 env = environ.Env()
 environ.Env.read_env()
-# Steps:
-# 1. Need to get all courses from DB ans store in list
-# 2. We will need a dictionary with course codes as keys and dependent course list as values, initially all empty
-# 3. For each course c:
-#       - Use clean/marked preq to find all of its preq courses p. 
-#       - For each of those preq courses p, append c to its dependancy list using dictionary from step 2
-# 4. For each dependancy list, convert into a (marked) string and then put into database
 
 def createCourseRecords():
     """
@@ -28,7 +21,6 @@ def createCourseRecords():
         dependDict[course['course_code']] = []
 
     return courseRecord, dependDict
-
 
 def createPreqList(preq: str):
     """
@@ -64,37 +56,44 @@ def createDependStr(dependList: list):
     
     return dependStr
 
+def main():
+    """
+    Steps:
+    1. Need to get all courses from DB and store in list
+    2. We will need a dictionary with course codes as keys and dependent course list as values, initially all empty
+    3. For each course c:
+          - Use clean/marked preq to find all of its preq courses p. 
+          - For each of those preq courses p, append c to its dependancy list using dictionary from step 2
+    4. For each dependancy list, convert into a (marked) string and then put into database
+    """
 
-courseRecord, dependDict = createCourseRecords()
-notInCatalogue = []
-# for each course find its preqs and put it in a list
-for course_code in courseRecord.keys():
-    preqList = createPreqList(courseRecord[course_code]['marked_preq'])
-    # for each preq in list, append course_code to its dependent courses
-    # print(preqList)
-    for preq in preqList:
-        try:
-            dependDict[preq].append(course_code)
-        except:
-            # these are courses that are mentioned as prerequisites but are no longer offered at USask
-            if preq not in notInCatalogue:
-                notInCatalogue.append(preq)
-                # print(f'{course_code}: {courseRecord[course_code]["clean_preq"]}')
+    courseRecord, dependDict = createCourseRecords()
+    notInCatalogue = []
+    # for each course find its preqs and put it in a list
+    for course_code in courseRecord.keys():
+        preqList = createPreqList(courseRecord[course_code]['marked_preq'])
+        # for each preq in list, append course_code to its dependent courses
+        # print(preqList)
+        for preq in preqList:
+            try:
+                dependDict[preq].append(course_code)
+            except:
+                # these are courses that are mentioned as prerequisites but are no longer offered at USask
+                if preq not in notInCatalogue:
+                    notInCatalogue.append(preq)
+                    # print(f'{course_code}: {courseRecord[course_code]["clean_preq"]}')
 
-# Courses mentioned in preqs but not in course catologue - may need to deal with these somehow
-# print(notInCatalogue)
-# print(len(notInCatalogue))
+    # Courses mentioned in preqs but not in course catologue - may need to deal with these somehow
+    # print(notInCatalogue)
+    # print(len(notInCatalogue))
 
+    for course_code in courseRecord.keys():
+        # create a dependent sting from its dependent list, then update the course record
+        dependStr = createDependStr(dependDict[course_code])
+        courseRecord[course_code]['dependent_courses'] = dependStr
 
-for course_code in courseRecord.keys():
-    # create a dependent sting from its dependent list, then update the course record
-    dependStr = createDependStr(dependDict[course_code])
-    courseRecord[course_code]['dependent_courses'] = dependStr
+        # then post the updated course information
+        requests.put(f"{env('SERVER_URL')}/updateCourse2023", data=courseRecord[course_code])
 
-    # then post the updated course information
-    requests.put(f"{env('SERVER_URL')}/updateCourse2023", data=courseRecord[course_code])
-
-
-
-
-
+if __name__ == '__main__':
+    main()
