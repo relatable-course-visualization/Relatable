@@ -1,6 +1,5 @@
 # A class for a course
 from webscrape import *
-from courseCleaner import *
 
 class Course:
     def __init__(self, code, name, description, prerequisite, restriction, link, credit_units):
