@@ -1,10 +1,10 @@
-import React, { useState, useEffect, Link } from "react";
+import React, { useState, useEffect } from "react";
 import "../stylings/search.css";
 import axios from "axios";
 
 import "../stylings/course.css";
 import Course from "./course";
-import { Button } from "@material-ui/core";
+import { Button, Typography } from "@material-ui/core";
 import TextField from "@mui/material/TextField";
 import { makeStyles } from "@material-ui/core/styles";
 
@@ -20,6 +20,16 @@ const useStyles = makeStyles({
     backgroundColor: "var(--clr-primary-color)",
     "&:hover": {
       backgroundColor: "var(--clr-primary-color)",
+    },
+  },
+
+  searchTitle: {
+    fontSize: "var(--fs-4)",
+    color: "pink",
+
+    "@media (max-width: 400px)": {
+      fontSize: "var(--fs-5)",
+      color: "red",
     },
   },
 });
@@ -63,7 +73,7 @@ function Search() {
   return (
     <div id="search">
       <>
-        <h1 id="searchTitle">Search Courses</h1>
+        <Typography id="searchTitle">Search Courses</Typography>
 
         <TextField
           id="outlined-basic"
@@ -75,6 +85,7 @@ function Search() {
             setNumShown(10);
           }}
           value={searchTitle}
+          className="searchTextField"
         />
       </>
       {loading ? (
