@@ -18,7 +18,8 @@ export default function CourseCard(props) {
     <Card
       sx={{
         '@media (max-width: 768px)': {
-          width: isHovered ? '90%' : '65%',
+          height: isHovered ? 'auto' : 110,
+          width: isHovered ? '100%' : 220,
         },
         transition: 'height 0.3s ease-in-out',
         height: isHovered ? 'auto' : 150,

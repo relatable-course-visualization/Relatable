@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import CourseCard from './courseCard';
-import '../stylings/courseCard.css';
+import '../stylings/coursePage.css';
 
 const courses = [
   {
@@ -23,12 +23,14 @@ const courses = [
 
 function CoursePage() {
   return (
+    <div className='coursepage-div'>
     <div className="courses-div">
       {courses.map((course, index) => (
         <div key={index}>
           <CourseCard props={course} />
         </div>
       ))}
+    </div>
     </div>
   );
 }
