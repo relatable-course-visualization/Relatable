@@ -12,6 +12,7 @@ class CourseTable2023(models.Model):
     clean_preq = models.TextField(null=True)
     marked_preq = models.TextField(null=True)
     dependent_courses = models.TextField(null=True)
+    not_in_catalogue = models.BooleanField(default=False)
 
 
 # Below are all formerly used tables
