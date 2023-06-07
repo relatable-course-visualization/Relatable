@@ -7,7 +7,7 @@ from .models import *
 class Course2023Serializer(serializers.ModelSerializer):
     class Meta:
         model = CourseTable2023
-        fields = ['id', 'course_code', 'name', 'description', 'restrictions', 'hyperlink', 'num_credits', 'raw_preq', 'clean_preq', 'marked_preq', 'dependent_courses']
+        fields = ['id', 'course_code', 'name', 'description', 'restrictions', 'hyperlink', 'num_credits', 'raw_preq', 'clean_preq', 'marked_preq', 'dependent_courses', 'not_in_catalogue']
 
 
 # Old Serializers:

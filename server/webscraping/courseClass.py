@@ -2,6 +2,9 @@
 from webscrape import *
 
 class Course:
+
+    # not_in_catalogue is not included as it is not a part of the scrape and the default value is False
+
     def __init__(self, code, name, description, prerequisite, restriction, link, credit_units):
         self.course_code = code
         self.name = name
@@ -34,9 +37,3 @@ class Course:
 
     def getInfo(self): # change how you return Prerequisite, should be a string
         return 'Code: {}\n Name: {} \n Description: {}\n Prerequisite(s): {}\n Restriction:{}\n Link: {}\n Credit Units: {}\n'.format(self.course_code, self.name, self.description, self.prerequisite, self.restrictions, self.hyperlink, self.num_credits)
-
-
-
-
-
-
