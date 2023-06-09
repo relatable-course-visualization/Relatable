@@ -34,6 +34,36 @@ Store University of Saskatchewan courses, defining prerequisite and dependency r
   - e.g., 3
   - This can be derived from the original course code (e.g., the ".3" in CMPT 370.3 represents three credits)
 
+# Version Two
+
+## MySQL Tables
+
+For each table, the first row is the fields and the latter are example records. Datatypes and incrementation are included for specificity.
+
+In V2, both the Prerequisite and Dependency tables are removed.
+
+### Course Table
+
+The V2 Course table is updated to store both prerequites and dependencies of a course in the from on string. In the case of prerequisites, three strings are stored:
+
+- raw_preq is the web-scraped prerequisite string
+- clean_preq is the processed version of raw_preq
+- marked_preq is the clean_preq with annotations for courses
+
+The non_in_catalogue field is used to indicate whether a courses exists in the current year's catalogue. This is used to store courses that are referenced in prerequisite strings but are no longer offered.
+
+Only marked versions of dependencies are stored.
+
+Primary key: id
+
+| id : INT , AUTO_INCREMENT | course_code : VARCHAR(10) | name : VARCHAR(255)                 | description : TEXT                                                                                                                                                                                                                                                                                                                                                                                           | restrictions : TEXT | hyperlink : VARCHAR(255)            | num_credits : INT | raw_preq : TEXT | clean_preq : TEXT | marked_preq : TEXT | dependent_courses : TEXT                                                                                       | not_in_catalogue : TINYINT(1) |
+| ------------------------- | ------------------------- | ----------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------- | ----------------------------------- | ----------------- | --------------- | ----------------- | ------------------ | -------------------------------------------------------------------------------------------------------------- | ----------------------------- |
+| 5                         | "CMPT 370"                | "Intermediate Software Engineering" | "Principles and techniques for developing software combined with the practical experience of creating a mid-size software system as a member of a software development team. Includes: teamwork; projects, planning and process; users and requirements; use cases; modeling; quality; software architecture; testing; GUI design, design principles, patterns and implementation; ethics; professionalism." | "None"              | https://catalogue.usask.ca/CMPT-370 | 3                 | CMPT 280.       | CMPT 280.         | \$[CMPT 280]\$.    | \$[CMPT 371]\$, \$[CMPT 436]\$, \$[CMPT 470]\$, \$[CMPT 479]\$, \$[CMPT 481]\$, \$[CMPT 487]\$, \$[CMPT 811]\$ | 0                             |
+
+![EER for course table](CourseTable2023.png)
+
+# Version One [Deprecated]
+
 ## Theory
 
 ### Prerequisite Definition
