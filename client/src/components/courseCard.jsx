@@ -24,6 +24,7 @@ export default function CourseCard(props) {
         transition: 'height 0.3s ease-in-out',
         height: isHovered ? 'auto' : 150,
         width: isHovered ? 750 : 450,
+        backgroundColor: 'var(--clr-secondary-color)',
       }}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
@@ -44,6 +45,43 @@ export default function CourseCard(props) {
             {props.body}
           </p>
         </div>
+        <div className="course-prerequisites">
+          <p className="course-subtitle">Prerequisites:</p>
+          {props.prerequisites == '[]' ? (
+            <h2>No Prerequisites</h2>
+          ) : (
+            <span>{props.prerequisites}</span>
+          )}
+        </div>
+
+        <div className="course-dependencies">
+          <p className="course-subtitle">Dependencies:</p>
+          {props.dependencies == '[]' ? (
+            <h2>No Dependencies</h2>
+          ) : (
+            <span>{props.dependencies}</span>
+          )}
+        </div>
+
+        <div className="course-credits">
+          {props.credits == -1 ? (
+            <p>Number of Credits: Not Applicable</p>
+          ) : (
+            <p>Number of Credits: {props.credits}</p>
+          )}
+        </div>
+
+        <div className="course-restrictions">
+          {props.restrictions == 'None' ? (
+            <p>Restrictions: No Restrictions</p>
+          ) : (
+            <p>Restrictions: {props.restrictions}</p>
+          )}
+        </div>
+
+        <a className="course-hyperlink" href={props.hyperlink}>
+          Link To Course
+        </a>
       </CardContent>
     </Card>
   );

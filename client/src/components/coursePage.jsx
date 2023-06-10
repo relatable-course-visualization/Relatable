@@ -23,14 +23,14 @@ const courses = [
 
 function CoursePage() {
   return (
-    <div className='coursepage-div'>
-    <div className="courses-div">
-      {courses.map((course, index) => (
-        <div key={index}>
-          <CourseCard props={course} />
-        </div>
-      ))}
-    </div>
+    <div className="coursepage-div">
+      <div className="courses-div">
+        {courses.map((course, index) => (
+          <div key={index}>
+            <CourseCard props={course} />
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
