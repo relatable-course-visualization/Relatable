@@ -11,7 +11,7 @@ const useStyles = makeStyles({
     bottom: 0,
     width: '100%',
     backgroundColor: 'var(--clr-primary-color)',
-    position: 'fixed',
+    position: 'flex',
   },
 
   footerButton: {
