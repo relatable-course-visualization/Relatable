@@ -1,48 +1,49 @@
-import { Button, Container, Grid } from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/styles";
-import RelatableLogo from "../images/relatable_full_logo.png";
-import "../stylings/footer.css";
+import React from 'react';
+import { Button, Container, Grid } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
+import RelatableLogo from '../images/relatable_full_logo.png';
+import '../stylings/footer.css';
 
 // MUI's makeStyles hooks is used to add CSS
 // The image is styled in footer.css
 const useStyles = makeStyles({
   footer: {
-    position: "absolute",
     bottom: 0,
-    width: "100%",
-    backgroundColor: "var(--clr-primary-color)",
+    width: '100%',
+    backgroundColor: 'var(--clr-primary-color)',
+    position: 'fixed',
   },
 
   footerButton: {
-    textTransform: "none",
-    fontFamily: "var(font-family)",
-    fontSize: "var(--fs-3)",
-    fontWeight: "var(--fw-bold)",
-    "& .MuiButton-label": {
-      whiteSpace: "nowrap", // prevents text going into multiple lines
+    textTransform: 'none',
+    fontFamily: 'var(font-family)',
+    fontSize: 'var(--fs-3)',
+    fontWeight: 'var(--fw-bold)',
+    '& .MuiButton-label': {
+      whiteSpace: 'nowrap', // prevents text going into multiple lines
     },
-    "&:hover": {
-      color: "black",
+    '&:hover': {
+      color: 'black',
     },
 
-    "@media (max-width: 600px)": {
-      fontSize: "var(--fs-4)",
+    '@media (max-width: 600px)': {
+      fontSize: 'var(--fs-4)',
     },
   },
 
   footerButtonGrid: {
-    maxWidth: "130px",
+    maxWidth: '130px',
 
-    "@media (max-width: 600px)": {
-      maxWidth: "100px",
+    '@media (max-width: 600px)': {
+      maxWidth: '100px',
     },
   },
 
   footerGrid: {
-    "@media (max-width: 320px)": {
-      display: "flex",
-      flexDirection: "column",
-      alignItems: "center",
+    '@media (max-width: 320px)': {
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
     },
   },
 });
