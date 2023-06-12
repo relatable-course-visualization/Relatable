@@ -2,14 +2,14 @@ import React from 'react';
 import '../stylings/home.css';
 import Footer from '../components/footer';
 import Search from '../components/search';
-import CoursePage from '../components/coursePage';
+import Courses from '../components/courses';
 
 const Home = () => {
   return (
     <div id="home">
       <Search />
       <div>
-        <CoursePage />
+        <Courses />
       </div>
       <div>
         <Footer />

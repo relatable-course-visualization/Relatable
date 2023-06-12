@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import CourseCard from './courseCard';
-import '../stylings/coursePage.css';
+import '../stylings/courses.css';
 
 const courses = [];
 
-function CoursePage() {
+function Courses() {
   return (
     <div className="coursepage-div">
       <div className="courses-div">
@@ -18,4 +18,4 @@ function CoursePage() {
   );
 }
 
-export default CoursePage;
+export default Courses;
