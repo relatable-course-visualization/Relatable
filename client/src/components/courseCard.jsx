@@ -37,28 +37,34 @@ export default function CourseCard(props) {
         <div className="course-title">
           <p>{props.name}</p>
         </div>
-        <div noWrap={!isHovered} className="course-body">
+        <div noWrap={!isHovered}>
           <p>{props.body}</p>
         </div>
-        <div className="course-prerequisites">
-          <p className="course-subtitle">Prerequisites:</p>
-          {props.prerequisites == "[]" ? (
-            <h2>No Prerequisites</h2>
+        <div>
+          {props.prerequisites === "None" ? (
+            <p>
+              <u>Prerequisites</u>: No Prerequisites
+            </p>
           ) : (
-            <span>{props.prerequisites}</span>
+            <p>
+              <u>Prerequisites</u>: {props.prerequisites}
+            </p>
           )}
         </div>
 
-        <div className="course-dependencies">
-          <p className="course-subtitle">Dependencies:</p>
-          {props.dependencies == "[]" ? (
-            <h2>No Dependencies</h2>
+        <div>
+          {props.dependencies === null ? (
+            <p>
+              <u>Dependencies</u>: No Dependencies
+            </p>
           ) : (
-            <span>{props.dependencies}</span>
+            <p>
+              <u>Dependencies</u>: {props.dependencies}
+            </p>
           )}
         </div>
 
-        <div className="course-credits">
+        <div>
           {props.credits == -1 ? (
             <p>Number of Credits: Not Applicable</p>
           ) : (
@@ -66,7 +72,7 @@ export default function CourseCard(props) {
           )}
         </div>
 
-        <div className="course-restrictions">
+        <div>
           {props.restrictions == "None" ? (
             <p>Restrictions: No Restrictions</p>
           ) : (
@@ -74,7 +80,12 @@ export default function CourseCard(props) {
           )}
         </div>
 
-        <a className="course-hyperlink" href={props.hyperlink}>
+        <a
+          className="course-hyperlink"
+          href={props.hyperlink}
+          target="_blank"
+          rel="noreferrer"
+        >
           Link To Course
         </a>
       </CardContent>
