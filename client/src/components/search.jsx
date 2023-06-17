@@ -7,6 +7,7 @@ import Course from "./course";
 import { Button, Typography } from "@material-ui/core";
 import TextField from "@mui/material/TextField";
 import { makeStyles } from "@material-ui/core/styles";
+import CourseCard from "./courseCard";
 
 const useStyles = makeStyles({
   searchButton: {
@@ -52,7 +53,7 @@ function Search() {
     const loadPosts = async () => {
       setLoading(true);
       const response = await axios.get(
-        `${process.env.REACT_APP_SERVER_ENDPOINT}/courses`
+        `${process.env.REACT_APP_SERVER_ENDPOINT}/getAllCourses2023`
       );
       setPosts(response.data);
       setLoading(false);
@@ -108,12 +109,16 @@ function Search() {
           .map((item) => (
             <h5 key={item.id}>
               <div className="wrapper">
-                <Course
+                <CourseCard
+                  name={item.name}
                   body={item.description}
-                  course_code={item.course_code}
-                  restrictions={item.restrictions}
-                  hyperlink={item.hyperlink}
+                  prerequisites={item.marked_preq}
+                  dependencies={item.dependent_courses}
                   credits={item.num_credits}
+                  restrictions={item.restrictions}
+                  course_code={item.course_code}
+                  hyperlink={item.hyperlink}
+                  not_in_catalogue={item.not_in_catalogue}
                   searchHandler={searchHandler}
                 />
               </div>
