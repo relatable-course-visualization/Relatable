@@ -1,0 +1,6 @@
+.env
+
+server/api/__pycache__/*
+server/api/migrations/__pycache__/*
+server/server/__pycache__/*
+server/webscraping/formConversion/__pycache__/*
