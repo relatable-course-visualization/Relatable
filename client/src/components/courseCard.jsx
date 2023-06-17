@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import Typography from '@mui/material/Typography';
+import React, { useState } from "react";
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
+import Typography from "@mui/material/Typography";
 
 export default function CourseCard(props) {
   const [isHovered, setIsHovered] = useState(false);
@@ -17,20 +17,23 @@ export default function CourseCard(props) {
   return (
     <Card
       sx={{
-        '@media (max-width: 768px)': {
-          height: isHovered ? 'auto' : 110,
-          width: isHovered ? '100%' : 220,
+        "@media (max-width: 768px)": {
+          height: isHovered ? "auto" : 110,
+          width: isHovered ? "100%" : 220,
         },
-        transition: 'height 0.3s ease-in-out',
-        height: isHovered ? 'auto' : 150,
+        transition: "height 0.3s ease-in-out",
+        height: isHovered ? "auto" : 150,
         width: isHovered ? 750 : 450,
-        backgroundColor: 'var(--clr-secondary-color)',
+        backgroundColor: "var(--clr-secondary-color)",
       }}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       className="course-card"
     >
       <CardContent className="course-card-content">
+        <div className="course-title">
+          <p>{props.course_code}</p>
+        </div>
         <div className="course-title">
           <p>{props.name}</p>
         </div>
@@ -39,7 +42,7 @@ export default function CourseCard(props) {
         </div>
         <div className="course-prerequisites">
           <p className="course-subtitle">Prerequisites:</p>
-          {props.prerequisites == '[]' ? (
+          {props.prerequisites == "[]" ? (
             <h2>No Prerequisites</h2>
           ) : (
             <span>{props.prerequisites}</span>
@@ -48,7 +51,7 @@ export default function CourseCard(props) {
 
         <div className="course-dependencies">
           <p className="course-subtitle">Dependencies:</p>
-          {props.dependencies == '[]' ? (
+          {props.dependencies == "[]" ? (
             <h2>No Dependencies</h2>
           ) : (
             <span>{props.dependencies}</span>
@@ -64,7 +67,7 @@ export default function CourseCard(props) {
         </div>
 
         <div className="course-restrictions">
-          {props.restrictions == 'None' ? (
+          {props.restrictions == "None" ? (
             <p>Restrictions: No Restrictions</p>
           ) : (
             <p>Restrictions: {props.restrictions}</p>
