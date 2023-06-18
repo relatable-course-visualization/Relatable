@@ -1,9 +1,12 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
+import { unwrapCourse } from "../helpers/unwrapCourse";
 
 export default function CourseCard(props) {
   const [isHovered, setIsHovered] = useState(false);
+  const [prerequistes, setPrerequisites] = useState("");
+  const [dependencies, setDependencies] = useState("");
 
   const handleMouseEnter = () => {
     setIsHovered(true);
@@ -12,6 +15,20 @@ export default function CourseCard(props) {
   const handleMouseLeave = () => {
     setIsHovered(false);
   };
+
+  useEffect(() => {
+    const courseHandler = (course) => {
+      props.searchHandler(course);
+    };
+
+    // update prerequisites and dependencies
+    if (props.prerequisites !== "None" && props.prerequisites !== null) {
+      setPrerequisites(unwrapCourse(props.prerequisites, courseHandler));
+    }
+    if (props.dependencies !== null && props.dependencies !== "None") {
+      setDependencies(unwrapCourse(props.dependencies, courseHandler));
+    }
+  }, [props.prerequisites, props.dependencies, props]);
 
   return (
     <Card
@@ -47,7 +64,7 @@ export default function CourseCard(props) {
               </p>
             ) : (
               <p>
-                <u>Prerequisites</u>: {props.prerequisites}
+                <u>Prerequisites</u>: {prerequistes}
               </p>
             )}
           </div>
@@ -59,7 +76,7 @@ export default function CourseCard(props) {
               </p>
             ) : (
               <p>
-                <u>Dependencies</u>: {props.dependencies}
+                <u>Dependencies</u>: {dependencies}
               </p>
             )}
           </div>
