@@ -7,7 +7,6 @@ import Course from "./course";
 import { Button, Typography } from "@material-ui/core";
 import TextField from "@mui/material/TextField";
 import { makeStyles } from "@material-ui/core/styles";
-import CourseCard from "./courseCard";
 
 const useStyles = makeStyles({
   searchButton: {
@@ -112,7 +111,7 @@ function Search() {
               key={item.id}
               style={{ justifyItems: "center" }}
             >
-              <CourseCard
+              <Course
                 name={item.name}
                 body={item.description}
                 prerequisites={item.marked_preq}
