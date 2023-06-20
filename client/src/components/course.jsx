@@ -49,10 +49,14 @@ export default function Course(props) {
       {!props.not_in_catalogue ? (
         <CardContent className="course-card-content">
           <div className="course-title">
-            <p>{props.course_code}</p>
+            <p>
+              <b>{props.course_code}</b>
+            </p>
           </div>
           <div className="course-title">
-            <p>{props.name}</p>
+            <p>
+              <b>{props.name}</b>
+            </p>
           </div>
           <div noWrap={!isHovered}>
             <p>{props.body}</p>
