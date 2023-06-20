@@ -52,7 +52,7 @@ function Search() {
     const loadPosts = async () => {
       setLoading(true);
       const response = await axios.get(
-        `${process.env.REACT_APP_SERVER_ENDPOINT}/courses`
+        `${process.env.REACT_APP_SERVER_ENDPOINT}/getAllCourses2023`
       );
       setPosts(response.data);
       setLoading(false);
@@ -106,18 +106,24 @@ function Search() {
           })
           .slice(0, numShown)
           .map((item) => (
-            <h5 key={item.id}>
-              <div className="wrapper">
-                <Course
-                  body={item.description}
-                  course_code={item.course_code}
-                  restrictions={item.restrictions}
-                  hyperlink={item.hyperlink}
-                  credits={item.num_credits}
-                  searchHandler={searchHandler}
-                />
-              </div>
-            </h5>
+            <div
+              className="wrapper"
+              key={item.id}
+              style={{ justifyItems: "center" }}
+            >
+              <Course
+                name={item.name}
+                body={item.description}
+                prerequisites={item.marked_preq}
+                dependencies={item.dependent_courses}
+                credits={item.num_credits}
+                restrictions={item.restrictions}
+                course_code={item.course_code}
+                hyperlink={item.hyperlink}
+                not_in_catalogue={item.not_in_catalogue}
+                searchHandler={searchHandler}
+              />
+            </div>
           ))
       )}
 
