@@ -1,5 +1,0 @@
-.env
-
-api/__pycache__/*
-server/__pycache__/*
-webscraping/__pycache__/*

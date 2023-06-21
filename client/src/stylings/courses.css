@@ -1,0 +1,40 @@
+body {
+  height: 70vh;
+}
+.courses-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.coursepage-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+}
+.courses-div > * {
+  margin-bottom: 45px;
+}
+
+@media (max-width: 768px) {
+  .course-title {
+    font-size: var(--fs-4);
+  }
+}
+
+.course-title {
+  font-size: var(--fs-3);
+}
+
+.course-hyperlink {
+  text-decoration: underline;
+  color: black;
+}
+
+.course-card {
+}
+
+.course-card-content {
+  font-family: var(font-family);
+}
