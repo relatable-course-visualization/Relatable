@@ -3,37 +3,45 @@ import '../stylings/aboutUs.css';
 
 function AboutUs() {
   return (
-    <div>
-      <h1 className="aboutUsHeaderText">ABOUT US</h1>
-      <div className="aboutUsDiv">
-        <div className="aboutUsSubDiv1">
-          <div className="aboutUsImage1Div">
-            <img
-              src="../images/about_us_image1.jpg"
-              className="aboutUsImage1"
-            ></img>
-          </div>
-          <div className="aboutUsTextBox1">
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </p>
-          </div>
+    <div className='pageDiv'>
+      <h1 className='aboutUsHeader'>Reinventing the USask course catalogue. For students, by students.</h1>
+      <div className='sections'>
+      <div className='text'>
+          <p>
+          Relatable was born out of the recognition for a better and smoother way 
+          to browse for classes. What started as a class project for CMPT 370 has 
+          evolved into a powerful platform designed to enhance the educational journey 
+          for students. 
+          </p>
+          <p>
+            At Relatable, our primary goal is to simplify the process of 
+            exploring and selecting courses. We understand the frustration of navigating 
+            complex course structures and deciphering prerequisites. That's why we've 
+            developed a platform that allows students to directly see dependent courses, 
+            easily access related courses, and presents prerequisites in a clear format.
+        </p>
         </div>
+        <img className='image1'
+          src="../images/about_us_image1.jpg"
+        ></img>
+      </div>
 
-        <div className="aboutUsSubDiv2">
-          <div className="aboutUsTextBox2">
-            <p>
-              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.
-            </p>
-          </div>
-          <div className="aboutUsImage2Div">
-            <img
-              src="../images/about_us_image2.jpg"
-              className="aboutUsImage2"
-            ></img>
-          </div>
+
+      <div className='sections'>
+        <img className='image1'
+          src="../images/about_us_image2.jpg"
+        ></img>
+        <div className='text'>
+          <p>
+            We're excited to present the first version of Relatable, but we're not stopping 
+            there. We value your feedback and ideas as we continue to improve and expand 
+            our services. Please don't hesitate to reach out to us at relatable@gmail.com 
+            with any suggestions, feedback, or ideas you may have.
+          </p>
+          {/* <p>
+            Join us on this journey of making the education experience more enjoyable, 
+            accessible, and relatable for students everywhere.
+          </p> */}
         </div>
       </div>
     </div>
