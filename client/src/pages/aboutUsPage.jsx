@@ -3,12 +3,14 @@ import "../stylings/home.css";
 import Footer from "../components/footer";
 import AboutUs from '../components/aboutUs';
 
+// import AboutUs from "../components/aboutUsV2";
 const AboutUsPage = () => {
   return (
-    <div id="aboutus">
+    <div id="aboutUsPage">
       <AboutUs />
-      <Footer />
+      {/* <Footer /> */}
     </div>
+
   );
 };
 
