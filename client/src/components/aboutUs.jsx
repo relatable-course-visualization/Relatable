@@ -34,7 +34,7 @@ function AboutUs() {
           <p>
             We're excited to present the first version of Relatable, but we're not stopping 
             there. We value your feedback and ideas as we continue to improve and expand 
-            our services. Please don't hesitate to reach out to us at relatable@gmail.com 
+            our services. Please don't hesitate to reach out to us at relatablecoursevisualizer@gmail.com 
             with any suggestions, feedback, or ideas you may have.
           </p>
           {/* <p>
