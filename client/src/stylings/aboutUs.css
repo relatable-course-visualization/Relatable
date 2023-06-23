@@ -1,4 +1,4 @@
-.pageDiv {
+.aboutUsStyling {
   display: flex;
   flex-direction: column;
   font-family: var(font-family);
@@ -14,7 +14,7 @@
   align-self: center;
 }
 
-.sections {
+.aboutUsRowContainer {
   display: flex;
   flex-direction: row;
   font-size: var(--fs-3);
@@ -25,14 +25,14 @@
   margin-bottom: 50px;
 }
 
-.image1 {
+.relatableFoundersImages {
   max-width: 600px;
   border-radius: 30px;
   margin-left: 2%;
   margin-right: 2%;
 }
 
-.text {
+.aboutUsText {
   font-family: var(font-family);
   font-size: var(--fs-3);
   text-align: center;
@@ -45,7 +45,7 @@
 /* Media queries */
 @media only screen and (max-width: 768px) {
   /* Styles for screens up to 768px */
-  .pageDiv {
+  .aboutUsStyling {
     display: inline-flex;
     flex-direction: column;
   }
@@ -53,19 +53,19 @@
     font-size: var(--fs-2);
   }
 
-  .text {
+  .aboutUsText {
     font-size: var(--fs-4);
   }
-  .sections {
+  .aboutUsRowContainer {
     gap: 0;
     margin-bottom: 0%;
-    margin-left: 1%;
-    margin-right: 1%;
+    margin-left: 1.5%;
+    margin-right: 1.5%;
   }
 
-  .image1 {
-    margin-left: 1%;
-    margin-right: 1%;
+  .relatableFoundersImages {
+    margin-left: 1.5%;
+    margin-right: 1.5%;
     margin-top: 1%;
     margin-bottom: 1%;
     max-width: 90%;
@@ -73,23 +73,8 @@
 
 }
 
-@media only screen and (min-width: 768px) {
-  /* Styles for screens above 768px */
-  .aboutUsDiv {
-    display: flex;
-  }
-  .aboutUsSubDiv1,
-  .aboutUsSubDiv2 {
-    display: inline-flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-  }
-  .aboutUsTextBox1,
-  .aboutUsTextBox2 {
-  }
-}
+
+
 
 
 

@@ -3,10 +3,10 @@ import '../stylings/aboutUs.css';
 
 function AboutUs() {
   return (
-    <div className='pageDiv'>
+    <div className='aboutUsStyling'>
       <h1 className='aboutUsHeader'>Reinventing the USask course catalogue. For students, by students.</h1>
-      <div className='sections'>
-      <div className='text'>
+      <div className='aboutUsRowContainer'>
+        <div className='aboutUsText'>
           <p>
           Relatable was born out of the recognition for a better and smoother way 
           to browse for classes. What started as a class project for CMPT 370 has 
@@ -19,19 +19,18 @@ function AboutUs() {
             complex course structures and deciphering prerequisites. That's why we've 
             developed a platform that allows students to directly see dependent courses, 
             easily access related courses, and presents prerequisites in a clear format.
-        </p>
+          </p>
         </div>
-        <img className='image1'
+        <img className='relatableFoundersImages'
           src="../images/about_us_image1.jpg"
         ></img>
       </div>
 
-
-      <div className='sections'>
-        <img className='image1'
+      <div className='aboutUsRowContainer'>
+        <img className='relatableFoundersImages'
           src="../images/about_us_image2.jpg"
         ></img>
-        <div className='text'>
+        <div className='aboutUsText'>
           <p>
             We're excited to present the first version of Relatable, but we're not stopping 
             there. We value your feedback and ideas as we continue to improve and expand 
