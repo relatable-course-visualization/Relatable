@@ -22,19 +22,22 @@ function AboutUs() {
           </p>
         </div>
         <img className='relatableFoundersImages'
-          src="../images/about_us_image1.jpg"
+          src="../images/relatableStudentGroup.jpg"
+          alt="Relatable Student Creators"
         ></img>
       </div>
 
       <div className='aboutUsRowContainer'>
         <img className='relatableFoundersImages'
-          src="../images/about_us_image2.jpg"
+          src="../images/relatableStudentsPresenting.jpg"
+          alt="Relatable Student Group Presenting"
         ></img>
         <div className='aboutUsText'>
           <p>
             We're excited to present the first version of Relatable, but we're not stopping 
             there. We value your feedback and ideas as we continue to improve and expand 
-            our services. Please don't hesitate to reach out to us at relatablecoursevisualizer@gmail.com 
+            our services. Please don't hesitate to reach out to us at 
+            <a href="relatablecoursevisualizer@gmail.com" target="_blank"> relatablecoursevisualizer@gmail.com </a>
             with any suggestions, feedback, or ideas you may have.
           </p>
           {/* <p>
