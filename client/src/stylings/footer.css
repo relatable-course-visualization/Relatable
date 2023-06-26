@@ -5,7 +5,7 @@
   margin-right: auto;
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 600.1px) {
   #logo {
     width: 210px;
   }

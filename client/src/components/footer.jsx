@@ -10,8 +10,12 @@ const useStyles = makeStyles({
   footer: {
     bottom: 0,
     width: '100%',
+    height: '150px',
     backgroundColor: 'var(--clr-primary-color)',
-    position: 'fixed',
+    position: 'absolute',
+    '@media (max-width: 600px)': {
+      maxHeight: '115px',
+    },
   },
 
   footerButton: {
@@ -33,7 +37,6 @@ const useStyles = makeStyles({
 
   footerButtonGrid: {
     maxWidth: '130px',
-
     '@media (max-width: 600px)': {
       maxWidth: '100px',
     },
@@ -42,7 +45,7 @@ const useStyles = makeStyles({
   footerGrid: {
     '@media (max-width: 320px)': {
       display: 'flex',
-      flexDirection: 'column',
+      flexDirection: 'row',
       alignItems: 'center',
     },
   },
@@ -72,11 +75,12 @@ function Footer() {
               About Us
             </Button>
           </Grid>
-          <Grid item className={classes.footerButtonGrid}>
+          {/* We can bring back contact us at a later stage */}
+          {/* <Grid item className={classes.footerButtonGrid}>
             <Button href="/contact-us" className={classes.footerButton}>
               Contact Us
             </Button>
-          </Grid>
+          </Grid> */}
         </Grid>
       </Container>
     </footer>
