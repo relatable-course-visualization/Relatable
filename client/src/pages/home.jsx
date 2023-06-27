@@ -5,7 +5,7 @@ import Search from "../components/search";
 
 const Home = () => {
   return (
-    <div id="home">
+    <div className="homepage">
       <Search />
       <Footer />
     </div>

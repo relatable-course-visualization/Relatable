@@ -12,7 +12,8 @@ const useStyles = makeStyles({
     width: '100%',
     height: '150px',
     backgroundColor: 'var(--clr-primary-color)',
-    position: 'absolute',
+    position: 'relative', // Relative position allows it to be placed right after content before it
+    marginTop: 'auto', // For search page when there are no results, it fills space
     '@media (max-width: 600px)': {
       maxHeight: '115px',
     },
