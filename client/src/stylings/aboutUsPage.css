@@ -3,15 +3,7 @@
     min-height: 100vh;
   }
   
-  #content-wrap {
-    padding-bottom: 150px;    /* Footer height */
-  }
 
-  @media only screen and (max-width: 600px) {
-    #content-wrap {
-      padding-bottom: 115px;    /* Footer height */
-    }
-  }
 
   
 

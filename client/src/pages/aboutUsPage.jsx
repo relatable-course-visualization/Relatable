@@ -6,10 +6,7 @@ import AboutUs from '../components/aboutUs';
 const AboutUsPage = () => {
   return (
     <div id="aboutUsPage">
-      <div id="content-wrap">
-        <AboutUs/>
-        {/* <Footer/> */}
-      </div>
+      <AboutUs/>
       <Footer/>
     </div>
 
