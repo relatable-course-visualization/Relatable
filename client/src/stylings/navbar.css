@@ -46,7 +46,7 @@
   display: none;
 }
 .navbar-item-div {
-  position: fixed;
+  position: absolute;
   display: grid;
   grid-template-columns: repeat(3, auto);
   grid-gap: 10px;
@@ -60,6 +60,10 @@
   margin-left: auto;
   margin-right: auto;
 }
+
+.navbar-logo {
+  margin-left: 16px;
+}
 @media screen and (max-width: 520px) {
   .navbar-item-div {
     grid-gap: 0;
@@ -70,12 +74,24 @@
   .navbar-logo {
     display: flex;
     justify-content: center;
-    align-self: center;
     align-items: center;
-    align-content: center;
+    margin-left: 10px;
+    margin-top: 8px;
   }
 
   #logo {
-    width: 120px;
+    display: flex;
+    width: 100px;
+    align-self: center;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .navbar-logo {
+    margin-left: 20px;
+  }
+
+  .navbar-links {
+    margin-right: 40px;
   }
 }

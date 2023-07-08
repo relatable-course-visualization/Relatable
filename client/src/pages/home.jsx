@@ -8,18 +8,10 @@ import Navbar from '../components/navbar';
 const Home = () => {
   return (
     <div id="home">
-      <div>
-        <Navbar />
-      </div>
-      <div>
-        <Search />
-      </div>
-      <div>
-        <Courses />
-      </div>
-      <div>
-        <Footer />
-      </div>
+      <Navbar />
+      <Search />
+      <Courses />
+      <Footer />
     </div>
   );
 };
