@@ -1,188 +1,118 @@
-import React, {useState, useEffect} from "react";
-import Button from '@material-ui/core/Button'
-import "../stylings/course.css";
-import axios from 'axios';
+import React, { useEffect, useState } from "react";
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
+import { unwrapCourse } from "../helpers/unwrapCourse";
 
-const Course = (props) => {
-    const courseHandler = (course) =>{
-       props.searchHandler(course);
+export default function Course(props) {
+  const [isHovered, setIsHovered] = useState(false);
+  const [prerequistes, setPrerequisites] = useState("");
+  const [dependencies, setDependencies] = useState("");
+
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+  };
+
+  useEffect(() => {
+    const courseHandler = (course) => {
+      props.searchHandler(course);
+    };
+
+    // update prerequisites and dependencies
+    if (props.prerequisites !== "None" && props.prerequisites !== null) {
+      setPrerequisites(unwrapCourse(props.prerequisites, courseHandler));
     }
+    if (props.dependencies !== null && props.dependencies !== "None") {
+      setDependencies(unwrapCourse(props.dependencies, courseHandler));
+    }
+  }, [props.prerequisites, props.dependencies, props]);
 
-    const [dependencies, setDependencies] = useState([]);
-    const [isDependenciesEmpty, setIsDependenciesEmpty] = useState(false);
+  return (
+    <Card
+      sx={{
+        "@media (max-width: 768px)": {
+          height: isHovered ? "auto" : 110,
+          width: isHovered ? "100%" : 220,
+        },
+        transition: "height 0.3s ease-in-out",
+        height: isHovered ? "auto" : 150,
+        width: isHovered ? 750 : 450,
+        backgroundColor: "var(--clr-secondary-color)",
+      }}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+      className="course-card"
+    >
+      {!props.not_in_catalogue ? (
+        <CardContent className="course-card-content">
+          <div className="course-title">
+            <p>
+              <b>{props.course_code}</b>
+            </p>
+          </div>
+          <div className="course-title">
+            <p>
+              <b>{props.name}</b>
+            </p>
+          </div>
+          <div noWrap={!isHovered}>
+            <p>{props.body}</p>
+          </div>
+          <div>
+            {props.prerequisites === "None" ? (
+              <p>
+                <u>Prerequisites</u>: No Prerequisites
+              </p>
+            ) : (
+              <p>
+                <u>Prerequisites</u>: {prerequistes}
+              </p>
+            )}
+          </div>
 
-    // prerequisites buttons
-    const [prerequisites, setPrerequisites] = useState([]);
-    const [isPrerequisitesEmpty, setIsPrerequisitesEmpty] = useState(false);
+          <div>
+            {props.dependencies === null ? (
+              <p>
+                <u>Dependencies</u>: No Dependencies
+              </p>
+            ) : (
+              <p>
+                <u>Dependencies</u>: {dependencies}
+              </p>
+            )}
+          </div>
 
-    var code = props.course_code.replace(" ", "");
+          <div>
+            {props.credits == -1 ? (
+              <p>Number of Credits: Not Applicable</p>
+            ) : (
+              <p>Number of Credits: {props.credits}</p>
+            )}
+          </div>
 
-    useEffect(() => {
-        const loadDependency = (code) => {
+          <div>
+            {props.restrictions == "None" ? (
+              <p>Restrictions: No Restrictions</p>
+            ) : (
+              <p>Restrictions: {props.restrictions}</p>
+            )}
+          </div>
 
-            // list of dependencies 
-            axios.get(
-            `${process.env.REACT_APP_SERVER_ENDPOINT}/getDependants/${code}`
-            ).then((response) => {
-                
-                var data = response.data;
-                // no dependencies
-                if(data == "[]"){
-                    setDependencies([]); 
-                    setIsDependenciesEmpty(true);
-                }
-                // dependencies
-                else{
-                    // clean up data
-                    data = data.replace('[', "");
-                    data = data.replace("]", "");
-                    data = data.replaceAll('"', "");
-
-                    // data is now a list
-                    data = data.split(',');
-
-                    var arrayedData = [];
-
-                    // store jsx into an array
-                    data.forEach((course) => {
-                        arrayedData.push( 
-                            <Button variant="contained" size="small" sx={{m: 30}} onClick={(e) => courseHandler( e.currentTarget.innerText )}> 
-                                <h5>{course}</h5>
-                            </Button>)
-                    })
-
-                    setDependencies(arrayedData);
-                    setIsDependenciesEmpty(false);
-                }
-            })
-        }
-    
-        loadDependency(code);
-
-        const loadPrerequisites = (code) => {
-            // list of prerequisites 
-            axios.get(
-            `${process.env.REACT_APP_SERVER_ENDPOINT}/getPrereqs/${code}`
-            ).then((response) => {
-                
-                var data = response.data
-        
-                // no prerequisites
-                if(data == "[]"){
-                    setPrerequisites([]); 
-                    setIsPrerequisitesEmpty(true);
-                }
-                // prerequisites
-                else{
-                    // clean up data
-                    data = data.replace('[', "");
-                    data = data.slice(0, -1);
-                    
-                    /* Iterate through disjunctions */
-                    var leftBracketIndex = 0;
-                    var rightBracketIndex = 0;
-                    var arrayedData = [];
-                    while(leftBracketIndex < data.length){
-                        // find closing bracket for inner list 
-                        while(data[rightBracketIndex] != ']'){
-                            rightBracketIndex++;
-                        }
-
-                        /* obtain inner list */
-
-                        // if item has a comma it means an OR
-                        var subdata = data.substring(leftBracketIndex+1, rightBracketIndex)
-                        if(subdata.includes(",")){
-                            // subdata is a list of courses inside an inner list (disjunction)
-                            subdata = subdata.split(",")
-                            
-                            // add opening bracket
-                            arrayedData.push(
-                                <h2 className="dynamic-text">{"( "}</h2>
-                            );
-
-                            // store jsx into an array
-                            subdata.forEach((course, i,) => {
-                                course = course.replaceAll('"', "");
-                                arrayedData.push( 
-                                    <Button variant="contained" size="small" onClick={(e) => courseHandler( e.currentTarget.innerText )}> 
-                                        <h5>{course}</h5>
-                                    </Button>);
-                                if(i != subdata.length -1){
-                                    arrayedData.push(<h2 className="dynamic-text"> OR </h2>)
-                                }
-                            })
-                            // add closing bracket
-                            arrayedData.push(
-                                <h2 className="dynamic-text">{")"}</h2>
-                            );
-                        }
-  
-                        // Only one item
-                        else{ 
-                            subdata = subdata.replaceAll('"', "");
-                            arrayedData.push(
-                                <Button variant="contained" size="small" onClick={(e) => courseHandler( e.currentTarget.innerText )}> 
-                                    <h5>{subdata}</h5>
-                                </Button>
-                            )}
-
-                        /* insert AND if disjunctions continue */
-
-                        leftBracketIndex = rightBracketIndex + 1;
-                        // not out of bounds 
-                        if (data[leftBracketIndex] !== undefined && leftBracketIndex < data.length) {
-                            // another disjunction 
-                            if (data[leftBracketIndex] === ","){
-                                // make AND tag in course prerequisite section
-                                arrayedData.push(<h2 className="dynamic-text"> AND </h2>)
-
-                                // update both indicies
-                                leftBracketIndex += 2;
-                                rightBracketIndex += 2; 
-                            }
-                        }
-                    }
-
-                    // update state variables
-                    setPrerequisites(arrayedData);
-                    setIsPrerequisitesEmpty(false);
-                }
-            })
-        }
-    
-        loadPrerequisites(code);
-    }, []);
-
-    return(
-        <div className="wrapper">
-            <div className="course">  
-                <div className="course__title" >{props.course_code}</div>
-                <div className="course__body">{props.body}</div>
-                <div className="sub">  
-                    <div className="course__subboxes">Prerequisites</div>
-                            {isPrerequisitesEmpty ? <h2 className="dynamic-text">No Prerequisites</h2> : <div className="rowPrerequisites">{prerequisites}</div>} 
-                    </div>
-
-                <div className="sub"> 
-                    <div className="course__subboxes">Dependencies</div>
-                            {isDependenciesEmpty ? <h2 className="dynamic-text">No Dependencies</h2> : <h2>{dependencies}</h2>}        
-                </div>
-                <div className="course__credits"></div>
-                    {props.credits == -1 ? <h2 className="other_text">Number of Credits: Not Applicable</h2> 
-                    : <h2 className="other_text">Number of Credits: {props.credits}</h2>}
-                <div className="course__restrictions"></div>
-                    {props.restrictions == "None" ? 
-                    <h2 className="other_text">Restrictions: No Restrictions</h2> : 
-                    <h2 className="other_text">Restrictions: {props.restrictions}</h2>}
-                    <div className="course__hyperlink" >
-                      <a id="hyperlink" href={props.hyperlink}>
-                        Link To Course
-                      </a>
-                    </div>
-            </div>  
-        </div>           
-    )
+          <a
+            className="course-hyperlink"
+            href={props.hyperlink}
+            target="_blank"
+            rel="noreferrer"
+          >
+            Link To Course
+          </a>
+        </CardContent>
+      ) : (
+        <>Not in-Catalogue</>
+      )}
+    </Card>
+  );
 }
-
-export default Course;
