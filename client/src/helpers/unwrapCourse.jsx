@@ -1,4 +1,4 @@
-import { Button } from "@mui/material";
+import { Button, Typography } from "@mui/material";
 import React from "react";
 
 const COURSE_CODE_PATTERN = /([A-Z]{2,4}\s[0-9]{3})/g;
@@ -24,11 +24,22 @@ export function unwrapCourse(course, courseHandler) {
       return (
         <React.Fragment key={index}>
           <Button
-            variant="contained"
+            style={{
+              color: "black",
+              borderColor: "#F9F5F6",
+              borderRadius: "13px",
+              borderWidth: "3px",
+              marginLeft: "5px",
+              marginRight: "5px",
+              marginBottom: "5px",
+              padding: "4px",
+              boxShadow: "var(--bs)",
+            }}
+            variant="outlined"
             size="small"
             onClick={() => courseHandler(part)}
           >
-            <h5>{part}</h5>
+            {part}
           </Button>
         </React.Fragment>
       );
