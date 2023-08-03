@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from "react";
-import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
-import { unwrapCourse } from "../helpers/unwrapCourse";
+import React, { useEffect, useState } from 'react';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import { unwrapCourse } from '../helpers/unwrapCourse';
 
 export default function Course(props) {
   const [isHovered, setIsHovered] = useState(false);
-  const [prerequistes, setPrerequisites] = useState("");
-  const [dependencies, setDependencies] = useState("");
+  const [prerequistes, setPrerequisites] = useState('');
+  const [dependencies, setDependencies] = useState('');
 
   const handleMouseEnter = () => {
     setIsHovered(true);
@@ -22,10 +22,10 @@ export default function Course(props) {
     };
 
     // update prerequisites and dependencies
-    if (props.prerequisites !== "None" && props.prerequisites !== null) {
+    if (props.prerequisites !== 'None' && props.prerequisites !== null) {
       setPrerequisites(unwrapCourse(props.prerequisites, courseHandler));
     }
-    if (props.dependencies !== null && props.dependencies !== "None") {
+    if (props.dependencies !== null && props.dependencies !== 'None') {
       setDependencies(unwrapCourse(props.dependencies, courseHandler));
     }
   }, [props.prerequisites, props.dependencies, props]);
@@ -33,14 +33,14 @@ export default function Course(props) {
   return (
     <Card
       sx={{
-        "@media (max-width: 768px)": {
-          height: isHovered ? "auto" : 110,
-          width: isHovered ? "100%" : 220,
+        '@media (max-width: 768px)': {
+          height: !props.not_in_catalogue ? (isHovered ? 'auto' : 110) : 110,
+          width: !props.not_in_catalogue ? (isHovered ? '100%' : 220) : 220,
         },
-        transition: "height 0.3s ease-in-out",
-        height: isHovered ? "auto" : 150,
-        width: isHovered ? 750 : 450,
-        backgroundColor: "var(--clr-secondary-color)",
+        transition: 'height 0.3s ease-in-out',
+        height: !props.not_in_catalogue ? (isHovered ? 'auto' : 150) : 150,
+        width: !props.not_in_catalogue ? (isHovered ? 750 : 450) : 450,
+        backgroundColor: 'var(--clr-secondary-color)',
       }}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
@@ -62,7 +62,7 @@ export default function Course(props) {
             <p>{props.body}</p>
           </div>
           <div>
-            {props.prerequisites === "None" ? (
+            {props.prerequisites === 'None' ? (
               <p>
                 <u>Prerequisites</u>: No Prerequisites
               </p>
@@ -111,7 +111,7 @@ export default function Course(props) {
           </a>
         </CardContent>
       ) : (
-        <>Not in-Catalogue</>
+        <p>{props.course_code} is no longer offered.</p>
       )}
     </Card>
   );
