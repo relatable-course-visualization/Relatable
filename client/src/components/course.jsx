@@ -86,7 +86,7 @@ export default function Course(props) {
           </div>
 
           <div>
-            {props.credits == -1 ? (
+            {props.credits === -1 ? (
               <p>Number of Credits: Not Applicable</p>
             ) : (
               <p>Number of Credits: {props.credits}</p>
@@ -94,7 +94,7 @@ export default function Course(props) {
           </div>
 
           <div>
-            {props.restrictions == 'None' ? (
+            {props.restrictions === "None" ? (
               <p>Restrictions: No Restrictions</p>
             ) : (
               <p>Restrictions: {props.restrictions}</p>
