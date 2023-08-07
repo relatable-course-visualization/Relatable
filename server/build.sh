@@ -4,6 +4,7 @@
 python3.9 -m pip install django
 python3.9 -m pip install pymysql
 python3.9 -m pip install dj_database_url 
+python3.9 -m pip install environ
 echo "Building the project..."
 python3.9 -m pip install -r requirements.txt
 echo "Make Migration..."
