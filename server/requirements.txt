@@ -49,4 +49,3 @@ typing_extensions==4.5.0
 tzdata==2022.1
 urllib3==1.26.12
 wasabi==1.1.1
-webscraping==0.0.0
